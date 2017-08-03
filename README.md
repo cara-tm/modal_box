@@ -2,6 +2,42 @@
 
 Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE7 minimum!
 
+This template has been tested successfully in:
+
+* Internet Explorer 7 (see below);
+* Internet Explorer 8 (see below);
+* Internet Explorer 9;
+* Internet Explorer 10;
+* Internet Explorer 11;
+* Microsoft Edge (all versions);
+* Internet Explorer (Microsoft Windows Phone 7.5 system);
+* Safari 5.x;
+* Safari Mobile;
+* Opera 9.64 min;
+* Opera mini (Microsoft Windows Phone 7.5 system);
+* Internet Explorer Mobile (Microsoft Windows Phone 8.x system);
+* Opera mini for android, version 7.5.x;
+* Opera mini android (latest version) ;
+* FireFox 3 min;
+* Midori 0.4 min;
+* Google Chromium (all versions);
+* Shiira Mac;
+* OmniWeb 5 Mac.
+
+
+## IE 8 and below support
+
+Full support in IE9. If you need previous browsers compatibility, you can add this little script into your page:
+
+    <script>
+    /*! Alternative to :target selector (unique ID #open-modal) for
+       	IE8 and below; can be removed safely if you don't need it.
+    */
+    if(document.all&&!document.addEventListener){var el=document.getElementById('b-active'),target=document.getElementById('open-modal');el.attachEvent('click',function(){toggle(target,'visible')})}function toggle(a,b){var d=a.className.match(/\S+/g)||[],f=d.indexOf(b);0<=f?d.splice(f,1):d.push(b),a.className=d.join(' ')};
+    </script>
+
+## Screen shots
+
 Google Chromium (latest) PC preview:
 ![Google Chromium PC](https://github.com/cara-tm/modal_box/raw/master/google-chromium.png "Google Chromium PC")
 
