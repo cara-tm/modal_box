@@ -14,10 +14,11 @@ This template has been tested successfully in:
 * Safari 5.x;
 * Safari Mobile;
 * Opera 9.64 min;
-* Opera mini (Microsoft Windows Phone 7.5 system);
+* Opera Mini (Microsoft Windows Phone 7.5 system);
 * Internet Explorer Mobile (Microsoft Windows Phone 8.x system);
-* Opera mini for android, version 7.5.x;
-* Opera mini android (latest version) ;
+* Opera Mini for android, version 7.5.x;
+* Opera Mini android (latest version);
+* UC Browser (android & PC);
 * FireFox 3 min;
 * Midori 0.4 min;
 * Google Chromium (all versions);
