@@ -21,7 +21,7 @@ This template has been tested successfully in:
 * UC Browser (android & PC);
 * FireFox 3 min;
 * Midori 0.4 min;
-* Google Chromium (all versions);
+* Google Chromium (all versions: PC & Mac; iOS & Android);
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
