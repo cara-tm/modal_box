@@ -25,6 +25,12 @@ This template has been tested successfully in:
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
+## Usage
+
+First, you need to encapsulate your entire content page into a div with a class name `wrapper`.
+Then, place the Modal Box template outside this `wrapper` block.
+Simple!
+
 
 ## IE 8 and below support
 
