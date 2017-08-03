@@ -12,7 +12,7 @@ Safari Mobile preview:
 
 .
 
-Opera Mini 7.5 Android preview: 
+Opera Mini 7.5 Android preview (Note. Scrolling is activated along the page document): 
 ![Opera Mini 7.5 Android](https://github.com/cara-tm/modal_box/raw/master/opera-mini-7.5-android.png "Opera Mini 7.5 Android")
 
 .
