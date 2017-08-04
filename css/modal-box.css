@@ -231,7 +231,7 @@ html,
 	/* List of max-height for fallbacks */
 	max-height: 145px;
 	max-height: 47vh;
-	max-height: calc(100vh - 25vh - 140px);
+	max-height: calc(100vh - 30vh - 140px);
 
 	height: 90%;
 	margin: 0;
