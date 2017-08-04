@@ -24,24 +24,20 @@ html,
 .modal-dialog:target {
     opacity:1;
 	display: block;
-
-    pointer-events: auto
+	pointer-events: auto
 }
 
 /**
  * Masks the wrapper and avoid scrolling on background 
  */
 .modal-dialog:target ~ .wrapper {
-/*
-    overflow: hidden;
-*/
-    position:fixed;
+	position:fixed;
 	z-index: -1;
 	top: 0;
 	left: 0;
 	/* Can be ugly in some mobile browsers. Change value below to 0 instead */
 	height: 100%;
-    backface-visibility: hidden
+	backface-visibility: hidden
 }
 
 /**
@@ -49,9 +45,9 @@ html,
  */
 .modal-dialog {
 	display: none;
-opacity: 0;
+	opacity: 0;
 	position: fixed;
-position: absolute;
+	position: absolute;
 	z-index: 99999;
 	top: 0;
 	right: 0;
@@ -82,6 +78,9 @@ position: absolute;
 	box-shadow: -15px 10px 30px rgba(255, 255, 255, .9)
 }
 
+/**
+ * Heading level 1 styles
+ */
 .header-modal h1 {
 	display: block;
 	display: inline-block;
@@ -95,6 +94,9 @@ position: absolute;
 	font-weight: 400
 }
 
+/**
+ * Header additional infos
+*/
 .header-modal strong {color: #ccc}
 
 .header-modal span {
@@ -106,10 +108,6 @@ position: absolute;
  * Links within the modal's header
  */
 .header-modal a {
-/*
-	float: right;
-	margin: 28px 30% 0 0;
-*/
 	display: inline-block;
 	width: 34px;
 	height: 34px;
@@ -118,6 +116,9 @@ position: absolute;
 	line-height: 32px
 }
 
+/**
+ * Header's links states
+ */
 .header-modal a:hover,
 	.header-modal a:active {
 		border-color: #ccc;
@@ -135,28 +136,31 @@ position: absolute;
 	vertical-align: middle
 }
 
-.header-modal svg path {
-	fill: green
-}
+/**
+ * SVG color
+ */
+.header-modal svg path {fill: green}
 
 /**
  * The closing rounded button
  */
 .modal-dialog .close {
 	display: block;
-    position: absolute;
+	position: absolute;
 	z-index: 10000;
-    top: 7px;
-    right: 10px;
-    width: 29px;
-    height: 29px;
-    background: #eee;
-    vertical-align: middle;
-    text-align: center;
-    text-decoration: none;
-    color: #d4d4d4;
-    font: normal normal normal 1.2em/29px 'Helvetica Neue', Helvetica, Arial,sans-serif;
-    border-radius: 50%;
+	top: 7px;
+	right: 10px;
+	width: 29px;
+	height: 29px;
+	margin: 0;
+	padding: 0;
+	background: #eee;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+	color: #d4d4d4;
+	font: normal normal normal 1.2em/29px 'Helvetica Neue', Helvetica, Arial,sans-serif;
+	border-radius: 50%;
 
 	-webkit-transition: box-shadow 200ms ease-out, -webkit-transform 200ms ease-out, opacity 200ms ease-in-out;
 	-moz-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
@@ -164,7 +168,7 @@ position: absolute;
 }
 
 /**
- * Hover state
+ * The close link states
  */
 .modal-dialog .close:hover,
 	.inner-dialog .close:active {
@@ -198,7 +202,7 @@ position: absolute;
 	-webkit-box-shadow: 0 -10px 45px rgba(0,0,0,.25);
 	-moz-box-shadow: 0 -10px 45px rgba(0,0,0,.25);
 	box-shadow: 0 -10px 45px rgba(0,0,0,.25);
-
+	/* For IE7 support: can be safely removed if needed */
 	zoom: 1
 }
 
@@ -212,38 +216,21 @@ position: absolute;
 	/* Needed for some mobile browsers (UC Browser): corrects the width to 100% */
 	display: inline-block;
 	width: auto;
-	/* End correction */
 
+	/* List of max-height for fallbacks */
 	max-height: 145px;
 	max-height: 47vh;
 	max-height: calc(100vh - 25vh - 140px);
-	height: 90%;
 
+	height: 90%;
 	margin: 0;
 	padding: 5px 20px 50px 20px
 }
 
-
 /**
- * A version with some effects
- 
-.modal-dialog .inner-dialog {
-	overflow-y: hidden;
-	overflow-y: -moz-hidden-unscrollable
-}
-
-.modal-dialog .inner-dialog:hover {
-	overflow-y: visible;
-	overflow-y: scroll
-}
-*/
-
-/* End special version */
-
-.modal-dialog .inner-dialog p {
-	font-family: 'Open Sans', Arial, sans-serif
-}
-
+ * The inner modal paragraphs styles
+ */
+.modal-dialog .inner-dialog p {font-family: 'Open Sans', Arial, sans-serif}
 
 /**
  * The modal box's footer
