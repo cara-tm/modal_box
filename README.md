@@ -22,6 +22,8 @@ This template has been tested successfully in:
 * FireFox 3 min;
 * Midori 0.4 min;
 * Google Chromium (all versions: PC & Mac; iOS & Android);
+* Brave;
+* Vivaldi;
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
