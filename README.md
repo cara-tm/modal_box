@@ -45,6 +45,11 @@ Full support in IE9. If you need previous browsers compatibility, you can add th
     if(document.all&&!document.addEventListener){var el=document.getElementById('b-active'),target=document.getElementById('open-modal');el.attachEvent('click',function(){toggle(target,'visible')})}function toggle(a,b){var d=a.className.match(/\S+/g)||[],f=d.indexOf(b);0<=f?d.splice(f,1):d.push(b),a.className=d.join(' ')};
     </script>
 
+## Note
+
+CSS rules has been verified troughout the online "Validate your CSS for different browsers" (features providing by Caniuse): [https://www.browseemall.com/Compatibility/ValidateCSS](https://www.browseemall.com/Compatibility/ValidateCSS
+)
+
 ## Screen shots
 
 Google Chromium (latest) PC preview:
