@@ -1,5 +1,5 @@
 /**
- * Resets
+ * Minimal resets
  */
 html,
 	body {
@@ -44,7 +44,8 @@ html,
  * Typos
 */
 .modal-dialog, 
-	.header-modal, 
+	.header-modal,
+	.header-modal h1,
 	.modal-dialog .inner-dialog p,
 	.footer-modal a {
 	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -99,6 +100,7 @@ html,
 	letter-spacing: -1px;
 	text-transform: uppercase;
 	line-height: 90px;
+	font-family: 'Open Sans Condensed';
 	font-size: 200%;
 	font-weight: 400
 }
