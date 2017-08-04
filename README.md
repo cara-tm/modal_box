@@ -1,6 +1,6 @@
 # CSS Modal Box
 
-Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE7 minimum!
+Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE7 minimum! ([See this demo here](https://codepen.io/cara-tm/full/ayzXPJ/))
 
 This template has been tested successfully in:
 
