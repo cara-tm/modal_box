@@ -226,6 +226,8 @@ html,
 	
 	/* Needed for some mobile browsers (UC Browser): corrects the width to 100% */
 	display: inline-block;
+	/* Modern alternative */
+	display: flow-root;
 	width: auto;
 
 	/* List of max-height for fallbacks */
