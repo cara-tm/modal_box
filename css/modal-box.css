@@ -41,6 +41,16 @@ html,
 }
 
 /**
+ * Typos
+*/
+.modal-dialog, 
+	.header-modal, 
+	.modal-dialog .inner-dialog p,
+	.footer-modal a {
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+/**
  * The modal outer that wrap the entire wrapper
  */
 .modal-dialog {
@@ -54,8 +64,7 @@ html,
 	bottom: 0;
  	left: 0;
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
- 	background: rgba(255, 255, 255, 0.95);
- 	font-family: Arial, Helvetica, sans-serif
+ 	background: rgba(255, 255, 255, 0.95)
 }
 
 /**
@@ -68,7 +77,7 @@ html,
 	max-height: 15vh;
 	background: #fff;
 
-	font-family: 'Open Sans Condensed', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-family: 'Open Sans Condensed';
 	font-weight: 300;
 	
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
@@ -230,7 +239,7 @@ html,
 /**
  * The inner modal paragraphs styles
  */
-.modal-dialog .inner-dialog p {font-family: 'Open Sans', Arial, sans-serif}
+.modal-dialog .inner-dialog p {font-family: 'Open Sans'}
 
 /**
  * The modal box's footer
@@ -267,7 +276,6 @@ html,
 	text-decoration: none;
 	white-space: nowrap;
 	word-break: keep-all;
-	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	font-weight: bold;
 	/* Same line-height as the footer's height for vertical alignment */
 	line-height: 50px;
