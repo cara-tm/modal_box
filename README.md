@@ -40,7 +40,7 @@ Full support in IE9. If you need previous browsers compatibility, you can add th
 
     <script>
     /*! Alternative to :target selector (unique ID #open-modal) for
-       	IE8 and below; can be removed safely if you don't need it.
+    IE8 and below; can be removed safely if you don't need it.
     */
     if(document.all&&!document.addEventListener){var el=document.getElementById('b-active'),target=document.getElementById('open-modal');el.attachEvent('click',function(){toggle(target,'visible')})}function toggle(a,b){var d=a.className.match(/\S+/g)||[],f=d.indexOf(b);0<=f?d.splice(f,1):d.push(b),a.className=d.join(' ')};
     </script>
