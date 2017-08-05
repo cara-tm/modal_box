@@ -43,12 +43,15 @@ html,
 /**
  * Typos
 */
+.modal-dialog {font: normal normal normal 62.5%/1 sans-serif}
+
 .modal-dialog, 
 	.header-modal,
 	.header-modal h1,
 	.modal-dialog .inner-dialog p,
 	.footer-modal a {
-	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif
+		padding: 0;
+		font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 
 /**
@@ -79,6 +82,7 @@ html,
 	background: #fff;
 
 	font-family: 'Open Sans Condensed';
+	font-size: 180%;
 	font-weight: 300;
 	
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
@@ -101,7 +105,8 @@ html,
 	text-transform: uppercase;
 	line-height: 90px;
 	font-family: 'Open Sans Condensed';
-	font-size: 200%;
+	font-size: 150%;
+	font-size: 2vw;
 	font-weight: 400
 }
 
@@ -170,7 +175,7 @@ html,
 	text-align: center;
 	text-decoration: none;
 	color: #d4d4d4;
-	font: normal normal normal 1.2em/29px 'Helvetica Neue', Helvetica, Arial,sans-serif;
+	font: normal normal normal 2em/29px 'Helvetica Neue', Helvetica, Arial,sans-serif;
 	border-radius: 50%;
 
 	-webkit-transition: box-shadow 200ms ease-out, -webkit-transform 200ms ease-out, opacity 200ms ease-in-out;
@@ -228,7 +233,6 @@ html,
 	display: inline-block;
 	/* Modern alternative */
 	display: flow-root;
-	width: auto;
 
 	/* List of max-height for fallbacks */
 	max-height: 145px;
@@ -237,13 +241,21 @@ html,
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px
+	padding: 5px 20px 50px 20px;
+	font-size: 135%
 }
 
 /**
- * The inner modal paragraphs styles
+ * The inner modal typo styles
  */
-.modal-dialog .inner-dialog p {font-family: 'Open Sans'}
+.modal .inner-dialog h2 {font-size: 145%}
+
+.modal-dialog .inner-dialog p {
+	padding: 0;
+	line-height: 1.5em;
+	font-size: 120%;
+	font-family: 'Open Sans'
+}
 
 /**
  * The modal box's footer
@@ -256,6 +268,7 @@ html,
 	background: #42a5f5;
 	border: 1px solid #42a5f5;
 	text-align: right;
+	font-size: 160%;
 
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
@@ -286,6 +299,9 @@ html,
 	outline: none;
 
 	-webkit-transition: .3s ease-out;
+	-moz-transition: .3s ease-out;
+	-o-transition: .3s ease-out;
+	-ms-transition: .3s ease-out;
 	transition: .3s ease-out;
 
 	/* Changes the highlighting on the links for mobile webkit engines */
@@ -302,15 +318,17 @@ html,
  * Media query for small screens
  */
 @media only screen and (max-width: 720px) {
-	
+
+	.header-modal {max-height: 11vmax}
+
 	.modal-dialog .modal {margin: 5vh auto 0;margin: calc(15vh - 50px) auto 0;margin: 5vmin auto 0}
 
-	.header-modal h1 {line-height: 15.5vmax; font-size: 4.45vmax}
+	.header-modal h1 {line-height: 15.5vmax; font-size: 5vmin; font-size: 4.45vmax}
 
 	.header-modal span {float: none; margin: 0}
 
 	.header-modal a {float: none; width: 24px; height: 24px; margin: 0 0 0 .5em; vertical-align: text-top}
-	
+
 	.header-modal svg {width: 22px; height: 22px; vertical-align: baseline}
 
 	.modal-dialog .modal {margin: 5vh auto 0; margin: calc(15vh - 50px) auto 0}
