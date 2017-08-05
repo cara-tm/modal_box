@@ -22,9 +22,18 @@ html,
  *  A pseudo-class to target the Modal unique #ID and open it
  */
 .modal-dialog:target {
-    opacity:1;
+	opacity:1;
 	display: block;
 	pointer-events: auto
+}
+
+/**
+ * A pseudo-class to target the inner modal box with animations
+ */
+.modal-dialog:target .modal {
+	opacity: 1;
+	-webkit-animation: animation 500ms linear both;
+	animation: animation 500ms linear both
 }
 
 /**
@@ -362,20 +371,59 @@ html,
 .modal-dialog ::-webkit-scrollbar-corner { background-color: #999}
 .modal-dialog ::-webkit-resizer { background-color: #666}
 
-
 /**
- * Custom rules for this demo document
+ * Animations generated with Bounce.js. Edit at https://goo.gl/UvsWhU
  */
-.wrapper {width: 100%}
-
-.wrapper p {padding: 10px 10px 0}
-
-.button {
-	margin: 0 .5em 0 0;
-	padding: .5em .5em .7em;
-	background: #0b7cd7;
-	color: #fff;
-	text-decoration: none
+@-webkit-keyframes animation {
+	12.61% {
+		-webkit-transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	16.72% {
+		-webkit-transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	25.03% {
+		-webkit-transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	33.33% {
+		-webkit-transform: matrix3d( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	42.84% {
+		-webkit-transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	100% {
+		-webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
 }
 
-.button:hover {text-decoration: underline}
+@keyframes animation {
+	12.61% {
+		-webkit-transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	16.72% {
+		-webkit-transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	25.03% {
+		-webkit-transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	33.33% {
+		-webkit-transform: matrix3d( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	42.84% {
+		-webkit-transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+	100% {
+		-webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+	}
+}
