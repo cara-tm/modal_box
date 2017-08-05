@@ -19,6 +19,31 @@ html,
 }
 
 /**
+ * Animation scale-up-center
+ */
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5)
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1)
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5)
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1)
+  }
+}
+
+
+/**
  *  A pseudo-class to target the Modal unique #ID and open it
  */
 .modal-dialog:target {
@@ -32,8 +57,8 @@ html,
  */
 .modal-dialog:target .modal {
 	opacity: 1;
-	-webkit-animation: animation 500ms linear both;
-	animation: animation 500ms linear both
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
 }
 
 /**
@@ -370,60 +395,3 @@ html,
 .modal-dialog ::-webkit-scrollbar-thumb { height: 50px; background-color: #999; border-radius: 3px}
 .modal-dialog ::-webkit-scrollbar-corner { background-color: #999}
 .modal-dialog ::-webkit-resizer { background-color: #666}
-
-/**
- * Animations generated with Bounce.js. Edit at https://goo.gl/UvsWhU
- */
-@-webkit-keyframes animation {
-	12.61% {
-		-webkit-transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	16.72% {
-		-webkit-transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	25.03% {
-		-webkit-transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	33.33% {
-		-webkit-transform: matrix3d( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	42.84% {
-		-webkit-transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	100% {
-		-webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-}
-
-@keyframes animation {
-	12.61% {
-		-webkit-transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.762, 0, 0, 0, 0, 0.762, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	16.72% {
-		-webkit-transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.865, 0, 0, 0, 0, 0.865, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	25.03% {
-		-webkit-transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.968, 0, 0, 0, 0, 0.968, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	33.33% {
-		-webkit-transform: matrix3d( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	42.84% {
-		-webkit-transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(0.994, 0, 0, 0, 0, 0.994, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-	100% {
-		-webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-	}
-}
