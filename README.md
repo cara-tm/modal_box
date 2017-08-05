@@ -24,6 +24,7 @@ This template has been tested successfully in:
 * Google Chromium (all versions: PC & Mac; iOS & Android);
 * Brave;
 * Vivaldi;
+* Camino 2.01 Mac;
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
