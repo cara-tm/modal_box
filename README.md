@@ -13,18 +13,19 @@ This template has been tested successfully in:
 * Internet Explorer (Microsoft Windows Phone 7.5 system);
 * Safari 5.x;
 * Safari Mobile;
-* Opera 9.64 min;
+* Opera 9.64 PC;
+* Opera 11 Linux;
 * Opera Mini (Microsoft Windows Phone 7.5 system);
 * Internet Explorer Mobile (Microsoft Windows Phone 8.x system);
 * Opera Mini for android, version 7.5.x;
 * Opera Mini android (latest version);
-* UC Browser (android & PC);
-* FireFox 3 min;
-* Midori 0.4 min;
+* UC Browser (Mini version for Android & normal version for PC);
+* FireFox 3;
+* Midori 0.4;
 * Google Chromium (all versions: PC & Mac; iOS & Android);
 * Brave;
 * Vivaldi;
-* Camino 2.01 Mac;
+* Camino 2.1 Mac;
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
