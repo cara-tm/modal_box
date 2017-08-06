@@ -292,6 +292,15 @@ html,
 }
 
 /**
+ * Experimental: tries to uniformatize all headings into the modal box content
+ */
+:-moz-any(.inner-dialog) * {font-size: 150%;} 
+:-webkit-any(.inner-dialog) * {font-size: 150%}
+:matches(.inner-dialog) * {font-size: 150%}
+
+.inner-dialog p{font-size: 120%}
+
+/**
  * The modal box's footer
  */
 .footer-modal {
