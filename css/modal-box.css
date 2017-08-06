@@ -115,8 +115,8 @@ html,
 	max-height: 15vh;
 	background: #fff;
 
-	font-family: 'Open Sans Condensed';
-	font-size: 180%;
+	font-family: 'Lato';
+	font-size: 100%;
 	font-weight: 300;
 	
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
@@ -138,7 +138,7 @@ html,
 	letter-spacing: -1px;
 	text-transform: uppercase;
 	line-height: 90px;
-	font-family: 'Open Sans Condensed';
+	font-family: 'Lato';
 	font-size: 150%;
 	font-size: 2vw;
 	font-weight: 400
