@@ -1,6 +1,7 @@
 # CSS Modal Box
 
 Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE7 minimum! ([See this demo here](https://codepen.io/cara-tm/full/ayzXPJ/))
+Prevents other CSS rules conflicts; animation with Hardware-Accelerated features; fully responsive with width and height support within all screen sizes.
 
 This template has been tested successfully in:
 
@@ -34,6 +35,7 @@ This template has been tested successfully in:
 First, you need to encapsulate your entire content page into a div with a class name `wrapper`.
 Then, place the Modal Box template outside this `wrapper` block.
 Simple!
+Note. The default template is white and blue. For customization, [see this sample here](https://github.com/cara-tm/modal_box/blob/master/css/custom.css)
 
 
 ## IE 8 and below support
