@@ -1,15 +1,54 @@
-/**
- * Minimal resets
- */
-html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0
+@charset "UTF-8";
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased
 }
 
 /**
- * Avoids selection with the mouse by the user
+ * Min resets
+ */
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+/**
+ * Waiting for Google font loader
+ */
+.wf-loading {
+	opacity: 0;
+	visibility: hidden;
+	height: 100%;
+	overflow: hidden
+}
+
+/**
+ * All is fine: display the document
+ */
+.wf-active {
+	opacity: 1;
+	visibility: visible
+}
+
+/**
+ * Prevent conflicts from other CSS rules
+ */
+body .modal-dialog {
+	font: normal normal normal 14px/1 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-kerning: normal;
+
+	-moz-font-feature-settings: "kern";
+	-webkit-font-feature-settings: "kern";
+	font-feature-settings: "kern"
+}
+
+/**
+ * Desable the user's mouse selection
  */
 .no__select {
 	-webkit-user-select: none;
@@ -19,77 +58,63 @@ html,
 }
 
 /**
- * Animation scale-up-center
+ * Animation
  */
 @-webkit-keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5)
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1)
-  }
-}
-@keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5)
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1)
-  }
+	0% {
+		-webkit-transform: scale(.5);
+		transform: scale(.5)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
 }
 
+@keyframes scale-up-center {
+	0% {
+		-webkit-transform: scale(.5);
+		transform: scale(.5)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
 
 /**
- *  A pseudo-class to target the Modal unique #ID and open it
+ * Open the modal box
  */
 .modal-dialog:target {
-	opacity:1;
+	opacity: 1;
 	display: block;
 	pointer-events: auto
 }
 
 /**
- * A pseudo-class to target the inner modal box with animations
+ * Apply animation on modal box opening
  */
 .modal-dialog:target .modal {
 	opacity: 1;
-	-webkit-animation: scale-up-center 100s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 100ms cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+
+	-webkit-animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both;
+	animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both
 }
 
 /**
- * Masks the wrapper and avoid scrolling on background 
+ * Hide the background beside the modal box
  */
-.modal-dialog:target ~ .wrapper {
-	position:fixed;
+.modal-dialog:target~.wrapper {
+	overflow: auto;
+	position: absolute;
 	z-index: -1;
 	top: 0;
 	left: 0;
-	/* Can be ugly in some mobile browsers. Change value below to 0 instead */
-	height: 100%;
-	backface-visibility: hidden
+	height: 0
 }
 
 /**
- * Typos
-*/
-.modal-dialog {font: normal normal normal 62.5%/1 sans-serif}
-
-.modal-dialog, 
-	.header-modal,
-	.header-modal h1,
-	.modal-dialog .inner-dialog p,
-	.footer-modal a {
-		padding: 0;
-		font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
-
-/**
- * The modal outer that wrap the entire wrapper
+ * The wrapper of the modal box
  */
 .modal-dialog {
 	display: none;
@@ -100,99 +125,47 @@ html,
 	top: 0;
 	right: 0;
 	bottom: 0;
- 	left: 0;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
- 	background: rgba(255, 255, 255, 0.95)
+	left: 0;
+
+	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
+	background: rgba(255, 255, 255, .95);
+
+	/* Activates Hardware-Acceleration */
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
 }
 
 /**
- * The modal header
+ * The inner of the modal box
  */
-.header-modal {
+.modal-dialog .modal {
+	overflow: hidden;
+	overflow: -moz-hidden-unscrollable;
 	position: relative;
-	z-index: 1001;
-	height: 90px;
-	max-height: 15vh;
-	background: #fff;
+	z-index: 1000;
 
-	font-family: 'Lato';
-	font-size: 100%;
-	font-weight: 300;
-	
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
-	-webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	-moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	box-shadow: -15px 10px 30px rgba(255, 255, 255, .9)
-}
+	max-width: 720px;
+	min-width: 250px;
+	width: 80%;
 
-/**
- * Heading level 1 styles
- */
-.header-modal h1 {
-	display: block;
-	display: inline-block;
-	margin: 0;
-	padding: 0 0 0 .5em;
-	vertical-align: middle;
-	letter-spacing: -1px;
-	text-transform: uppercase;
-	line-height: 90px;
-	font-family: 'Lato';
+	margin: 2.5% auto 0;
+	margin: 5vh auto 0;
+
 	font-size: 150%;
-	font-size: 2vw;
-	font-weight: 400
+
+	border-radius: 6px 6px 0 0;
+	-webkit-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	-moz-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	
+	/* For IE7 support: can be safely removed if no used */
+	zoom: 1
 }
 
 /**
- * Header additional infos
-*/
-.header-modal strong {color: #ccc}
-
-.header-modal span {
-	float: right;
-	margin: 28px 30% 0 0
-}
-
-/**
- * Links within the modal's header
- */
-.header-modal a {
-	display: inline-block;
-	width: 34px;
-	height: 34px;
-	margin: 0 0 0 .5em;
-	border: 1px solid transparent;
-	line-height: 32px
-}
-
-/**
- * Header's links states
- */
-.header-modal a:hover,
-	.header-modal a:active {
-		border-color: #ccc;
-		border-radius: 50%;
-		-webkit-tap-highlight-color: transparent
-}
-
-/**
- * SVG icons within the modal's header
- */
-.header-modal svg {
-	width: 32px;
-	height: 32px;
-	margin: 0;
-	vertical-align: middle
-}
-
-/**
- * SVG color
- */
-.header-modal svg path {fill: green}
-
-/**
- * The closing rounded button
+ * The close button
  */
 .modal-dialog .close {
 	display: block;
@@ -204,203 +177,318 @@ html,
 	height: 29px;
 	margin: 0;
 	padding: 0;
-	background: #eee;
+	background: #0288d1;
 	vertical-align: middle;
 	text-align: center;
 	text-decoration: none;
-	color: #d4d4d4;
-	font: normal normal normal 2em/29px 'Helvetica Neue', Helvetica, Arial,sans-serif;
-	border-radius: 50%;
+	color: #fff;
+	font: normal normal normal 1.2em/29px 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+	border-radius: 50%;
 	-webkit-transition: box-shadow 200ms ease-out, -webkit-transform 200ms ease-out, opacity 200ms ease-in-out;
 	-moz-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
+	-o-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
+	-ms-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
 	transition: box-shadow 200ms ease-out, transform 200ms ease-out, opacity 200ms ease-in-out
 }
 
 /**
- * The close link states
+ * The close button state
  */
 .modal-dialog .close:hover,
 	.inner-dialog .close:active {
-		background: #e6005c;
-		color: #fff;
-		outline: none;
-		border: none;
-		box-shadow: 0 0 10px rgba(0,0,0,.3);
-		-webkit-tap-highlight-color: transparent
+	background: #03a9f4;
+	outline: none;
+	border: none;
+
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	-webkit-transform: scale(1.2, 1.2);
+	-moz-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
+	-webkit-tap-highlight-color: transparent
 }
 
 /**
- * The outer part of the modal box
+ * The header of the modal box
  */
-.modal-dialog .modal {
-	overflow: hidden;
-	overflow: -moz-hidden-unscrollable;
+.header-modal {
 	position: relative;
-	z-index: 1000;
-	/* max-width can be changed safely depending of your needs */
-	max-width: 720px;
-	min-width: 250px;
-	width: 80%; 
-	margin: 2.5% auto 0;
-	margin: 5vh auto 0;
+	z-index: 1001;
+	height: 90px;
+	max-height: 26vh;
+	font-family: 'Noto Sans';
+	font-weight: 300;
 
-	background: #fff;
-	border: 1px solid #eee;
-
-	border-radius: 6px 6px 0 0;
-	-webkit-box-shadow: 0 -10px 45px rgba(0,0,0,.25);
-	-moz-box-shadow: 0 -10px 45px rgba(0,0,0,.25);
-	box-shadow: 0 -10px 45px rgba(0,0,0,.25);
-	/* For IE7 support: can be safely removed if needed */
-	zoom: 1
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30,Direction=95,Color='#ffffff')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
+	-webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
+	-moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
+	box-shadow: -15px 10px 30px rgba(255, 255, 255, .9)
 }
 
 /**
- * The inner part of the modal box
+ * The main title of the modal box header
+ */
+.header-modal h1 {
+	display: block;
+	display: inline-block;
+	margin: 0;
+	padding: 0 0 0 .5em;
+	vertical-align: middle;
+	letter-spacing: -1px;
+	text-transform: capitalize;
+	line-height: 90px;
+	font-size: 110%;
+	font-weight: 400
+}
+
+/**
+ * Optinal: for call to action into the modal box header
+ */ 
+.header-modal span {
+	float: right;
+	margin: 31px 30% 0 0;
+	font-size: 70%
+}
+
+/**
+ * The links into the modal box header
+ */
+.header-modal a {
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	margin: 0 0 0 .5em;
+	border: 1px solid transparent;
+	line-height: 32px;
+	border-radius: 50%
+}
+
+/**
+ * The link state into the modal box header
+ */
+.header-modal a:hover,
+	.header-modal a:active {
+	border-color: #0288d1;
+
+	transform: translate(1.2, 1.2);
+	transition: transform 200ms ease-out;
+	-webkit-tap-highlight-color: transparent
+}
+
+/**
+ * The SVG icon into the modal box header
+ */
+.header-modal svg {
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	vertical-align: middle;
+	color: #212121
+}
+
+/**
+ * The content part into the modal box
  */
 .modal-dialog .inner-dialog {
 	overflow-y: visible;
 	overflow-y: scroll;
-	
-	/* Needed for some mobile browsers (UC Browser): corrects the width to 100% */
 	display: inline-block;
-	/* Modern alternative */
 	display: flow-root;
 
-	/* List of max-height for fallbacks */
+	/* List of gracefull degradation max height */
 	max-height: 145px;
 	max-height: 47vh;
 	max-height: calc(100vh - 30vh - 140px);
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px;
-	font-size: 135%
+	padding: 5px 20px 50px 20px
 }
 
 /**
- * The inner modal typo styles
+ * Prevent headings resizer
  */
-.modal .inner-dialog h2 {font-size: 145%}
+:-webkit-any(.inner-dialog) * {
+	font-size: 100%
+}
 
+:-moz-any(.inner-dialog) * {
+	font-size: 100%
+}
+
+:matches(.inner-dialog) * {
+	font-size: 100%
+}
+
+/**
+ * Styling the paragraphs
+ */
 .modal-dialog .inner-dialog p {
-	padding: 0;
-	line-height: 1.5em;
-	font-size: 120%;
-	font-family: 'Open Sans'
+	color: #212121;
+	font-size: 90%;
+	line-height: 1.5
 }
 
 /**
- * Experimental: tries to uniformatize all headings into the modal box content
+ * Restore the paragraph font size
  */
-:-moz-any(.inner-dialog) * {font-size: 150%;} 
-:-webkit-any(.inner-dialog) * {font-size: 150%}
-:matches(.inner-dialog) * {font-size: 150%}
+:-webkit-any(.modal-dialog) p {
+	font-size: 90%
+}
 
-.inner-dialog p{font-size: 120%}
+:-moz-any(.modal-dialog) p {
+	font-size: 90%
+}
+
+:matches(.inner-dialog) p {
+	font-size: 90%
+}
 
 /**
- * The modal box's footer
+ * The footer of the modal box
  */
 .footer-modal {
 	overflow-y: auto;
 	width: 100%;
 	height: 50px;
 	margin: 0 auto;
-	background: #42a5f5;
-	border: 1px solid #42a5f5;
+	background: #0288d1;
 	text-align: right;
-	font-size: 160%;
-
 	border-radius: 0 0 2px 2px;
-	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
-				0 3px 14px 2px rgba(0,0,0,0.12), 
-				0 5px 5px -3px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
-				0 3px 14px 2px rgba(0,0,0,0.12), 
-				0 5px 5px -3px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
-				0 3px 14px 2px rgba(0,0,0,0.12), 
-				0 5px 5px -3px rgba(0, 0, 0, 0.3)
+	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
+	-o-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
+	-ms-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
+	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3)
 }
 
 /**
- * Styling the footer's links
+ * The links into the modal box footer
  */
 .footer-modal a {
 	display: inline-table;
 	padding: 0 2em;
-	color: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
 	white-space: nowrap;
 	word-break: keep-all;
-	font-weight: bold;
-	/* Same line-height as the footer's height for vertical alignment */
+	color: #fff;
+	font-weight: 700;
+	font-size: 70%;
 	line-height: 50px;
 	outline: none;
-
 	-webkit-transition: .3s ease-out;
 	-moz-transition: .3s ease-out;
 	-o-transition: .3s ease-out;
 	-ms-transition: .3s ease-out;
-	transition: .3s ease-out;
-
-	/* Changes the highlighting on the links for mobile webkit engines */
-	-webkit-tap-highlight-color: #0b7cd7
+	transition: .3s ease-out
 }
 
+/**
+ * Links states
+ */
 .footer-modal a:hover,
 	.footer-modal a:active {
-		background: #0b7cd7;
-		-webkit-tap-highlight-color: #0b7cd7
+	background: #03a9f4
 }
 
 /**
- * Media query for small screens
+ * Media query for small screen below 720px width
  */
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width:720px) {
 
-	.header-modal {max-height: 11vmax}
-
-	.modal-dialog .modal {margin: 5vh auto 0;margin: calc(15vh - 50px) auto 0;margin: 5vmin auto 0}
-
-	.header-modal h1 {line-height: 15.5vmax; font-size: 5vmin; font-size: 4.45vmax}
-
-	.header-modal span {float: none; margin: 0}
-
-	.header-modal a {float: none; width: 24px; height: 24px; margin: 0 0 0 .5em; vertical-align: text-top}
-
-	.header-modal svg {width: 22px; height: 22px; vertical-align: baseline}
-
-	.modal-dialog .modal {margin: 5vh auto 0; margin: calc(15vh - 50px) auto 0}
-
-	html .footer-modal {box-shadow: 0 -10px 10px rgba(221, 221, 221, 0.95)}
-
-	.footer-modal a {font-size: 80%}
-
-	.mob-hide {display: none}
+	.header-modal {
+		max-height: 11vmax
+	}
+	.header-modal h1 {
+		line-height: 12.5vmax;
+		font-size: 5.2vmin;
+		font-size: 4vmax
+	}
+	.header-modal span {
+		float: none;
+		margin: 0
+	}
+	.header-modal a {
+		float: none;
+		width: 24px;
+		height: 24px;
+		margin: 0 0 0 .5em;
+		vertical-align: text-top
+	}
+	.header-modal svg {
+		width: 22px;
+		height: 22px;
+		vertical-align: baseline
+	}
+	.modal-dialog .modal {
+		margin: 5vh auto 0;
+		margin: calc(15vh - 50px) auto 0;
+		margin: 5vmin auto 0
+	}
+	.footer-modal {
+		box-shadow: 0 -10px 10px rgba(221, 221, 221, .95)
+	}
+	.footer-modal a {
+		font-size: 60%
+	}
+	.mob-hide {
+		display: none
+	}
 
 }
 
 /**
- * Specific corrections for the Opera Mini browser:
- * - the lack of scrollbars support other than the "body" element;
- * - the lack of line height support.
+ * Corrections for Opera 7.5 browser
+ * 1.° default height of the modal box
+ * 2.° fallback for line-height
  */
-:-o-prefocus, html .modal-dialog .inner-dialog {height: 100%; max-height: 100%}
+:-o-prefocus,
+html .modal-dialog .inner-dialog {
+	/* 1.° */
+	height: 100%;
+	max-height: 100%
+}
 
-:-o-prefocus, html .footer-modal a {display: inline-block; padding: .8em 2em}
-
+:-o-prefocus,
+html .footer-modal a {
+	/* 2.° */
+	display: inline-block;
+	padding: .8em 2em
+}
 
 /**
- * Apply custom scrollbar styling on modal box only for webkit engines
+ * Styling the scroll bars for webkit browsers engine
  */
-.modal-dialog ::-webkit-scrollbar { width: 3px; height: 3px}
-.modal-dialog ::-webkit-scrollbar-button {  background-color: #666}
-.modal-dialog ::-webkit-scrollbar-track {  background-color: #999}
-.modal-dialog ::-webkit-scrollbar-track-piece { background-color: #fff}
-.modal-dialog ::-webkit-scrollbar-thumb { height: 50px; background-color: #999; border-radius: 3px}
-.modal-dialog ::-webkit-scrollbar-corner { background-color: #999}
-.modal-dialog ::-webkit-resizer { background-color: #666}
+.modal-dialog ::-webkit-scrollbar {
+	width: 3px;
+	height: 3px
+}
+
+.modal-dialog ::-webkit-scrollbar-button {
+	background-color: #666
+}
+
+.modal-dialog ::-webkit-scrollbar-track {
+	background-color: #999
+}
+
+.modal-dialog ::-webkit-scrollbar-track-piece {
+	background-color: #fff
+}
+
+.modal-dialog ::-webkit-scrollbar-thumb {
+	height: 50px;
+	background-color: #999;
+	border-radius: 3px
+}
+
+.modal-dialog ::-webkit-scrollbar-corner {
+	background-color: #999
+}
+
+.modal-dialog ::-webkit-resizer {
+	background-color: #666
+}
+
