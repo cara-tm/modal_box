@@ -296,7 +296,6 @@ body .modal-dialog {
 	overflow-y: visible;
 	overflow-y: scroll;
 	display: inline-block;
-	display: flow-root;
 
 	/* List of gracefull degradation max height */
 	max-height: 145px;
