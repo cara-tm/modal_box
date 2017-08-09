@@ -128,11 +128,7 @@ body .modal-dialog {
 	left: 0;
 
 	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
-	background: rgba(255, 255, 255, .95);
-
-	/* Activates Hardware-Acceleration */
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
+	background: rgba(255, 255, 255, .95)
 }
 
 /**
@@ -159,6 +155,12 @@ body .modal-dialog {
 	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+
+	/* Activates GPU Hardware-Acceleration */
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 	
 	/* For IE7 support: can be safely removed if no used */
 	zoom: 1
