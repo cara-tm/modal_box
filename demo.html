@@ -114,7 +114,7 @@ body .modal-dialog {
 /**
  * Hide the background beside the modal box
  */
-.modal-dialog:target~.wrapper {
+.modal-dialog:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
 	z-index: -1;
@@ -306,7 +306,6 @@ body .modal-dialog {
 	overflow-y: visible;
 	overflow-y: scroll;
 	display: inline-block;
-	display: flow-root;
 
 	/* List of gracefull degradation max height */
 	max-height: 145px;
