@@ -3,7 +3,7 @@
 Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE7 minimum! ([See this demo here](https://codepen.io/cara-tm/full/ayzXPJ/))
 Prevents other CSS rules conflicts; animation with Hardware-Accelerated features; fully responsive with width and height support within all screen sizes.
 
-This template has been tested successfully in real systems:
+This component template has been tested successfully in (real systems not from emulators):
 
 * Internet Explorer 6 (see below);
 * Internet Explorer 7 (see below);
