@@ -20,7 +20,7 @@ This template has been tested successfully in:
 * Internet Explorer Mobile (Microsoft Windows Phone 8.x system);
 * Opera Mini for android, version 7.5.x;
 * Opera Mini android (latest version);
-* UC Browser (Mini version for Android & normal version for PC);
+* UC Browser (Mini or HD version for Android & normal version for PC);
 * FireFox 2 minimum;
 * Midori 0.4;
 * Google Chromium (all versions: PC & Mac; iOS & Android);
