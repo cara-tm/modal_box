@@ -6,7 +6,7 @@ Prevents other CSS rules conflicts; animation with Hardware-Accelerated features
 This template has been tested successfully in:
 
 * Internet Explorer 7 (see below);
-* Internet Explorer 8 (see below);
+* Internet Explorer 8 (even in regressive 'Compatibility View'; see below);
 * Internet Explorer 9;
 * Internet Explorer 10;
 * Internet Explorer 11;
