@@ -562,7 +562,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close">×</a>
+		<a href="#close" title="Close" class="close" id="close-modal">×</a>
 
 		<div class="header-modal no__select">
 			<h1><strong>↤</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#open-modal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
@@ -625,8 +625,7 @@ WebFont.load({
 <script>
 /*! Alternative to :target selector (unique ID #open-modal) for
     IE8 and below; can be removed safely if you don't need it.
-    TO DO: close event.
 */
-'use strict';var addEvent=function(f,g,h){try{f.addEventListener(g,h,!1)}catch(i){f.attachEvent('on'+g,h)}},el=document.getElementById('b-active'),target=document.getElementById('open-modal');addEvent(el,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'});function hasClass(f,g){if('undefined'!=typeof g)return-1<(' '+f.className+' ').indexOf(' '+g+' ')}function removeClass(f,g){if('undefined'!=typeof g)return f.className=f.className.replace(new RegExp('(?:^|s)'+g+'(?!S)'),'')}
+'use strict';var addEvent=function(a,b,d){try{a.addEventListener(b,d,!1)}catch(e){a.attachEvent('on'+b,d)}},el=document.getElementById('b-active'),target=document.getElementById('open-modal'),c=document.getElementById('close-modal');addEvent(el,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(c,'click',function(){document.getElementById('open-modal').className='modal-dialog dialog'});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')}function removeClass(a,b){return a.className=a.className.replace(new RegExp('(?:^|s)'+b+'(?!S)'),'')}
 </script>
 </body></html>
