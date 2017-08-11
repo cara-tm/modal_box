@@ -24,6 +24,7 @@ This component template has been tested successfully in (real systems not from e
 * Opera Mini android (latest version);
 * UC Browser (Mini or HD version for Android & normal version for PC);
 * FireFox 2 minimum;
+* FireFox ESR;
 * Midori 0.4;
 * Google Chromium (all versions: PC & Mac; iOS & Android);
 * Brave;
@@ -70,11 +71,4 @@ Safari Mobile preview:
 
 .
 
-Opera Mini 7.5 Android preview (Note. Scrolling is activated along the page document): 
-![Opera Mini 7.5 Android](https://github.com/cara-tm/modal_box/raw/master/opera-mini-7.5-android.png "Opera Mini 7.5 Android")
-
-.
-
-Internet Explorer 7 preview: 
-![Internet Explorer 7](https://github.com/cara-tm/modal_box/raw/master/ie7.png "Internet Explorer 7")
- 
+See the 'png' images for all the different browsers.
