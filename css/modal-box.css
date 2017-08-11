@@ -114,6 +114,14 @@ body .modal-dialog {
 }
 
 /**
+ * For default browser (Android 2.3.6): restores the 
+ * wrapper visibility after closing the modal box
+ */
+#close:target ~ .wrapper {
+	position: static
+}
+
+/**
  * The wrapper of the modal box
  */
 .modal-dialog {
