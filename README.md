@@ -22,7 +22,9 @@ This component template has been tested successfully in (real systems not from e
 * Internet Explorer Mobile (Microsoft Windows Phone 8.x system);
 * Opera Mini for android, version 7.5.x;
 * Opera Mini android (latest version);
+* Opera Mini 14 for iOS;
 * UC Browser (Mini or HD version for Android & normal version for PC);
+* default browser in Android 2.3.6 (TO DO: font sizes need adaptation);
 * FireFox 2 minimum;
 * FireFox ESR;
 * Midori 0.4;
