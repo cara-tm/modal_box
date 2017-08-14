@@ -346,6 +346,29 @@ body .modal-dialog {
 :matches(.inner-dialog) * {
 	font-size: 100%
 }
+	
+/**
+ * Styles for icons
+*/
+strong[class$="-sign"] {
+	display: inline-table;
+	width: 28px;
+	height: 28px;
+	margin: 0 5px 0 0;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+	font: normal normal normal 22px/28px Arial, sans-serif;
+	border-radius: 50%
+}
+
+.error-sign {background: #d32f2f}
+
+.info-sign {background: #3f51b5}
+
+.success-sign {background: #00c853}
+
+.warning-sign {background: #fbc02d}
 
 /**
  * Styling the paragraphs
@@ -626,7 +649,7 @@ WebFont.load({
 		<div class="inner-dialog modal-message">
 
 			<h2>Message Box</h2>
-			<p>This is a sample modal box that can be created using the powers of CSS3.</p>
+			<p><strong class="info-sign">ℹ</strong> <strong class="warning-sign">⚠</strong> <strong class="success-sign">✔</strong> <strong class="error-sign">✕</strong>This is a sample modal message box suitable for infos.</p>
 
 		</div> <!-- /inner-dialog -->
 
