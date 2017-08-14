@@ -127,9 +127,8 @@ body .modal-dialog {
  * Specific rule for default Android 2.3.6 browser: restores
  * the wrapper visibility after closing the modal box
  */
-#close:target ~ .wrapper {
-	position: static
-}
+#close:target ~ .wrapper,
+	a[class^="close"]:target ~ .wrapper {position: static}
 
 /**
  * The wrapper of the modal box
@@ -202,7 +201,7 @@ body .modal-dialog {
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
-	font: normal normal normal 1.2em/29px 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: normal normal normal 1.2em/29px Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
 	border-radius: 50%;
 	-webkit-transition: box-shadow 200ms ease-out, -webkit-transform 200ms ease-out, opacity 200ms ease-in-out;
@@ -236,7 +235,7 @@ body .modal-dialog {
 	z-index: 1001;
 	height: 90px;
 	max-height: 26vh;
-	font-family: 'Noto Sans';
+	font-family: 'Noto Sans', inherit, sans-serif;
 	font-weight: 300;
 
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30,Direction=95,Color='#ffffff')";
@@ -324,6 +323,11 @@ body .modal-dialog {
 	margin: 0;
 	padding: 5px 20px 50px 20px
 }
+
+/**
+ * Custom paddings for 'Model Messages'
+ */
+.modal-dialog .inner-dialog.modal-message {padding: 5px 20px}
 
 /**
  * Prevent headings resizer
@@ -601,6 +605,25 @@ WebFont.load({
 		<div class="footer-modal no__select">
 			<a href="https://www.cara-tm.com" target="_blank" class="">Help</a> <a href="#close" class="help">Close</a>
 		</div>
+	</div> <!-- /modal -->
+ 
+</div> <!-- /modal-dialog -->
+
+
+
+<div aria-hidden="true" role="dialog" class="modal-dialog dialog" id="open-modal2">
+
+	<div class="modal">
+
+		<a href="#close" title="Close" class="close"><strong>×</strong></a>
+
+		<div class="inner-dialog modal-message">
+
+			<h2>Message Box</h2>
+			<p>This is a sample modal box that can be created using the powers of CSS3.</p>
+
+		</div> <!-- /inner-dialog -->
+
 	</div> <!-- /modal -->
  
 </div> <!-- /modal-dialog -->
