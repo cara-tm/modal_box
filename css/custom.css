@@ -4,6 +4,14 @@
  */
 
 /**
+ * The close button
+ */
+.modal-dialog .inner-modal .close { background: #eee}
+
+.modal-dialog .inner-modal .close:hover,
+	.modal-dialog .inner-modal .close:active {background: #e6005c}
+
+/**
  * The entire modal box header
  */
 .header-modal {
@@ -43,6 +51,11 @@
 	background: #fff
 	color: #757575
 }
+
+/**
+ * Creates rounding icons for Message Boxes instead of square ones
+ */
+strong[class$="-sign"] { border-radius: 50%}
 
 /**
  * The entire modal box outer footer
