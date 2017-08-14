@@ -1,10 +1,12 @@
 @charset "UTF-8";
 
+/*! CSS Modal Box by cara-tm.com - MIT license - https://github.com/cara-tm/modal_box */
 html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility
 }
 
 /**
@@ -39,7 +41,7 @@ body {
  * Prevent conflicts from other CSS rules
  */
 body .modal-dialog {
-	font: normal normal normal 14px/1 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: normal normal normal 14px/1 Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-kerning: normal;
 
 	-moz-font-feature-settings: "kern";
@@ -104,22 +106,24 @@ body .modal-dialog {
 /**
  * Hide the background beside the modal box
  */
-.modal-dialog:target~.wrapper {
+.modal-dialog:target~.wrapper,
+    a[class^="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
 	z-index: -1;
 	top: 0;
 	left: 0;
-	height: 0
+	height: 0;
+	margin: 0;
+	padding: 0
 }
 
 /**
  * For default browser (Android 2.3.6): restores the 
  * wrapper visibility after closing the modal box
  */
-#close:target ~ .wrapper {
-	position: static
-}
+#close:target~.wrapper,
+    a[class^="close"]:target ~ .wrapper {position: static}
 
 /**
  * The wrapper of the modal box
@@ -134,13 +138,12 @@ body .modal-dialog {
 	right: 0;
 	bottom: 0;
 	left: 0;
-
-	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
+	background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
 	background: rgba(255, 255, 255, .95)
 }
 
 /**
- * The inner of the modal box
+ * The inner part of the modal box
  */
 .modal-dialog .modal {
 	overflow: hidden;
@@ -148,29 +151,31 @@ body .modal-dialog {
 	position: relative;
 	z-index: 1000;
 
+    
 	max-width: 720px;
 	min-width: 250px;
 	width: 80%;
 
+    
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
-
+	background: #fff;
 	font-size: 150%;
-
 	border-radius: 6px 6px 0 0;
+
+    /* Activates GPU Hardware-Acceleration */
+    -webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+
 	-webkit-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	-moz-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
-
-	/* Activates GPU Hardware-Acceleration */
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	
-	/* For IE7 support: can be safely removed if no used */
+    
+    /* For IE7 support: can be safely removed if no used */
 	zoom: 1
 }
 
@@ -178,6 +183,7 @@ body .modal-dialog {
  * The close button
  */
 .modal-dialog .close {
+	box-sizing: content-box;
 	display: block;
 	position: absolute;
 	z-index: 10000;
@@ -189,24 +195,31 @@ body .modal-dialog {
 	padding: 0;
 	background: #0288d1;
 	vertical-align: middle;
+	align-self: center;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
-	font: normal normal normal 1.2em/29px 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border-radius: 50%
+}
 
-	border-radius: 50%;
-	-webkit-transition: box-shadow 200ms ease-out, -webkit-transform 200ms ease-out, opacity 200ms ease-in-out;
-	-moz-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
-	-o-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
-	-ms-transition: box-shadow 200ms ease-out, -moz-transform 200ms ease-out, opacity 200ms ease-in-out;
-	transition: box-shadow 200ms ease-out, transform 200ms ease-out, opacity 200ms ease-in-out
+
+.modal-dialog .close strong {
+	display: inline-block;
+	width: 29px;
+	height: 29px;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	line-height: 29px;
+	font-weight: normal;
+	cursor: pointer
 }
 
 /**
  * The close button state
  */
 .modal-dialog .close:hover,
-	.inner-dialog .close:active {
+    .inner-dialog .close:active {
 	background: #03a9f4;
 	outline: none;
 	border: none;
@@ -226,7 +239,8 @@ body .modal-dialog {
 	z-index: 1001;
 	height: 90px;
 	max-height: 26vh;
-	font-family: 'Noto Sans';
+	color: #aaa;
+	font-family: 'Noto Sans', inherit, sans-serif;
 	font-weight: 300;
 
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30,Direction=95,Color='#ffffff')";
@@ -254,7 +268,7 @@ body .modal-dialog {
 
 /**
  * Optinal: for call to action into the modal box header
- */ 
+ */
 .header-modal span {
 	float: right;
 	margin: 31px 30% 0 0;
@@ -278,7 +292,7 @@ body .modal-dialog {
  * The link state into the modal box header
  */
 .header-modal a:hover,
-	.header-modal a:active {
+    .header-modal a:active {
 	border-color: #0288d1;
 
 	transform: translate(1.2, 1.2);
@@ -290,11 +304,22 @@ body .modal-dialog {
  * The SVG icon into the modal box header
  */
 .header-modal svg {
+	display: inline-block;
 	width: 32px;
 	height: 32px;
 	margin: 0;
 	vertical-align: middle;
-	color: #212121
+	text-align: center;
+	color: #aaa;
+	font-size: 2em;
+	cursor: pointer
+}
+
+/**
+ * SVG icon color
+ */
+.header-modal path {
+	fill: #aaa
 }
 
 /**
@@ -305,7 +330,7 @@ body .modal-dialog {
 	overflow-y: scroll;
 	display: inline-block;
 
-	/* List of gracefull degradation max height */
+    /* List of gracefull degradation max height */
 	max-height: 145px;
 	max-height: 47vh;
 	max-height: calc(100vh - 30vh - 140px);
@@ -315,23 +340,19 @@ body .modal-dialog {
 	padding: 5px 20px 50px 20px
 }
 
+.modal-dialog .inner-dialog.modal-message {padding: 5px 20px}
+
 /**
- * Prevent headings resizer
+ * Prevent headings resizing
  */
-:-webkit-any(.inner-dialog) * {
-	font-size: 100%
-}
+:-webkit-any(.inner-dialog) * {font-size: 100%}
 
-:-moz-any(.inner-dialog) * {
-	font-size: 100%
-}
+:-moz-any(.inner-dialog) * {font-size: 100%}
 
-:matches(.inner-dialog) * {
-	font-size: 100%
-}
+:matches(.inner-dialog) * {font-size: 100%}
 
 /**
- * Styling the paragraphs
+ * Restores the paragraph font size
  */
 .modal-dialog .inner-dialog p {
 	color: #212121;
@@ -339,20 +360,46 @@ body .modal-dialog {
 	line-height: 1.5
 }
 
+:-webkit-any(.modal-dialog) p {font-size: 90%}
+
+:-moz-any(.modal-dialog) p {font-size: 90%}
+
+:matches(.inner-dialog) p {font-size: 90%}
+
 /**
- * Restore the paragraph font size
+ * Styling the signs for the Modal Message Box
  */
-:-webkit-any(.modal-dialog) p {
-	font-size: 90%
+strong[class$="-sign"] {
+	display: inline-table;
+	width: 28px;
+	height: 28px;
+	margin: 0 5px 0 0;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+	font: normal normal normal 22px/28px Arial, sans-serif;
+	border-radius: 50%
 }
 
-:-moz-any(.modal-dialog) p {
-	font-size: 90%
-}
+/**
+ * here is the error sign color
+ */
+.error-sign {background: #d32f2f}
 
-:matches(.inner-dialog) p {
-	font-size: 90%
-}
+/**
+ * Here is the info sign color
+ */
+.info-sign {background: #3f51b5}
+
+/**
+ * Here is the success sign color
+ */
+.success-sign {background: #00c853}
+
+/**
+ * Here is the warning sign color
+ */
+.warning-sign {background: #fbc02d}
 
 /**
  * The footer of the modal box
@@ -364,6 +411,7 @@ body .modal-dialog {
 	margin: 0 auto;
 	background: #0288d1;
 	text-align: right;
+
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
 	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
@@ -373,11 +421,12 @@ body .modal-dialog {
 }
 
 /**
- * The links into the modal box footer
+ * The footer links
  */
 .footer-modal a {
 	display: inline-table;
 	display: inline-block;
+	display: -moz-inline-stack;
 	padding: 0 2em;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -388,6 +437,7 @@ body .modal-dialog {
 	font-size: 70%;
 	line-height: 50px;
 	outline: none;
+
 	-webkit-transition: .3s ease-out;
 	-moz-transition: .3s ease-out;
 	-o-transition: .3s ease-out;
@@ -396,21 +446,20 @@ body .modal-dialog {
 }
 
 /**
- * Links states
+ * The footer links states
  */
 .footer-modal a:hover,
-	.footer-modal a:active {
-	background: #03a9f4
+.footer-modal a:active {
+	background: #03a9f4;
+	-webkit-tap-highlight-color: #03a9f4
 }
 
 /**
- * Media query for small screen below 720px width
+ * Media query for screen below 720px
  */
 @media only screen and (max-width:720px) {
 
-	.header-modal {
-		max-height: 11vmax
-	}
+	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
 		font-size: 5.2vmin;
@@ -437,15 +486,9 @@ body .modal-dialog {
 		margin: calc(15vh - 50px) auto 0;
 		margin: 5vmin auto 0
 	}
-	.footer-modal {
-		box-shadow: 0 -10px 10px rgba(221, 221, 221, .95)
-	}
-	.footer-modal a {
-		font-size: 60%
-	}
-	.mob-hide {
-		display: none
-	}
+	.footer-modal {box-shadow: 0 -10px 10px rgba(221, 221, 221, .95)}
+	.footer-modal a {font-size: 60%}
+	.mob-hide {display: none}
 
 }
 
@@ -456,14 +499,14 @@ body .modal-dialog {
  */
 :-o-prefocus,
 html .modal-dialog .inner-dialog {
-	/* 1.° */
+    /* 1.° */
 	height: 100%;
 	max-height: 100%
 }
 
 :-o-prefocus,
 html .footer-modal a {
-	/* 2.° */
+    /* 2.° */
 	display: inline-block;
 	padding: .8em 2em
 }
@@ -476,17 +519,11 @@ html .footer-modal a {
 	height: 3px
 }
 
-.modal-dialog ::-webkit-scrollbar-button {
-	background-color: #666
-}
+.modal-dialog ::-webkit-scrollbar-button {background-color: #666}
 
-.modal-dialog ::-webkit-scrollbar-track {
-	background-color: #999
-}
+.modal-dialog ::-webkit-scrollbar-track {background-color: #999}
 
-.modal-dialog ::-webkit-scrollbar-track-piece {
-	background-color: #fff
-}
+.modal-dialog ::-webkit-scrollbar-track-piece {background-color: #fff}
 
 .modal-dialog ::-webkit-scrollbar-thumb {
 	height: 50px;
@@ -494,11 +531,7 @@ html .footer-modal a {
 	border-radius: 3px
 }
 
-.modal-dialog ::-webkit-scrollbar-corner {
-	background-color: #999
-}
+.modal-dialog ::-webkit-scrollbar-corner {background-color: #999}
 
-.modal-dialog ::-webkit-resizer {
-	background-color: #666
-}
+.modal-dialog ::-webkit-resizer {background-color: #666}
 
