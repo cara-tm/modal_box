@@ -5,6 +5,9 @@
 <title>Modal Box by Patrick LEFEVRE</title>
 <meta name="viewport" content="width=device-width, shrink-to-fit=no">
 
+	<!-- Preferable choice: the minified CSS file 
+<link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+	-->
 <style>
 	
 @charset "UTF-8";
@@ -521,9 +524,12 @@ html .footer-modal a {
 
 .wrapper {width: 100%}
 
-.wrapper p {padding: 10px 10px 0}
+.wrapper p {padding: 10px 2% 0}
+
+p.first-line {float: left;clear: both;width: 96%}
 
 .button {
+	float: left;
 	margin: 0 .5em 0 0;
 	padding: .5em .5em .7em;
 	background: #0b7cd7;
@@ -630,8 +636,11 @@ WebFont.load({
 
 <div class="wrapper">
 
-	<p><a href="#open" class="button">A simple link</a>
-	<a href="#open-modal" class="button" id="b-active">Open Modal</a>
+	<p class="first-line">
+		<a href="#open" class="button">A simple link</a>
+		<a href="#open-modal" class="button" id="b-active">Open Modal Box</a>
+		<a href="#open-modal2" class="button" id="b-active">Open Modal Message</a>
+	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
