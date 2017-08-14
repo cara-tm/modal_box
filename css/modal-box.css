@@ -327,7 +327,7 @@ body .modal-dialog {
  */
 .modal-dialog .inner-dialog {
 	overflow-y: visible;
-	overflow-y: scroll;
+	overflow-y: auto;
 	display: inline-block;
 
     /* List of gracefull degradation max height */
