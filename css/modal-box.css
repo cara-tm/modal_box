@@ -426,7 +426,6 @@ strong[class$="-sign"] {
 .footer-modal a {
 	display: inline-table;
 	display: inline-block;
-	display: -moz-inline-stack;
 	padding: 0 2em;
 	text-transform: uppercase;
 	text-decoration: none;
