@@ -639,7 +639,7 @@ WebFont.load({
 		</div> <!-- /inner-dialog -->
 
 		<div class="footer-modal no__select">
-			<a href="#close" class="help">Close</a><a href="https://www.cara-tm.com" target="_blank" class="">Help</a>
+			<a href="#close" class="" id="footer-close">Close</a><a href="https://www.cara-tm.com" target="_blank" class="">Help</a>
 		</div>
 	</div> <!-- /modal -->
  
@@ -651,7 +651,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close"><strong>×</strong></a>
+		<a href="#close" title="Close" class="close" id="close-msg"><strong>×</strong></a>
 
 		<div class="inner-dialog modal-message">
 
@@ -669,7 +669,7 @@ WebFont.load({
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
 		<a href="#open-modal" class="button" id="b-active">Open Modal Box</a>
-		<a href="#open-modal2" class="button" id="b-active">Open Modal Message</a>
+		<a href="#open-modal2" class="button" id="m-active">Open Modal Message</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
@@ -693,9 +693,11 @@ WebFont.load({
 </div> <!-- /wrapper -->
 
 <script>
-/*! Alternative to :target selector (unique ID #open-modal) for
-    IE8 and below; can be removed safely if you don't need it.
+/*! A poor alternative to :target selector for IE8 and below;
+    script can be removed safely if you don't need this support.
 */
-'use strict';var addEvent=function(a,b,d){try{a.addEventListener(b,d,!1)}catch(e){a.attachEvent('on'+b,d)}},el=document.getElementById('b-active'),target=document.getElementById('open-modal'),c=document.getElementById('close-modal');addEvent(el,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(c,'click',function(){document.getElementById('open-modal').className='modal-dialog dialog'});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')}function removeClass(a,b){return a.className=a.className.replace(new RegExp('(?:^|s)'+b+'(?!S)'),'')}
+'use strict';
+var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('open-modal'),target2=document.getElementById('open-modal2'),link1=document.getElementById('b-active'),link2=document.getElementById('m-active'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
+
 </script>
 </body></html>
