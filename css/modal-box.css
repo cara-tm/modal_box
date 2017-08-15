@@ -254,7 +254,7 @@ body .modal-dialog {
  * The main title of the modal box header
  */
 .header-modal h1 {
-	display: block;
+	display: inline;
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0 .5em;
@@ -270,8 +270,9 @@ body .modal-dialog {
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
-	float: right;
-	margin: 31px 30% 0 0;
+	display: inline-table;
+    width: 50%;
+	text-align: center;
 	font-size: 70%
 }
 
@@ -426,6 +427,10 @@ strong[class$="-sign"] {
 .footer-modal a {
 	display: inline-table;
 	display: inline-block;
+    /* The only reasonable solution to get good looking buttons, but 
+       forces to reverse the order of the links into the footer. */ 
+    float: right;
+
 	padding: 0 2em;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -465,7 +470,7 @@ strong[class$="-sign"] {
 		font-size: 4vmax
 	}
 	.header-modal span {
-		float: none;
+		width: auto;
 		margin: 0
 	}
 	.header-modal a {
