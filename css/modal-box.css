@@ -340,7 +340,7 @@ body .modal-dialog {
 	padding: 5px 20px 50px 20px
 }
 
-.modal-dialog .inner-dialog.modal-message {width: 100%;padding: 5px 20px}
+.modal-dialog .inner-dialog.modal-message {width: 90%;padding: 5px 10% 5px 20px}
 
 /**
  * Prevent headings resizing
@@ -357,7 +357,8 @@ body .modal-dialog {
 .modal-dialog .inner-dialog p {
 	color: #212121;
 	font-size: 85%;
-	line-height: 1.5
+	line-height: 1.5;
+    hyphens: auto
 }
 
 :-webkit-any(.modal-dialog) p {font-size: 85%}
@@ -379,8 +380,7 @@ strong[class$="-sign"] {
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;
-	font: normal normal normal 22px/28px Arial, sans-serif;
-	border-radius: 50%
+	font: normal normal normal 22px/28px Arial, sans-serif
 }
 
 /**
