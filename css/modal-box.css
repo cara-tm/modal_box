@@ -151,12 +151,10 @@ body .modal-dialog {
 	position: relative;
 	z-index: 1000;
 
-    
 	max-width: 720px;
 	min-width: 250px;
 	width: 80%;
 
-    
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
 	background: #fff;
@@ -330,6 +328,7 @@ body .modal-dialog {
 	overflow-y: visible;
 	overflow-y: auto;
 	display: inline-block;
+    width: auto;
 
     /* List of gracefull degradation max height */
 	max-height: 145px;
@@ -341,7 +340,7 @@ body .modal-dialog {
 	padding: 5px 20px 50px 20px
 }
 
-.modal-dialog .inner-dialog.modal-message {padding: 5px 20px}
+.modal-dialog .inner-dialog.modal-message {width: 100%;padding: 5px 20px}
 
 /**
  * Prevent headings resizing
@@ -371,10 +370,12 @@ body .modal-dialog {
  * Styling the signs for the Modal Message Box
  */
 strong[class$="-sign"] {
+    display: -moz-inline-box;
 	display: inline-table;
 	width: 28px;
 	height: 28px;
 	margin: 0 5px 0 0;
+    padding: 0 2px;
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;

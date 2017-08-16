@@ -161,13 +161,11 @@ body .modal-dialog {
 	overflow: -moz-hidden-unscrollable;
 	position: relative;
 	z-index: 1000;
-
     
 	max-width: 720px;
 	min-width: 250px;
 	width: 80%;
 
-    
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
 	background: #fff;
@@ -341,6 +339,7 @@ body .modal-dialog {
 	overflow-y: visible;
 	overflow-y: auto;
 	display: inline-block;
+    width: auto;
 
     /* List of gracefull degradation max height */
 	max-height: 145px;
@@ -352,7 +351,7 @@ body .modal-dialog {
 	padding: 5px 20px 50px 20px
 }
 
-.modal-dialog .inner-dialog.modal-message {padding: 5px 20px}
+.modal-dialog .inner-dialog.modal-message {width: 100%;padding: 5px 20px}
 
 /**
  * Prevent headings resizing
@@ -382,10 +381,13 @@ body .modal-dialog {
  * Styling the signs for the Modal Message Box
  */
 strong[class$="-sign"] {
+    display: -moz-inline-box;
 	display: inline-table;
-	width: 28px;
+    /* 2px less due to padding */
+	width: 24px;
 	height: 28px;
 	margin: 0 5px 0 0;
+    padding: 0 2px;
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;
@@ -401,7 +403,7 @@ strong[class$="-sign"] {
 /**
  * Here is the info sign color
  */
-.info-sign {background: #3f51b5}
+html .info-sign {background: #3f51b5}
 
 /**
  * Here is the success sign color
@@ -560,7 +562,7 @@ p.first-line {float: left;clear: both;width: 96%}
 
 .button {
 	float: left;
-	margin: 0 .5em 2em 0;
+	margin: 0 .5em 1em 0;
 	padding: .8em .5em 1em;
 	background: #0b7cd7;
 	color: #fff;
@@ -612,7 +614,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close" id="close-modal"><strong>×</strong></a>
+		<a href="#close" title="Close" class="close no__select" id="close-modal"><strong>×</strong></a>
 
 		<div class="header-modal no__select">
 			<h1><strong>↤</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#open-modal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
@@ -653,7 +655,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close" id="close-msg"><strong>×</strong></a>
+		<a href="#close" title="Close" class="close no__select" id="close-msg"><strong>×</strong></a>
 
 		<div class="inner-dialog modal-message">
 
