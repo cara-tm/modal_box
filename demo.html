@@ -162,16 +162,17 @@ body .modal-dialog {
 	position: relative;
 	z-index: 1000;
     
-	max-width: 720px;
+	max-width: 36em;
 	min-width: 250px;
-	width: 80%;
 
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
+
 	background: #fff;
 	font-size: 125%;
-	border-radius: 6px 6px 0 0;
+    border: 1px solid #eee;
 
+	border-radius: 6px 6px 0 0;
     /* Activates GPU Hardware-Acceleration */
     -webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
@@ -184,7 +185,7 @@ body .modal-dialog {
 	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
     
-    /* For IE7 support: can be safely removed if no used */
+    /* For IE7 support: can be safely removed if not used */
 	zoom: 1
 }
 
@@ -198,8 +199,8 @@ body .modal-dialog {
 	z-index: 10000;
 	top: 7px;
 	right: 10px;
-	width: 29px;
-	height: 29px;
+	width: 1.45em;
+	height: 1.5em;
 	margin: 0;
 	padding: 0;
 	background: #0288d1;
@@ -214,8 +215,8 @@ body .modal-dialog {
 
 .modal-dialog .close strong {
 	display: inline-block;
-	width: 29px;
-	height: 29px;
+	width: 1.45em;
+	height: 1.5em;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
@@ -246,8 +247,11 @@ body .modal-dialog {
 .header-modal {
 	position: relative;
 	z-index: 1001;
-	height: 90px;
+    
+    height: 5em;
+	height: 6rem;
 	max-height: 26vh;
+
 	color: #aaa;
 	font-family: 'Noto Sans', inherit, sans-serif;
 	font-weight: 300;
@@ -294,6 +298,7 @@ body .modal-dialog {
 	height: 34px;
 	margin: 0 0 0 .5em;
 	border: 1px solid transparent;
+    text-decoration: none;
 	line-height: 32px;
 	border-radius: 50%
 }
@@ -328,9 +333,7 @@ body .modal-dialog {
 /**
  * SVG icon color
  */
-.header-modal path {
-	fill: #aaa
-}
+.header-modal path {fill: #aaa}
 
 /**
  * The content part into the modal box
@@ -342,13 +345,13 @@ body .modal-dialog {
     width: auto;
 
     /* List of gracefull degradation max height */
-	max-height: 145px;
+	max-height: 14em;
 	max-height: 47vh;
-	max-height: calc(100vh - 30vh - 140px);
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px
+	padding: 5px 20px 50px 20px;
+    color: #212121
 }
 
 .modal-dialog .inner-dialog.modal-message {
@@ -369,9 +372,10 @@ body .modal-dialog {
  * Restores the paragraph font size
  */
 .modal-dialog .inner-dialog p {
-	color: #212121;
 	font-size: 85%;
 	line-height: 1.5;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
     hyphens: auto
 }
 
@@ -385,8 +389,6 @@ body .modal-dialog {
  * Styling the signs for the Modal Message Box
  */
 span[class$="-sign"] {
-    
-    
 	display: inline-table;
     display: inline-block;
     /* 2px less due to padding */
@@ -400,9 +402,10 @@ span[class$="-sign"] {
 	font: normal normal normal 22px/28px Arial, sans-serif
 }
     
-    span[class$="-sign"] strong {
-        display: -moz-inline-box;
-    }
+span[class$="-sign"] strong {
+    display: -moz-inline-box;
+    display: inline-block
+}
 
 /**
  * here is the error sign color
@@ -430,10 +433,14 @@ html .info-sign {background: #3f51b5}
 .footer-modal {
 	overflow-y: auto;
 	width: 100%;
-	height: 50px;
-	margin: 0 auto;
+
+	height: 3em;
+    height: 3rem;
+
+	margin: -2.5px auto 0;
 	background: #0288d1;
 	text-align: right;
+    border: 1px solid #0288d1;
 
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
@@ -461,7 +468,10 @@ html .info-sign {background: #3f51b5}
 	color: #fff;
 	font-weight: 700;
 	font-size: 70%;
-	line-height: 50px;
+
+	line-height: 4.3em;
+    line-height: 3rem;
+
 	outline: none;
 
 	-webkit-transition: .3s ease-out;
@@ -485,6 +495,7 @@ html .info-sign {background: #3f51b5}
  */
 @media only screen and (max-width:720px) {
 
+    .modal-dialog .modal {width: 80%}
 	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
@@ -512,7 +523,7 @@ html .info-sign {background: #3f51b5}
 		margin: calc(15vh - 50px) auto 0;
 		margin: 5vmin auto 0
 	}
-	.footer-modal {box-shadow: 0 -10px 10px rgba(221, 221, 221, .95)}
+	.footer-modal {box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
@@ -561,7 +572,30 @@ html .footer-modal a {
 
 .modal-dialog ::-webkit-resizer {background-color: #666}
 
-/*! CSS rules for this page demo */
+
+
+/*! ============================
+    CSS rules for this page demo
+*/
+
+
+/**
+ * Waiting for Google font loader: hide the entire page
+ */
+.wf-loading {
+	opacity: 0;
+	visibility: hidden;
+	height: 100%;
+	overflow: hidden
+}
+
+/**
+ * All is fine: display the document
+ */
+.wf-active {
+	opacity: 1;
+	visibility: visible
+}
 
 .wrapper {width: 100%}
 
@@ -570,13 +604,17 @@ html .footer-modal a {
     font-size: 20px;
     line-height: 1.5
 }
-    
-.modal-dialog .inner-dialog h2{font-family: 'Noto Sans'}
-
-.modal-dialog .inner-dialog p{font-family: 'Open Sans'}
 
 p.first-line {float: left;clear: both;width: 96%}
 
+/* Custom fonts */
+.modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
+
+.modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}
+
+/**
+ * The buttons
+*/
 .button {
 	float: left;
 	margin: 0 .5em 1em 0;

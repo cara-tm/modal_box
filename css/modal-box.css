@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*! CSS Modal Box by cara-tm.com - MIT license - https://github.com/cara-tm/modal_box */
+/*! CSS Modal Box by cara-tm.com - https://github.com/cara-tm/modal_box - MIT license */
 html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -13,7 +13,7 @@ html {
  * Min resets
  */
 html,
-body {
+    body {
 	height: 100%;
 	margin: 0;
 	padding: 0
@@ -41,7 +41,7 @@ body {
  * Prevent conflicts from other CSS rules
  */
 body .modal-dialog {
-	font: normal normal normal 14px/1 Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font: normal normal normal 16px/1 Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-kerning: normal;
 
 	-moz-font-feature-settings: "kern";
@@ -150,17 +150,18 @@ body .modal-dialog {
 	overflow: -moz-hidden-unscrollable;
 	position: relative;
 	z-index: 1000;
-
-	max-width: 720px;
+    
+	max-width: 36em;
 	min-width: 250px;
-	width: 80%;
 
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
-	background: #fff;
-	font-size: 125%;
-	border-radius: 6px 6px 0 0;
 
+	background: #fff;
+    border: 1px solid #eee;
+	font-size: 125%;
+
+	border-radius: 6px 6px 0 0;
     /* Activates GPU Hardware-Acceleration */
     -webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
@@ -173,7 +174,7 @@ body .modal-dialog {
 	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
 	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
     
-    /* For IE7 support: can be safely removed if no used */
+    /* For IE7 support: can be safely removed if not used */
 	zoom: 1
 }
 
@@ -181,14 +182,14 @@ body .modal-dialog {
  * The close button
  */
 .modal-dialog .close {
-	box-sizing: content-box;
 	display: block;
 	position: absolute;
 	z-index: 10000;
 	top: 7px;
 	right: 10px;
-	width: 29px;
-	height: 29px;
+	width: 1.45em;
+    /* WTF: 1px visual correction! */
+	height: 1.5em;
 	margin: 0;
 	padding: 0;
 	background: #0288d1;
@@ -203,8 +204,8 @@ body .modal-dialog {
 
 .modal-dialog .close strong {
 	display: inline-block;
-	width: 29px;
-	height: 29px;
+	width: 1.45em;
+	height: 1.5em;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
@@ -235,8 +236,11 @@ body .modal-dialog {
 .header-modal {
 	position: relative;
 	z-index: 1001;
-	height: 90px;
+
+	height: 5em;
+    height: 6rem;
 	max-height: 26vh;
+
 	color: #aaa;
 	font-family: 'Noto Sans', inherit, sans-serif;
 	font-weight: 300;
@@ -268,9 +272,9 @@ body .modal-dialog {
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
-	display: inline-table;
+    display: inline-table;
     width: 50%;
-	text-align: center;
+    text-align: center;
 	font-size: 70%
 }
 
@@ -283,6 +287,7 @@ body .modal-dialog {
 	height: 34px;
 	margin: 0 0 0 .5em;
 	border: 1px solid transparent;
+    text-decoration: none;
 	line-height: 32px;
 	border-radius: 50%
 }
@@ -317,9 +322,7 @@ body .modal-dialog {
 /**
  * SVG icon color
  */
-.header-modal path {
-	fill: #aaa
-}
+.header-modal path {fill: #aaa}
 
 /**
  * The content part into the modal box
@@ -331,16 +334,19 @@ body .modal-dialog {
     width: auto;
 
     /* List of gracefull degradation max height */
-	max-height: 145px;
+	max-height: 14em;
 	max-height: 47vh;
-	max-height: calc(100vh - 30vh - 140px);
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px
+	padding: 5px 20px 50px 20px;
+    color: #212121
 }
 
-.modal-dialog .inner-dialog.modal-message {width: 90%;padding: 5px 10% 5px 20px}
+.modal-dialog .inner-dialog.modal-message {
+    width: 90%;
+    padding: 5px 10% 5px 20px
+}
 
 /**
  * Prevent headings resizing
@@ -355,7 +361,6 @@ body .modal-dialog {
  * Restores the paragraph font size
  */
 .modal-dialog .inner-dialog p {
-	color: #212121;
 	font-size: 85%;
 	line-height: 1.5;
     hyphens: auto
@@ -370,10 +375,11 @@ body .modal-dialog {
 /**
  * Styling the signs for the Modal Message Box
  */
-strong[class$="-sign"] {
-    display: -moz-inline-box;
+span[class$="-sign"] {
 	display: inline-table;
-	width: 28px;
+    display: inline-block;
+    /* 2px less due to padding */
+	width: 24px;
 	height: 28px;
 	margin: 0 5px 0 0;
     padding: 0 2px;
@@ -381,6 +387,11 @@ strong[class$="-sign"] {
 	text-align: center;
 	color: #fff;
 	font: normal normal normal 22px/28px Arial, sans-serif
+}
+
+span[class$="-sign"] strong {
+    display: -moz-inline-box;
+    display: inline-block
 }
 
 /**
@@ -409,10 +420,14 @@ strong[class$="-sign"] {
 .footer-modal {
 	overflow-y: auto;
 	width: 100%;
-	height: 50px;
-	margin: 0 auto;
+
+	height: 3em;
+    height: 3rem;
+
+	margin: -2.5px auto 0;
 	background: #0288d1;
 	text-align: right;
+    border: 1px solid #0288d1;
 
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
@@ -440,7 +455,10 @@ strong[class$="-sign"] {
 	color: #fff;
 	font-weight: 700;
 	font-size: 70%;
-	line-height: 50px;
+
+	line-height: 4.3em /* 50px */;
+    line-height: 3rem;
+
 	outline: none;
 
 	-webkit-transition: .3s ease-out;
@@ -464,6 +482,7 @@ strong[class$="-sign"] {
  */
 @media only screen and (max-width:720px) {
 
+    .modal-dialog .modal {width: 80%}
 	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
@@ -491,7 +510,7 @@ strong[class$="-sign"] {
 		margin: calc(15vh - 50px) auto 0;
 		margin: 5vmin auto 0
 	}
-	.footer-modal {box-shadow: 0 -10px 10px rgba(221, 221, 221, .95)}
+	.footer-modal {box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
@@ -539,4 +558,3 @@ html .footer-modal a {
 .modal-dialog ::-webkit-scrollbar-corner {background-color: #999}
 
 .modal-dialog ::-webkit-resizer {background-color: #666}
-

@@ -4,6 +4,34 @@
  */
 
 /**
+ * Waiting for Google @font-face loader: hide the entire page
+ */
+.wf-loading {
+	opacity: 0;
+	visibility: hidden;
+	height: 100%;
+	overflow: hidden
+}
+
+/**
+ * All is fine: display the document
+ */
+.wf-active {
+	opacity: 1;
+	visibility: visible
+}
+
+/**
+ * Color of the entire box border
+ */
+.modal-dialog .modal {border-color: #e91e63}
+
+/**
+ * Color for the main text content
+ */
+.modal-dialog .inner-modal {color: #212121}
+
+/**
  * The close button
  */
 .modal-dialog .inner-modal .close { background: #eee}
@@ -42,7 +70,10 @@
  * The 'Close' link
  */
 .modal-dialog .close:hover,
-	.modal-dialog .close:active {background: #e6005c; color: #fff}
+	.modal-dialog .close:active {
+        background: #e6005c;
+        color: #fff
+}
 
 /**
  * The main content of the modal box
@@ -62,7 +93,7 @@ strong[class$="-sign"] { border-radius: 50%}
  */
 .footer-modal {
 	background: #c2185b;
-	border: 1px solid #c2185b
+	border-color: #c2185b
 }
 
 /**
