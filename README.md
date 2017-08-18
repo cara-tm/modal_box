@@ -69,8 +69,6 @@ Google Chromium (latest) PC preview:
 
 .
 
-Safari Mobile preview: 
-![Safari MObile](https://github.com/cara-tm/modal_box/raw/master/safari-mobile.PNG "Safari Mobile")
 
 .
 
