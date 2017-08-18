@@ -26,8 +26,8 @@ This component template has been tested successfully in (real systems not from e
 * UC Browser (Mini or HD version for Android & normal version for PC);
 * UC Browser 10.x for iOS;
 * default browser in Android 2.3.6 (TO DO: font sizes need adaptation);
-* FireFox 2 minimum;
-* FireFox ESR;
+* FireFox 1.0.8 minimum;
+* FireFox 52 ESR;
 * Midori 0.4;
 * Google Chromium (all versions: PC & Mac; iOS & Android);
 * Brave;
