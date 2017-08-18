@@ -147,7 +147,9 @@ body .modal-dialog {
  */
 .modal-dialog .modal {
 	overflow: hidden;
+    /* For old FF versions */
 	overflow: -moz-hidden-unscrollable;
+
 	position: relative;
 	z-index: 1000;
     
@@ -158,21 +160,24 @@ body .modal-dialog {
 	margin: 5vh auto 0;
 
 	background: #fff;
-    border: 1px solid #eee;
 	font-size: 125%;
 
+    -webkit-border-radius: 6px 6px 0 0;
+    -khtml-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0;
+
     /* Activates GPU Hardware-Acceleration */
     -webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
-	-webkit-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
-	-moz-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
-	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
-	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
-	box-shadow: 0 -10px 45px rgba(0, 0, 0, .25);
+	-webkit-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
+	-moz-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
+	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
+	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
+	box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
     
     /* For IE7 support: can be safely removed if not used */
 	zoom: 1
@@ -182,13 +187,13 @@ body .modal-dialog {
  * The close button
  */
 .modal-dialog .close {
+	box-sizing: content-box;
 	display: block;
 	position: absolute;
 	z-index: 10000;
-	top: 7px;
-	right: 10px;
+	top: .35em;
+	right: .4em;
 	width: 1.45em;
-    /* WTF: 1px visual correction! */
 	height: 1.5em;
 	margin: 0;
 	padding: 0;
@@ -198,6 +203,10 @@ body .modal-dialog {
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
+
+    /* No vendor prefix for FF: ugly in old versions */
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
 	border-radius: 50%
 }
 
@@ -205,11 +214,13 @@ body .modal-dialog {
 .modal-dialog .close strong {
 	display: inline-block;
 	width: 1.45em;
+    /* For visual adjustment */
 	height: 1.5em;
+
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
-	line-height: 29px;
+	line-height: 1.5em;
 	font-weight: normal;
 	cursor: pointer
 }
@@ -223,10 +234,17 @@ body .modal-dialog {
 	outline: none;
 	border: none;
 
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -khtml-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
 	-webkit-transform: scale(1.2, 1.2);
 	-moz-transform: scale(1.2, 1.2);
 	transform: scale(1.2, 1.2);
+
 	-webkit-tap-highlight-color: transparent
 }
 
@@ -236,14 +254,22 @@ body .modal-dialog {
 .header-modal {
 	position: relative;
 	z-index: 1001;
-
-	height: 5em;
-    height: 6rem;
+    
+    height: 5em;
+	min-height: 5rem;
 	max-height: 26vh;
+
+    border: 1px solid #eee;
+    border-bottom: 0;
 
 	color: #aaa;
 	font-family: 'Noto Sans', inherit, sans-serif;
 	font-weight: 300;
+
+    -webkit-border-radius: 6px 6px 0 0;
+    -khtml-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
 
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30,Direction=95,Color='#ffffff')";
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
@@ -275,6 +301,9 @@ body .modal-dialog {
     display: inline-table;
     width: 50%;
     text-align: center;
+/*
+    vertical-align: text-top;
+*/
 	font-size: 70%
 }
 
@@ -286,9 +315,11 @@ body .modal-dialog {
 	width: 34px;
 	height: 34px;
 	margin: 0 0 0 .5em;
-	border: 1px solid transparent;
     text-decoration: none;
 	line-height: 32px;
+
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
 	border-radius: 50%
 }
 
@@ -297,10 +328,20 @@ body .modal-dialog {
  */
 .header-modal a:hover,
     .header-modal a:active {
-	border-color: #0288d1;
+    -webkit-box-shadow: 0px 0px 2px #0288d1;
+    -moz-box-shadow: 0px 0px 2px #0288d1;
+    -khtml-box-shadow: 0px 0px 2px #0288d1;
+    box-shadow: 0px 0px 2px #0288d1;
 
+    -webkit-transform: translate(1.2, 1.2);
+	-webkit-transition: transform 200ms ease-out;
+    -moz-transform: translate(1.2, 1.2);
+	-moz-transition: transform 200ms ease-out;
+    -ms-transform: translate(1.2, 1.2);
+	-ms-transition: transform 200ms ease-out;
 	transform: translate(1.2, 1.2);
 	transition: transform 200ms ease-out;
+
 	-webkit-tap-highlight-color: transparent
 }
 
@@ -328,6 +369,10 @@ body .modal-dialog {
  * The content part into the modal box
  */
 .modal-dialog .inner-dialog {
+    overflow: hidden;
+    /* For FF 1 */
+    overflow: auto;
+
 	overflow-y: visible;
 	overflow-y: auto;
 	display: inline-block;
@@ -340,12 +385,24 @@ body .modal-dialog {
 	height: 90%;
 	margin: 0;
 	padding: 5px 20px 50px 20px;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
     color: #212121
 }
 
-.modal-dialog .inner-dialog.modal-message {
+.modal-dialog .modal.modal-message {
+    border: 1px solid #eee;
+
+    -webkit-border-radius: 6px 6px 0 0;
+    -khtml-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0
+}
+
+.modal-dialog .modal.modal-message .inner-dialog {
     width: 90%;
-    padding: 5px 10% 5px 20px
+    padding: 5px 10% 5px 20px;
+    border: none
 }
 
 /**
@@ -388,7 +445,7 @@ span[class$="-sign"] {
 	color: #fff;
 	font: normal normal normal 22px/28px Arial, sans-serif
 }
-
+    
 span[class$="-sign"] strong {
     display: -moz-inline-box;
     display: inline-block
@@ -402,7 +459,7 @@ span[class$="-sign"] strong {
 /**
  * Here is the info sign color
  */
-.info-sign {background: #3f51b5}
+html .info-sign {background: #3f51b5}
 
 /**
  * Here is the success sign color
@@ -427,13 +484,21 @@ span[class$="-sign"] strong {
 	margin: -2.5px auto 0;
 	background: #0288d1;
 	text-align: right;
-    border: 1px solid #0288d1;
+    border-right: 1px solid #0288d1;
+    border-left: 1px solid #0288d1;
 
+    -webkit-border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    -o-border-radius: 0 0 2px 2px;
+    -ms-border-radius: 0 0 2px 2px;
+    -khtml-border-radius: 0 0 2px 2px;
 	border-radius: 0 0 2px 2px;
+
 	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
 	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
 	-o-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
 	-ms-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
+    -khtml-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
 	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3)
 }
 
@@ -456,7 +521,7 @@ span[class$="-sign"] strong {
 	font-weight: 700;
 	font-size: 70%;
 
-	line-height: 4.3em /* 50px */;
+	line-height: 4.3em;
     line-height: 3rem;
 
 	outline: none;
@@ -498,7 +563,7 @@ span[class$="-sign"] strong {
 		width: 24px;
 		height: 24px;
 		margin: 0 0 0 .5em;
-		vertical-align: text-top
+		vertical-align: middle
 	}
 	.header-modal svg {
 		width: 22px;
@@ -510,7 +575,12 @@ span[class$="-sign"] strong {
 		margin: calc(15vh - 50px) auto 0;
 		margin: 5vmin auto 0
 	}
-	.footer-modal {box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)}
+	.footer-modal {
+        -webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+        -moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+        -khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+        box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
+    }
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
