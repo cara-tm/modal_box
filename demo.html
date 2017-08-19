@@ -392,6 +392,7 @@ body .modal-dialog {
 }
 
 .modal-dialog .modal.modal-message {
+    margin-bottom: 0;
     border: 1px solid #eee;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -541,6 +542,10 @@ html .info-sign {background: #3f51b5}
  */
 @media only screen and (max-width:720px) {
 
+    .modal-dialog .modal.modal-message .inner-dialog {
+        max-height:none;
+        height:auto
+    }
 	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
@@ -648,7 +653,10 @@ html .footer-modal a {
 	visibility: visible
 }
 
-.wrapper {width: 100%}
+.wrapper {
+    width: 100%;
+    margin: 0 0 3em
+}
 
 .wrapper p {
     padding: 10px 2% 0;
@@ -766,7 +774,7 @@ WebFont.load({
 		<div class="inner-dialog">
 
 			<h2>Message Box</h2>
-            <p><span class="info-sign"><strong>ℹ</strong></span> <span class="warning-sign"><strong>⚠</strong></span> <span class="success-sign"><strong>✔</strong></span> <span class="error-sign"><strong>✕</strong></span>This is a sample modal message box suitable for infos. ✌</p>
+            <p><span class="info-sign"><strong>🛈</strong></span> <span class="warning-sign"><strong>⚠</strong></span> <span class="success-sign"><strong>✔</strong></span> <span class="error-sign"><strong>✕</strong></span>This is a sample modal message box suitable for infos. ✌</p>
 
 		</div> <!-- /inner-dialog -->
 

@@ -380,6 +380,7 @@ body .modal-dialog {
 }
 
 .modal-dialog .modal.modal-message {
+    margin-bottom: 0;
     border: 1px solid #eee;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -390,7 +391,7 @@ body .modal-dialog {
 
 .modal-dialog .modal.modal-message .inner-dialog {
     width: 90%;
-    padding: 5px 10% 5px 20px;
+    padding: 5px 10px 5px 20px;
     border: none
 }
 
@@ -529,6 +530,10 @@ html .info-sign {background: #3f51b5}
  */
 @media only screen and (max-width:720px) {
 
+    .modal-dialog .modal.modal-message .inner-dialog {
+        max-height:none;
+        height:auto
+    }
 	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
