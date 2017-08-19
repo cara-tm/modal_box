@@ -173,11 +173,12 @@ body .modal-dialog {
 	-ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
-	-webkit-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
-	-moz-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
-	-o-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
-	-ms-box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
-	box-shadow: 0 -10px 45px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+    -moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+    -khtml-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+    -ms-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+    -o-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     
     /* For IE7 support: can be safely removed if not used */
 	zoom: 1
@@ -269,13 +270,7 @@ body .modal-dialog {
     -webkit-border-radius: 6px 6px 0 0;
     -khtml-border-radius: 6px 6px 0 0;
     -moz-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0;
-
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30,Direction=95,Color='#ffffff')";
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
-	-webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	-moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	box-shadow: -15px 10px 30px rgba(255, 255, 255, .9)
+    border-radius: 6px 6px 0 0
 }
 
 /**
@@ -492,14 +487,7 @@ html .info-sign {background: #3f51b5}
     -o-border-radius: 0 0 2px 2px;
     -ms-border-radius: 0 0 2px 2px;
     -khtml-border-radius: 0 0 2px 2px;
-	border-radius: 0 0 2px 2px;
-
-	-webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
-	-moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
-	-o-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
-	-ms-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
-    -khtml-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3);
-	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .3)
+	border-radius: 0 0 2px 2px
 }
 
 /**
@@ -554,7 +542,7 @@ html .info-sign {background: #3f51b5}
 		font-size: 5.2vmin;
 		font-size: 4vmax
 	}
-	.header-modal span {
+	html .header-modal span {
 		width: auto;
 		margin: 0
 	}
@@ -575,12 +563,6 @@ html .info-sign {background: #3f51b5}
 		margin: calc(15vh - 50px) auto 0;
 		margin: 5vmin auto 0
 	}
-	.footer-modal {
-        -webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        -moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        -khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
-    }
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
