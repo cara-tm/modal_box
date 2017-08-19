@@ -274,8 +274,13 @@ body .modal-dialog {
     -webkit-border-radius: 6px 6px 0 0;
     -khtml-border-radius: 6px 6px 0 0;
     -moz-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0
-    border-radius: 6px 6px 0 0
+    border-radius: 6px 6px 0 0;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
+    -webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+    -moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+    box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9)
 }
 
 /**
@@ -667,6 +672,9 @@ html .footer-modal a {
 p.first-line {float: left;clear: both;width: 96%}
 
 /* Custom fonts */
+
+.header-modal {font-family: 'Noto Sans', inherit, sans-serif}
+
 .modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
 
 .modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}

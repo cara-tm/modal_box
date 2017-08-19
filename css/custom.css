@@ -53,6 +53,7 @@
  */
 .header-modal {
 	background: #e91e63;
+    border: 0;
 	border-bottom: 14px solid #c2185b
 }
 

@@ -257,13 +257,19 @@ body .modal-dialog {
     border-bottom: 0;
 
 	color: #aaa;
-	font-family: 'Noto Sans', inherit, sans-serif;
+	font-family: inherit, sans-serif;
 	font-weight: 300;
 
     -webkit-border-radius: 6px 6px 0 0;
     -khtml-border-radius: 6px 6px 0 0;
     -moz-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0
+    border-radius: 6px 6px 0 0;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
+    -webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+    -moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+    box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9)
 }
 
 /**
