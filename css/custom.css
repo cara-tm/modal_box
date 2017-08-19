@@ -37,7 +37,16 @@
 .modal-dialog .inner-modal .close { background: #eee}
 
 .modal-dialog .inner-modal .close:hover,
-	.modal-dialog .inner-modal .close:active {background: #e6005c}
+	.modal-dialog .inner-modal .close:active {
+        background: #e6005c;
+        /* Shadow on hover state */
+       -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -khtml-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -ms-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	   box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
 
 /**
  * The entire modal box header
