@@ -439,21 +439,21 @@ body .modal-dialog {
 /**
  * Styling the signs for the Modal Message Box
  */
-span[class$="-sign"] {
+span[class*="-sign"] {
 	display: inline-table;
     display: inline-block;
     /* 2px less due to padding */
-	width: 24px;
+	width: 30px;
 	height: 28px;
 	margin: 0 5px 0 0;
-    padding: 0 2px;
+    padding: 0;
 	vertical-align: middle;
 	text-align: center;
-	color: #fff;
+	color: #333;
 	font: normal normal normal 22px/28px Arial, sans-serif
 }
     
-span[class$="-sign"] strong {
+span[class*="-sign"] strong {
     display: -moz-inline-box;
     display: inline-block
 }
@@ -461,12 +461,12 @@ span[class$="-sign"] strong {
 /**
  * here is the error sign color
  */
-.error-sign {background: #d32f2f}
+.error-sign {background: #e27575}
 
 /**
  * Here is the info sign color
  */
-html .info-sign {background: #3f51b5}
+html .info-sign {background: #9ea8dd}
 
 /**
  * Here is the success sign color
@@ -669,15 +669,22 @@ html .footer-modal a {
     line-height: 1.5
 }
 
-p.first-line {float: left;clear: both;width: 96%}
+p.first-line {
+    float: left;
+    clear: both;
+    width: 96%
+}
 
 /* Custom fonts */
+@media only screen and (min-width: 720px) {
 
-.header-modal {font-family: 'Noto Sans', inherit, sans-serif}
+    .header-modal {font-family: 'Noto Sans', inherit, sans-serif}
 
-.modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
+    .modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
 
-.modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}
+    .modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}
+
+}
 
 /**
  * The buttons
@@ -690,7 +697,7 @@ p.first-line {float: left;clear: both;width: 96%}
 	color: #fff;
 	text-decoration: none;
     font-size: 18px;
-    line-height: 0.6
+    line-height: 1
 }
 
 .button:hover {text-decoration: underline}
