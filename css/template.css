@@ -1,0 +1,124 @@
+/*!
+ * A sample of customization for CSS Modal Box
+ * See: https://github.com/cara-tm/modal_box/
+ */
+
+/**
+ * Waiting for Google @font-face loader: hide the entire page
+ */
+.wf-loading {
+	opacity: 0;
+	visibility: hidden;
+	height: 100%;
+	overflow: hidden
+}
+
+/**
+ * All is fine: display the document
+ */
+.wf-active {
+	opacity: 1;
+	visibility: visible
+}
+
+/**
+ * Color of the entire box border
+ */
+.modal-dialog .modal {border-color: #e91e63}
+
+/**
+ * Color for the main text content
+ */
+.modal-dialog .inner-modal {color: #212121}
+
+/**
+ * The close button
+ */
+.modal-dialog .inner-modal .close { background: #eee}
+
+.modal-dialog .inner-modal .close:hover,
+	.modal-dialog .inner-modal .close:active {
+        background: #e6005c;
+        /* Shadow on hover state */
+       -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -khtml-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+       -ms-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	   box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+
+/**
+ * The entire modal box header
+ */
+.header-modal {
+	background: #e91e63;
+    border: 0;
+	border-bottom: 14px solid #c2185b
+}
+
+/**
+ * Heading (level 1) for the modal box header
+ */
+.header-modal h1,
+	.header-modal strong,
+		.header-modal svg {color: #fff}
+
+/**
+ * The states of the links into the modal box header
+ */
+.header-modal a:hover,
+	.header-modal a:active {border-color: #fff}
+
+/**
+ * SVG icon color within the modal box header
+ */
+.header-modal svg path {fill: #fff}
+.modal-dialog .close {background: #e040fb}
+
+/**
+ * The 'Close' link
+ */
+.modal-dialog .close:hover,
+	.modal-dialog .close:active {
+        background: #e6005c;
+        color: #fff
+}
+
+/**
+ * The main content of the modal box
+ */
+.modal-dialog .inner-dialog {
+	background: #fff
+	color: #757575
+}
+
+/**
+ * Creates rounding icons for Message Boxes instead of square ones
+ */
+strong[class$="-sign"] { border-radius: 50%}
+
+/**
+ * The entire modal box outer footer
+ */
+.footer-modal {
+	background: #c2185b;
+	border-color: #c2185b
+}
+
+/**
+ * The modal box footer's links
+ */
+.footer-modal a{
+	color: #fff;
+	-webkit-tap-highlight-color: #e91e63
+}
+
+/**
+ * The footer's links states
+ */
+.footer-modal a:hover,
+	.footer-modal a:active {
+	background: #e91e63;
+	-webkit-tap-highlight-color: #e91e63
+}

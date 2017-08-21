@@ -1,124 +1,134 @@
-/*!
- * A sample of customization for CSS Modal Box
- * See: https://github.com/cara-tm/modal_box/
- */
-
 /**
- * Waiting for Google @font-face loader: hide the entire page
+ * Optinal: for call to action into the modal box header
  */
-.wf-loading {
-	opacity: 0;
-	visibility: hidden;
-	height: 100%;
-	overflow: hidden
+.header-modal span {
+    display: inline-table;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+	font-size: 70%
 }
 
 /**
- * All is fine: display the document
+ * The links into the modal box header
  */
-.wf-active {
-	opacity: 1;
-	visibility: visible
+.header-modal a {
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	margin: 0 0 0 .5em;
+    text-decoration: none;
+	line-height: 32px;
+
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+	border-radius: 50%
 }
 
 /**
- * Color of the entire box border
- */
-.modal-dialog .modal {border-color: #e91e63}
-
-/**
- * Color for the main text content
- */
-.modal-dialog .inner-modal {color: #212121}
-
-/**
- * The close button
- */
-.modal-dialog .inner-modal .close { background: #eee}
-
-.modal-dialog .inner-modal .close:hover,
-	.modal-dialog .inner-modal .close:active {
-        background: #e6005c;
-        /* Shadow on hover state */
-       -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-       -o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-       -khtml-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-       -ms-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-	   box-shadow: 0 0 10px rgba(0, 0, 0, .3)
-}
-
-/**
- * The entire modal box header
- */
-.header-modal {
-	background: #e91e63;
-    border: 0;
-	border-bottom: 14px solid #c2185b
-}
-
-/**
- * Heading (level 1) for the modal box header
- */
-.header-modal h1,
-	.header-modal strong,
-		.header-modal svg {color: #fff}
-
-/**
- * The states of the links into the modal box header
+ * The link state into the modal box header
  */
 .header-modal a:hover,
-	.header-modal a:active {border-color: #fff}
+    .header-modal a:active {
+    -webkit-box-shadow: 0px 0px 2px #0288d1;
+    -moz-box-shadow: 0px 0px 2px #0288d1;
+    -khtml-box-shadow: 0px 0px 2px #0288d1;
+    box-shadow: 0px 0px 2px #0288d1;
 
-/**
- * SVG icon color within the modal box header
- */
-.header-modal svg path {fill: #fff}
-.modal-dialog .close {background: #e040fb}
+    -webkit-transform: translate(1.2, 1.2);
+	-webkit-transition: transform 200ms ease-out;
+    -moz-transform: translate(1.2, 1.2);
+	-moz-transition: transform 200ms ease-out;
+    -ms-transform: translate(1.2, 1.2);
+	-ms-transition: transform 200ms ease-out;
+	transform: translate(1.2, 1.2);
+	transition: transform 200ms ease-out;
 
-/**
- * The 'Close' link
- */
-.modal-dialog .close:hover,
-	.modal-dialog .close:active {
-        background: #e6005c;
-        color: #fff
+	-webkit-tap-highlight-color: transparent
 }
 
 /**
- * The main content of the modal box
+ * The SVG icon into the modal box header
  */
-.modal-dialog .inner-dialog {
-	background: #fff
-	color: #757575
+.header-modal svg {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	vertical-align: middle;
+	text-align: center;
+	color: #aaa;
+	font-size: 2em;
+	cursor: pointer
 }
 
 /**
- * Creates rounding icons for Message Boxes instead of square ones
+ * SVG icon color
  */
-strong[class$="-sign"] { border-radius: 50%}
+.header-modal path {fill: #aaa}
 
 /**
- * The entire modal box outer footer
+ * Styling the signs for the Modal Message Box
  */
-.footer-modal {
-	background: #c2185b;
-	border-color: #c2185b
-}
-
-/**
- * The modal box footer's links
- */
-.footer-modal a{
+span[class*="-sign"] {
+	display: inline-table;
+    display: inline-block;
+    /* 2px less due to padding */
+	width: 30px;
+	height: 28px;
+	margin: 0 5px 0 0;
+    padding: 0;
+	vertical-align: middle;
+	text-align: center;
 	color: #fff;
-	-webkit-tap-highlight-color: #e91e63
+	font: normal normal normal 22px/28px Arial, sans-serif
+}
+    
+span[class*="-sign"] strong {
+    display: -moz-inline-box;
+    display: inline-block
 }
 
 /**
- * The footer's links states
+ * here is the error sign color
  */
-.footer-modal a:hover,
-	.footer-modal a:active {
-	background: #e91e63;
-	-webkit-tap-highlight-color: #e91e63
+.error-sign {background: #e27575}
+
+/**
+ * Here is the info sign color
+ */
+html .info-sign {background: #9ea8dd}
+
+/**
+ * Here is the success sign color
+ */
+.success-sign {background: #00c853}
+
+/**
+ * Here is the warning sign color
+ */
+.warning-sign {background: #fbc02d}
+
+/**
+ * Media query for screen below 720px
+ */
+@media only screen and (max-width:720px) {
+
+	html .header-modal span {
+		width: auto;
+		margin: 0
+	}
+	.header-modal a {
+		float: none;
+		width: 24px;
+		height: 24px;
+		margin: 0 0 0 .5em;
+		vertical-align: middle
+	}
+	.header-modal svg {
+		width: 22px;
+		height: 22px;
+		vertical-align: baseline
+	}
+
 }

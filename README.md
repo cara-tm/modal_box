@@ -41,7 +41,18 @@ This component template has been tested successfully in (real systems not from e
 First, you need to encapsulate your entire content page into a div with a class name `wrapper`.
 Then, place the Modal Box template outside this `wrapper` block.
 Simple!
-Note. The default template is white and blue. For customization, [see this sample here](https://github.com/cara-tm/modal_box/blob/master/css/custom.css)
+Note. The default template is white and blue. For customization, [see this sample here](https://github.com/cara-tm/modal_box/blob/master/css/template.css)
+
+## This content package (v1.2 onward)
+
+This minimal default component (required) is distributed in white/blue colors (see screen shots) and do not include the styles for inner optional elements within the modal header ([File: `modal-box.min.css`](https://github.com/cara-tm/modal_box/blob/master/css/modal-box.min.css).
+
+In order to add these additional supports, please include the optional styles [File: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/custom.css).
+
+A red colored example, well commented, is available for your customization convenience [File: `template.css` previously, file: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/template.css).
+.
+
+An independant `demo.html` file with full styles is available for integration example [File: `demo.html`](https://github.com/cara-tm/modal_box/blob/master/demo.html).
 
 
 ## IE 8 and below support
@@ -55,7 +66,7 @@ Full support in IE9. If you need previous browsers compatibility, you can add th
     'use strict';var addEvent=function(a,b,d){try{a.addEventListener(b,d,!1)}catch(e){a.attachEvent('on'+b,d)}},el=document.getElementById('b-active'),target=document.getElementById('open-modal'),c=document.getElementById('close-modal');addEvent(el,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(c,'click',function(){document.getElementById('open-modal').className='modal-dialog dialog'});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')}function removeClass(a,b){return a.className=a.className.replace(new RegExp('(?:^|s)'+b+'(?!S)'),'')}
     </script>
 
-Note. This component template is a cross browsers visual solution, not a javascript case study for all browsers. Use your personnal scripting code depending of your needs. This poor javascript solution also affects the included CSS animation.
+Note. This component template is a cross browsers visual solution, not a javascript case study for all browsers. Use your personnal scripting code depending of your needs. This poor javascript solution also affects a little bit the included CSS animation.
 
 ## Note
 

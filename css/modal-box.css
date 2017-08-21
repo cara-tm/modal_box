@@ -96,10 +96,11 @@ body .modal-dialog {
 /**
  * Apply animation on modal box opening
  */
-.modal-dialog:target .modal {
+.modal-dialog:target {
 	opacity: 1;
 
 	-webkit-animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both;
+    -moz-animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both;
 	animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both
 }
 
@@ -154,7 +155,6 @@ body .modal-dialog {
 	z-index: 1000;
     
 	max-width: 36em;
-	min-width: 250px;
 
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
@@ -168,16 +168,17 @@ body .modal-dialog {
 	border-radius: 6px 6px 0 0;
 
     /* Activates GPU Hardware-Acceleration */
-    -webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: scale(0, 0);
+	-moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    /* IE9 only */
+	-ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+    will-change: transform;
 
     -webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     -moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     -khtml-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
-    -ms-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
-    -o-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
 	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     
     /* For IE7 support: can be safely removed if not used */
@@ -265,10 +266,9 @@ body .modal-dialog {
     -moz-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
 
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
     -webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
     -moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+    -khtml-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
     box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9)
 }
 
@@ -287,78 +287,6 @@ body .modal-dialog {
 	font-size: 110%;
 	font-weight: 400
 }
-
-/**
- * Optinal: for call to action into the modal box header
- */
-.header-modal span {
-    display: inline-table;
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-/*
-    vertical-align: text-top;
-*/
-	font-size: 70%
-}
-
-/**
- * The links into the modal box header
- */
-.header-modal a {
-	display: inline-block;
-	width: 34px;
-	height: 34px;
-	margin: 0 0 0 .5em;
-    text-decoration: none;
-	line-height: 32px;
-
-    -webkit-border-radius: 50%;
-    -khtml-border-radius: 50%;
-	border-radius: 50%
-}
-
-/**
- * The link state into the modal box header
- */
-.header-modal a:hover,
-    .header-modal a:active {
-    -webkit-box-shadow: 0px 0px 2px #0288d1;
-    -moz-box-shadow: 0px 0px 2px #0288d1;
-    -khtml-box-shadow: 0px 0px 2px #0288d1;
-    box-shadow: 0px 0px 2px #0288d1;
-
-    -webkit-transform: translate(1.2, 1.2);
-	-webkit-transition: transform 200ms ease-out;
-    -moz-transform: translate(1.2, 1.2);
-	-moz-transition: transform 200ms ease-out;
-    -ms-transform: translate(1.2, 1.2);
-	-ms-transition: transform 200ms ease-out;
-	transform: translate(1.2, 1.2);
-	transition: transform 200ms ease-out;
-
-	-webkit-tap-highlight-color: transparent
-}
-
-/**
- * The SVG icon into the modal box header
- */
-.header-modal svg {
-	display: inline-block;
-	width: 32px;
-	height: 32px;
-	margin: 0;
-	vertical-align: middle;
-	text-align: center;
-	color: #aaa;
-	font-size: 2em;
-	cursor: pointer
-}
-
-/**
- * SVG icon color
- */
-.header-modal path {fill: #aaa}
 
 /**
  * The content part into the modal box
@@ -426,48 +354,6 @@ body .modal-dialog {
 :matches(.inner-dialog) p {font-size: 85%}
 
 /**
- * Styling the signs for the Modal Message Box
- */
-span[class*="-sign"] {
-	display: inline-table;
-    display: inline-block;
-    /* 2px less due to padding */
-	width: 30px;
-	height: 28px;
-	margin: 0 5px 0 0;
-    padding: 0;
-	vertical-align: middle;
-	text-align: center;
-	color: #fff;
-	font: normal normal normal 22px/28px Arial, sans-serif
-}
-    
-span[class*="-sign"] strong {
-    display: -moz-inline-box;
-    display: inline-block
-}
-
-/**
- * here is the error sign color
- */
-.error-sign {background: #e27575}
-
-/**
- * Here is the info sign color
- */
-html .info-sign {background: #9ea8dd}
-
-/**
- * Here is the success sign color
- */
-.success-sign {background: #00c853}
-
-/**
- * Here is the warning sign color
- */
-.warning-sign {background: #fbc02d}
-
-/**
  * The footer of the modal box
  */
 .footer-modal {
@@ -483,12 +369,16 @@ html .info-sign {background: #9ea8dd}
     border-right: 1px solid #0288d1;
     border-left: 1px solid #0288d1;
 
-    -webkit-border-radius: 0 0 2px 2px;
-    -moz-border-radius: 0 0 2px 2px;
-    -o-border-radius: 0 0 2px 2px;
-    -ms-border-radius: 0 0 2px 2px;
-    -khtml-border-radius: 0 0 2px 2px;
-	border-radius: 0 0 2px 2px
+    -webkit-border-radius: 0px 0px 2px 2px;
+    -moz-border-radius: 0px 0px 2px 2px;
+    -o-border-radius: 0px 0px 2px 2px;
+    -ms-border-radius: 0px 0px 2px 2px;
+    -khtml-border-radius: 0px 0px 2px 2px;
+	border-radius: 0px 0px 2px 2px;
+    -webkit-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    -khtml-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14)
 }
 
 /**
@@ -545,22 +435,6 @@ html .info-sign {background: #9ea8dd}
 		line-height: 12.5vmax;
 		font-size: 5.2vmin;
 		font-size: 4vmax
-	}
-	html .header-modal span {
-		width: auto;
-		margin: 0
-	}
-	.header-modal a {
-		float: none;
-		width: 24px;
-		height: 24px;
-		margin: 0 0 0 .5em;
-		vertical-align: middle
-	}
-	.header-modal svg {
-		width: 22px;
-		height: 22px;
-		vertical-align: baseline
 	}
 	.modal-dialog .modal {
         width: 80%;

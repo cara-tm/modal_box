@@ -165,7 +165,6 @@ body .modal-dialog {
 	z-index: 1000;
     
 	max-width: 36em;
-	min-width: 250px;
 
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
@@ -179,16 +178,16 @@ body .modal-dialog {
 	border-radius: 6px 6px 0 0;
 
     /* Activates GPU Hardware-Acceleration */
-    -webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: scale(0, 0);
+	-moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+    will-change: transform;
 
     -webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     -moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     -khtml-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
-    -ms-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
-    -o-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
 	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
     
     /* For IE7 support: can be safely removed if not used */
@@ -268,7 +267,7 @@ body .modal-dialog {
     border-bottom: 0;
 
 	color: #aaa;
-	font-family: 'Noto Sans', inherit, sans-serif;
+	font-family: inherit, sans-serif;
 	font-weight: 300;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -276,8 +275,6 @@ body .modal-dialog {
     -moz-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
 
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=30, Direction=95, Color='#ffffff');
     -webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
     -moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
     box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9)
@@ -334,10 +331,10 @@ body .modal-dialog {
  */
 .header-modal a:hover,
     .header-modal a:active {
-    -webkit-box-shadow: 0px 0px 2px #0288d1;
-    -moz-box-shadow: 0px 0px 2px #0288d1;
-    -khtml-box-shadow: 0px 0px 2px #0288d1;
-    box-shadow: 0px 0px 2px #0288d1;
+    -webkit-box-shadow: inset 0px 0px 3px #0288d1;
+    -moz-box-shadow: inset 0px 0px 3px #0288d1;
+    -khtml-box-shadow: inset 0px 0px 3px #0288d1;
+    box-shadow: inset 0px 0px 3px #0288d1;
 
     -webkit-transform: translate(1.2, 1.2);
 	-webkit-transition: transform 200ms ease-out;
@@ -494,12 +491,16 @@ html .info-sign {background: #9ea8dd}
     border-right: 1px solid #0288d1;
     border-left: 1px solid #0288d1;
 
-    -webkit-border-radius: 0 0 2px 2px;
-    -moz-border-radius: 0 0 2px 2px;
-    -o-border-radius: 0 0 2px 2px;
-    -ms-border-radius: 0 0 2px 2px;
-    -khtml-border-radius: 0 0 2px 2px;
-	border-radius: 0 0 2px 2px
+    -webkit-border-radius: 0px 0px 2px 2px;
+    -moz-border-radius: 0px 0px 2px 2px;
+    -o-border-radius: 0px 0px 2px 2px;
+    -ms-border-radius: 0px 0px 2px 2px;
+    -khtml-border-radius: 0px 0px 2px 2px;
+	border-radius: 0px 0px 2px 2px;
+    -webkit-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    -khtml-box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.14)
 }
 
 /**
