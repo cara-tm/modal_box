@@ -27,6 +27,11 @@
 .modal-dialog .modal {border-color: #e91e63}
 
 /**
+ * Color of the entire message border
+ */
+.modal-dialog .modal.modal-message {border-color: #eee}
+
+/**
  * Color for the main text content
  */
 .modal-dialog .inner-modal {color: #212121}
@@ -69,7 +74,8 @@
  */
 .header-modal a:hover,
 	.header-modal a:active {
-		color: #e040fb;
+		background: #e040fb;
+		color: #fff;
 		-webkit-box-shadow:0 0 2px #e040fb;
 		-moz-box-shadow:0 0 2px #e040fb;
 		-khtml-box-shadow:0 0 2px #e040fb;
@@ -80,12 +86,12 @@
  * SVG icon color within the modal box header
  */
 html .header-modal a:hover svg,
-	html .header-modal a:active svg {color: #e040fb}
+	html .header-modal a:active svg {color: #fff}
 
 .header-modal svg path {fill: #fff}
 
 .header-modal a:hover svg path,
-	.header-modal a:active svg path {fill: #e040fb}
+	.header-modal a:active svg path {fill: #fff}
 
 /**
  * The 'Close' button
@@ -105,7 +111,7 @@ html .header-modal a:hover svg,
  * The main content of the modal box
  */
 .modal-dialog .inner-dialog {
-	background: #fff
+	background: #fff;
 	color: #757575
 }
 

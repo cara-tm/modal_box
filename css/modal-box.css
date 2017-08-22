@@ -285,8 +285,12 @@ body .modal-dialog {
 
 	overflow-y: visible;
 	overflow-y: auto;
-	display: inline-block;
-    width: auto;
+
+	display: block;
+
+    width: 94.25%;
+	width: auto;
+	width: calc(100% - 41px);
 
     /* List of gracefull degradation max height */
 	max-height: 14em;
@@ -294,14 +298,14 @@ body .modal-dialog {
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px;
+	padding: 5px 20px 20px 20px;
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
-    color: #212121
+    color: #212121;
+	hyphens:auto
 }
 
 .modal-dialog .modal.modal-message {
-    margin-bottom: 0;
     border: 1px solid #eee;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -310,11 +314,7 @@ body .modal-dialog {
 	border-radius: 6px 6px 0 0
 }
 
-.modal-dialog .modal.modal-message .inner-dialog {
-    width: 90%;
-    padding: 5px 10px 5px 20px;
-    border: none
-}
+.modal-dialog .modal.modal-message .inner-dialog {border: 0}
 
 /**
  * Prevent headings resizing
@@ -328,17 +328,11 @@ body .modal-dialog {
 /**
  * Restores the paragraph font size
  */
-.modal-dialog .inner-dialog p {
+.modal-dialog .inner-dialog p,
+	.modal-dialog .inner-dialog ul {
 	font-size: 85%;
-	line-height: 1.5;
-    hyphens: auto
+	line-height: 1.5
 }
-
-:-webkit-any(.modal-dialog) p {font-size: 85%}
-
-:-moz-any(.modal-dialog) p {font-size: 85%}
-
-:matches(.inner-dialog) p {font-size: 85%}
 
 /**
  * The footer of the modal box
@@ -350,7 +344,6 @@ body .modal-dialog {
 	height: 3em;
     height: 3rem;
 
-	margin: -2.5px auto 0;
 	background: #0288d1;
 	text-align: right;
     border-right: 1px solid #0288d1;

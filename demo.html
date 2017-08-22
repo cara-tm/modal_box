@@ -353,8 +353,12 @@ body .modal-dialog {
 
 	overflow-y: visible;
 	overflow-y: auto;
-	display: inline-block;
-    width: auto;
+
+	display: block;
+
+	width: auto;
+    width: 94.25%;
+	width: calc(100% - 41px);
 
     /* List of gracefull degradation max height */
 	max-height: 14em;
@@ -362,15 +366,14 @@ body .modal-dialog {
 
 	height: 90%;
 	margin: 0;
-	padding: 5px 20px 50px 20px;
+	padding: 5px 20px 20px 20px;
     border-right: 1px solid #eee;
     border-left: 1px solid #eee;
-    color: #212121
+    color: #212121;
+	hyphens:auto
 }
 
 .modal-dialog .modal-message {
-	max-width: 36em;
-    margin-bottom: 0;
     border: 1px solid #eee;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -379,11 +382,7 @@ body .modal-dialog {
 	border-radius: 6px 6px 0 0
 }
 
-.modal-dialog .modal-message .inner-dialog {
-    width: auto;
-    padding: 5px 0 5px 20px;
-    border: none
-}
+.modal-dialog .modal.modal-message .inner-dialog {border: 0}
 
 /**
  * Prevent headings resizing
@@ -397,17 +396,11 @@ body .modal-dialog {
 /**
  * Restores the paragraph font size
  */
-.modal-dialog .inner-dialog p {
+.modal-dialog .inner-dialog p,
+	.modal-dialog .inner-dialog ul {
 	font-size: 85%;
-	line-height: 1.5;
-    hyphens: auto
+	line-height: 1.5
 }
-
-:-webkit-any(.modal-dialog) p {font-size: 85%}
-
-:-moz-any(.modal-dialog) p {font-size: 85%}
-
-:matches(.inner-dialog) p {font-size: 85%}
 
 /**
  * Styling the signs for the Modal Message Box
@@ -462,7 +455,6 @@ html .info-sign {background: #9ea8dd}
 	height: 3em;
     height: 3rem;
 
-	margin: -2.5px auto 0;
 	background: #0288d1;
 	text-align: right;
     border-right: 1px solid #0288d1;
@@ -525,10 +517,10 @@ html .info-sign {background: #9ea8dd}
  */
 @media only screen and (max-width:720px) {
 
-    .modal-dialog .modal.modal-message .inner-dialog {
-        max-height:none;
-        height:auto
-    }
+	.modal-dialog .modal.modal-message .inner-dialog {
+		max-height:none;
+		height:auto
+	}
 	.header-modal {max-height: 11vmax}
 	html .header-modal span {
 		width: auto;
@@ -547,17 +539,17 @@ html .info-sign {background: #9ea8dd}
 		vertical-align: baseline
 	}
 	.modal-dialog .modal {
-        width: 80%;
+		width: 80%;
 		margin: 5vh auto 3em;
 		margin: calc(15vh - 50px) auto 3em;
 		margin: 5vmin auto 3em
 	}
 	.footer-modal {
-        -webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        -moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        -khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-        box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
-    }
+		-webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		-moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		-khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
+	}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
@@ -570,14 +562,14 @@ html .info-sign {background: #9ea8dd}
  */
 :-o-prefocus,
 html .modal-dialog .inner-dialog {
-    /* 1.° */
+	/* 1.° */
 	height: 100%;
 	max-height: 100%
 }
 
 :-o-prefocus,
 html .footer-modal a {
-    /* 2.° */
+	/* 2.° */
 	display: inline-block;
 	padding: .8em 2em
 }

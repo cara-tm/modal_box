@@ -59,10 +59,18 @@ An independant `demo.html` file with full styles is available for integration ex
 Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag:
 
     <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+	<!-- Facultative: for optional elements -->
     <link rel="stylesheet" href="css/custom.min.css" media="screen">
+	<!-- Sample custom colors styling (overwrite default) -->
     <link rel="stylesheet" href="css/template.css" media="screen">
 
-![Template sample](https://github.com/cara-tm/modal_box/raw/master/template.png "The sample Template result")
+![Template sample](https://github.com/cara-tm/modal_box/raw/master/template.png "The sample Template result").
+
+## Integration example
+
+Here is an integration test within the default Textpattern template (v 4.7-dev) without any kind of conflicts even by putting the modal's styles at the beginning of the default.css file:
+
+![TXP intégration sample](https://github.com/cara-tm/modal_box/raw/master/txp-integration.png "The sample Template result").
 
 ## IE 8 and below support
 

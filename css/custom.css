@@ -81,13 +81,12 @@ span[class*="-sign"] {
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;
-	font: normal normal normal 22px/28px Arial, sans-serif
+	font: normal normal normal 22px/28px 'Cambria Math', 'Apple Symbols'
 }
     
 span[class*="-sign"] strong {
     display: -moz-inline-box;
-    display: inline-block;
-	font-family: 'Cambria Math', 'Apple Symbols'
+    display: inline-block
 }
 
 /**
