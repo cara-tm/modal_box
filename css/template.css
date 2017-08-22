@@ -68,16 +68,32 @@
  * The states of the links into the modal box header
  */
 .header-modal a:hover,
-	.header-modal a:active {border-color: #fff}
+	.header-modal a:active {
+		color: #e040fb;
+		-webkit-box-shadow:0 0 2px #e040fb;
+		-moz-box-shadow:0 0 2px #e040fb;
+		-khtml-box-shadow:0 0 2px #e040fb;
+		box-shadow:0 0 2px #e040fb
+}
 
 /**
  * SVG icon color within the modal box header
  */
+html .header-modal a:hover svg,
+	html .header-modal a:active svg {color: #e040fb}
+
 .header-modal svg path {fill: #fff}
+
+.header-modal a:hover svg path,
+	.header-modal a:active svg path {fill: #e040fb}
+
+/**
+ * The 'Close' button
+ */
 .modal-dialog .close {background: #e040fb}
 
 /**
- * The 'Close' link
+ * The 'Close' state
  */
 .modal-dialog .close:hover,
 	.modal-dialog .close:active {

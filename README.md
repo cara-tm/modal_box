@@ -54,6 +54,15 @@ A red colored example, well commented, is available for your customization conve
 
 An independant `demo.html` file with full styles is available for integration example [File: `demo.html`](https://github.com/cara-tm/modal_box/blob/master/demo.html).
 
+## Custom template sample
+
+Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag:
+
+    <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+    <link rel="stylesheet" href="css/custom.min.css" media="screen">
+    <link rel="stylesheet" href="css/template.css" media="screen">
+
+![Template sample](https://github.com/cara-tm/modal_box/raw/master/template.png "The sample Template result")
 
 ## IE 8 and below support
 

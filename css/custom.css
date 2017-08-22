@@ -86,7 +86,8 @@ span[class*="-sign"] {
     
 span[class*="-sign"] strong {
     display: -moz-inline-box;
-    display: inline-block
+    display: inline-block;
+	font-family: 'Cambria Math', 'Apple Symbols'
 }
 
 /**

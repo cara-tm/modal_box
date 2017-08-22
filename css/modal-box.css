@@ -205,26 +205,13 @@ body .modal-dialog {
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
+	line-height: 1.5;
+	cursor: pointer;
 
     /* No vendor prefix for FF: ugly in old versions */
     -webkit-border-radius: 50%;
     -khtml-border-radius: 50%;
 	border-radius: 50%
-}
-
-
-.modal-dialog .close strong {
-	display: inline-block;
-	width: 1.45em;
-    /* For visual adjustment */
-	height: 1.5em;
-
-	margin: 0;
-	padding: 0;
-	vertical-align: middle;
-	line-height: 1.5em;
-	font-weight: normal;
-	cursor: pointer
 }
 
 /**
@@ -258,7 +245,7 @@ body .modal-dialog {
     border-bottom: 0;
 
 	color: #aaa;
-	font-family: inherit, sans-serif;
+	font-family: inherit;
 	font-weight: 300;
 
     -webkit-border-radius: 6px 6px 0 0;
@@ -433,8 +420,8 @@ body .modal-dialog {
 	.header-modal {max-height: 11vmax}
 	.header-modal h1 {
 		line-height: 12.5vmax;
-		font-size: 5.2vmin;
-		font-size: 4vmax
+		font-size: 4vmin;
+		font-size: 4.1vmax
 	}
 	.modal-dialog .modal {
         width: 80%;
