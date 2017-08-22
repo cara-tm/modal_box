@@ -45,14 +45,14 @@ Note. The default template is white and blue. For customization, [see this sampl
 
 ## This content package (v1.2 onward)
 
-This minimal default component (required) is distributed in white/blue colors (see screen shots) and do not include the styles for inner optional elements within the modal header ([File: `modal-box.min.css`](https://github.com/cara-tm/modal_box/blob/master/css/modal-box.min.css).
+This minimal default component (required) is distributed in white/blue colors (see screen shots) and do not include the styles for inner optional elements within the modal header ([File: `modal-box.min.css`](https://github.com/cara-tm/modal_box/blob/master/css/modal-box.min.css)).
 
-In order to add these additional supports, please include the optional styles [File: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/custom.css).
+In order to add these additional supports, please include the optional styles ([File: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/custom.css)).
 
-A red colored example, well commented, is available for your customization convenience [File: `template.css` previously, file: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/template.css).
+A red colored example, well commented, is available for your customization convenience ([File: `template.css` previously, file: `custom.css`](https://github.com/cara-tm/modal_box/blob/master/css/template.css)).
 .
 
-An independant `demo.html` file with full styles is available for integration example [File: `demo.html`](https://github.com/cara-tm/modal_box/blob/master/demo.html).
+An independant `demo.html` file with full styles is available for integration example ([File: `demo.html`](https://github.com/cara-tm/modal_box/blob/master/demo.html)).
 
 ## Custom template sample
 

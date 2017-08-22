@@ -418,11 +418,6 @@ body .modal-dialog {
         height:auto
     }
 	.header-modal {max-height: 11vmax}
-	.header-modal h1 {
-		line-height: 12.5vmax;
-		font-size: 4vmin;
-		font-size: 4.1vmax
-	}
 	.modal-dialog .modal {
         width: 80%;
 		margin: 5vh auto 3em;
