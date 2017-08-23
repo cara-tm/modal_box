@@ -71,22 +71,26 @@
  * Styling the signs for the Modal Message Box
  */
 span[class*="-sign"] {
-	display: inline-table;
-    display: inline-block;
+	display: table-cell;
+	display: inline-block;
+	float: left;
     /* 2px less due to padding */
-	width: 30px;
+	width: 1.364em;
 	height: 28px;
 	margin: 0 5px 0 0;
     padding: 0;
 	vertical-align: middle;
 	text-align: center;
 	color: #fff;
-	font: normal normal normal 22px/28px 'Cambria Math', 'Apple Symbols'
+	font: normal normal normal 22px/28px sans-serif
 }
     
 span[class*="-sign"] strong {
-    display: -moz-inline-box;
-    display: inline-block
+    display: table;
+	display: inline-table;
+	width: 1.364em;
+	text-align: center;
+	font-family:'Cambria Math','Apple Symbols'
 }
 
 /**
