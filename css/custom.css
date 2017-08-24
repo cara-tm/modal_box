@@ -74,23 +74,20 @@ span[class*="-sign"] {
 	display: table-cell;
 	display: inline-block;
 	float: left;
-    /* 2px less due to padding */
 	width: 1.364em;
-	height: 28px;
 	margin: 0 5px 0 0;
-    padding: 0;
-	vertical-align: middle;
+	padding: 0;
 	text-align: center;
 	color: #fff;
-	font: normal normal normal 22px/28px sans-serif
+	font: normal normal normal 22px/1 sans-serif
 }
-    
+
 span[class*="-sign"] strong {
-    display: table;
 	display: inline-table;
 	width: 1.364em;
+	vertical-align: baseline;
 	text-align: center;
-	font-family:'Cambria Math','Apple Symbols'
+	font: 100%/1 'Cambria Math','Apple Symbols'
 }
 
 /**
