@@ -115,7 +115,7 @@ body .modal-dialog {
  * Hide the background beside the modal box
  */
 .modal-dialog:target ~ .wrapper,
-	a[class^="close"]:target ~ .wrapper {
+	a[class="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
 	z-index: -1;
@@ -131,7 +131,7 @@ body .modal-dialog {
  * wrapper visibility after closing the modal box
  */
 #close:target ~ .wrapper,
-	a[class^="close"]:target ~ .wrapper {position: static}
+	a[class="close"]:target ~ .wrapper {position: static}
 
 /**
  * The wrapper of the modal box
@@ -141,7 +141,7 @@ body .modal-dialog {
 	opacity: 0;
 	position: fixed;
 	position: absolute;
-	z-index: 99999;
+	z-index: 999999;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -282,10 +282,10 @@ body .modal-dialog {
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
-    display: inline-table;
-    display: inline-block;
-    width: 50%;
-    text-align: center;
+	display: inline-table;
+	display: inline-block;
+	width: 50%;
+	text-align: center;
 	font-size: 70%
 }
 
@@ -297,11 +297,11 @@ body .modal-dialog {
 	width: 34px;
 	height: 34px;
 	margin: 0 0 0 .5em;
-    text-decoration: none;
+	text-decoration: none;
 	line-height: 32px;
 
-    -webkit-border-radius: 50%;
-    -khtml-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
 	border-radius: 50%
 }
 
@@ -310,10 +310,10 @@ body .modal-dialog {
  */
 .header-modal a:hover,
     .header-modal a:active {
-    -webkit-box-shadow: inset 0px 0px 3px #0288d1;
-    -moz-box-shadow: inset 0px 0px 3px #0288d1;
-    -khtml-box-shadow: inset 0px 0px 3px #0288d1;
-    box-shadow: inset 0px 0px 3px #0288d1;
+	-webkit-box-shadow: inset 0px 0px 3px #0288d1;
+	-moz-box-shadow: inset 0px 0px 3px #0288d1;
+	-khtml-box-shadow: inset 0px 0px 3px #0288d1;
+	box-shadow: inset 0px 0px 3px #0288d1;
 
 	-webkit-tap-highlight-color: transparent
 }
@@ -366,15 +366,16 @@ body .modal-dialog {
 	hyphens: auto
 }
 
-.modal-dialog .modal.modal-message {
+.modal-dialog .modal-message {
 	border: 1px solid #eee;
 	-webkit-border-radius: 6px 6px 0 0;
 	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0
 }
-.modal-dialog .modal.modal-message .inner-dialog {
+.modal-dialog .modal-message .inner-dialog {
 	overflow: hidden;
+	order: 1;
 	margin: 0;
 	border: 0
 }
@@ -408,7 +409,7 @@ span[class*="-sign"] {
 	margin: 0 5px 0 0;
 	padding: 0;
 	text-align: center;
-	color: #fff;
+	color: #333;
 	font: normal normal normal 22px/1 sans-serif
 }
 
@@ -457,7 +458,6 @@ html .info-sign {background: #9ea8dd}
 
 	-webkit-border-radius: 0 0 2px 2px;
 	-moz-border-radius: 0 0 2px 2px;
-	-o-border-radius: 0 0 2px 2px;
 	-ms-border-radius: 0 0 2px 2px;
 	-khtml-border-radius: 0 0 2px 2px;
 	border-radius: 0 0 2px 2px;
@@ -517,6 +517,7 @@ html .info-sign {background: #9ea8dd}
 		height: auto
 	}
 	.header-modal {max-height: 11vmax}
+	.header-modal span {width: auto}
 	.modal-dialog .modal {
 		width: 80%;
 		margin: 5vh auto 3em;
@@ -689,7 +690,7 @@ WebFont.load({
 		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
 
 		<div class="header-modal no__select">
-			<h1><strong>↤</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#open-modal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
+			<h1><strong>⇄</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#open-modal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
 		</div>
 
 		<div class="inner-dialog">
@@ -732,7 +733,7 @@ WebFont.load({
 		<div class="inner-dialog">
 
 			<h2>Message Box</h2>
-            <p><span class="info-sign"><strong>ℹ</strong></span> <span class="warning-sign"><strong>⚠</strong></span> <span class="success-sign"><strong>✔</strong></span> <span class="error-sign"><strong>✕</strong></span> This is a sample modal message box suitable for infos. ✌</p>
+            <p><span class="info-sign"><strong>&#8505;</strong></span> <span class="warning-sign"><strong>⚠</strong></span> <span class="success-sign"><strong>✔</strong></span> <span class="error-sign"><strong>✕</strong></span> This is a sample modal message box suitable for infos. ✌</p>
 
 		</div> <!-- /inner-dialog -->
 
