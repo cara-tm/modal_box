@@ -31,6 +31,11 @@ body {
 }
 
 /**
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {overflow: hidden}
+
+/**
  * Waiting for Google font loader
  */
 .wf-loading {
@@ -57,6 +62,12 @@ body .modal-dialog {
 	-moz-font-feature-settings: "kern";
 	-webkit-font-feature-settings: "kern";
 	font-feature-settings: "kern"
+}
+	
+.inner-dialog img {
+	width: 100%;
+	border: 0;
+	-ms-interpolation-mode: bicubic
 }
 
 /**
@@ -367,17 +378,14 @@ body .modal-dialog {
 }
 
 .modal-dialog .modal-message {
-	border: 1px solid #eee;
+	overflow-y: auto;
+
+	padding-bottom: 10px;
+
 	-webkit-border-radius: 6px 6px 0 0;
 	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0
-}
-.modal-dialog .modal-message .inner-dialog {
-	overflow: hidden;
-	order: 1;
-	margin: 0;
-	border: 0
 }
 
 /**
@@ -454,6 +462,7 @@ html .info-sign {background: #9ea8dd}
 	background: #0288d1;
 	text-align: right;
 	border-right: 1px solid #0288d1;
+	border-bottom: 0;
 	border-left: 1px solid #0288d1;
 
 	-webkit-border-radius: 0 0 2px 2px;
@@ -512,7 +521,7 @@ html .info-sign {background: #9ea8dd}
  * Media query for screen below 720px
  */
 @media only screen and (max-width: 720px) {
-	
+
 	.modal-dialog:target ~ .wrapper,
 		a[class^="close"]:target ~ .wrapper{position:absolute}
 	.modal-dialog .modal.modal-message .inner-dialog {
@@ -700,7 +709,7 @@ WebFont.load({
 
 
 			<h2>Modal Box</h2>
-
+			<img src="ie-6.png" alt="IE6" />
 			<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 			<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
 
@@ -736,7 +745,16 @@ WebFont.load({
 		<div class="inner-dialog">
 
 			<h2>Message Box</h2>
-            <p><span class="info-sign"><strong>&#8505;</strong></span> <span class="warning-sign"><strong>⚠</strong></span> <span class="success-sign"><strong>✔</strong></span> <span class="error-sign"><strong>✕</strong></span> This is a sample modal message box suitable for infos. ✌</p>
+			<p><!-- 
+				<span class="info-sign"><strong>&#8505;</strong></span> 
+				<span class="warning-sign"><strong>⚠</strong></span>
+				--> 
+				<span class="success-sign"><strong>✔</strong></span> 
+				<!--
+				<span class="error-sign"><strong>✕</strong></span> 
+				-->
+				This is a sample modal message box suitable for infos. ✌
+			</p>
 
 		</div> <!-- /inner-dialog -->
 

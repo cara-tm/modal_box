@@ -125,7 +125,8 @@ strong[class$="-sign"] { border-radius: 50%}
  */
 .footer-modal {
 	background: #c2185b;
-	border-color: #c2185b
+	border-color: #c2185b;
+	border-bottom: 1px solid #c2185b
 }
 
 /**

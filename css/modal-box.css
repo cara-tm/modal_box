@@ -20,6 +20,11 @@ body {
 }
 
 /**
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {overflow: hidden}
+
+/**
  * Waiting for Google font loader
  */
 .wf-loading {
@@ -295,17 +300,15 @@ body .modal-dialog {
 	hyphens: auto
 }
 
-.modal-dialog .modal.modal-message {
-	border: 1px solid #eee;
+.modal-dialog .modal-message {
+	overflow-y: auto;
+
+	padding-bottom: 10px;
+
 	-webkit-border-radius: 6px 6px 0 0;
 	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0
-}
-.modal-dialog .modal.modal-message .inner-dialog {
-	overflow: hidden;
-	margin: 0;
-	border: 0
 }
 
 /**
@@ -339,6 +342,7 @@ body .modal-dialog {
 	background: #0288d1;
 	text-align: right;
 	border-right: 1px solid #0288d1;
+	border-bottom: 0;
 	border-left: 1px solid #0288d1;
 
 	-webkit-border-radius: 0 0 2px 2px;
