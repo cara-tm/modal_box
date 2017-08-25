@@ -107,6 +107,7 @@ body .modal-dialog {
 	a[class^="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
+	position: fixed;
 	z-index: -1;
 	top: 0;
 	left: 0;
@@ -128,7 +129,6 @@ body .modal-dialog {
 .modal-dialog {
 	display: none;
 	opacity: 0;
-	position: fixed;
 	position: absolute;
 	z-index: 99999;
 	top: 0;
@@ -398,6 +398,8 @@ body .modal-dialog {
  */
 @media only screen and (max-width: 720px) {
 
+	.modal-dialog:target ~ .wrapper,
+		a[class^="close"]:target ~ .wrapper{position:absolute}
 	.modal-dialog .modal.modal-message .inner-dialog {
 		max-height: none;
 		height: auto
