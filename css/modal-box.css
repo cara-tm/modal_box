@@ -20,11 +20,6 @@ body {
 }
 
 /**
- * Corrects overflow displayed oddly in IE9
- */
-svg:not(:root) {overflow: hidden}
-
-/**
  * Waiting for Google font loader
  */
 .wf-loading {
@@ -157,8 +152,8 @@ body .modal-dialog {
 
 	max-width: 35em;
 
-	margin: 2.5% auto 0;
-	margin: 5vh auto 0;
+	margin: 2.5% auto 1em;
+	margin: 5vh auto 1em;
 	background: #fff;
 	font-size: 125%;
 
@@ -299,7 +294,9 @@ body .modal-dialog {
 }
 
 .modal-dialog .modal-message {
-	overflow-y: auto;
+	overflow-y: hidden;
+	max-height: 100%;
+	height: auto;
 
 	padding-bottom: 10px;
 
@@ -404,12 +401,7 @@ body .modal-dialog {
 		height: auto
 	}
 	.header-modal {max-height: 11vmax}
-	.modal-dialog .modal {
-		width: 80%;
-		margin: 5vh auto 3em;
-		margin: calc(15vh - 50px) auto 3em;
-		margin: 5vmin auto 3em
-	}
+	.modal-dialog .modal {width: 80%}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 

@@ -167,9 +167,9 @@ body .modal-dialog {
 	z-index: 1000;
 
 	max-width: 35em;
+	margin: 2.5% auto 1em;
+	margin: 5vh auto 1em;
 
-	margin: 2.5% auto 0;
-	margin: 5vh auto 0;
 	background: #fff;
 	font-size: 125%;
 
@@ -370,7 +370,9 @@ body .modal-dialog {
 }
 
 .modal-dialog .modal-message {
-	overflow-y: auto;
+	overflow: hidden;
+	max-height: 100%;
+	height: auto;
 
 	padding-bottom: 10px;
 
@@ -518,12 +520,7 @@ html .info-sign {background: #9ea8dd}
 		height: auto
 	}
 	.header-modal {max-height: 11vmax}
-	.modal-dialog .modal {
-		width: 80%;
-		margin: 5vh auto 3em;
-		margin: calc(15vh - 50px) auto 3em;
-		margin: 5vmin auto 3em
-	}
+	.modal-dialog .modal {width: 80%}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 

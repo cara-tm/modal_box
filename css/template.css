@@ -29,7 +29,17 @@
 /**
  * Color of the entire message border
  */
-.modal-dialog .modal.modal-message {border-color: #eee}
+.modal-dialog .modal-message {border-color: #eee}
+
+/**
+ * Adds a colored border at the top of message boxes
+ */
+.modal-dialog .modal-message .inner-dialog {border-top: 5px solid #e6005c}
+
+/**
+ * Changes the top position for the close button
+ */
+.modal-dialog .modal-message .close {top: .4em}
 
 /**
  * Color for the main text content
