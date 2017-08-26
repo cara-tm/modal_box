@@ -200,7 +200,9 @@ body .modal-dialog {
 
 	/* No vendor prefix for FF: ugly in old versions */
 	-webkit-border-radius: 50%;
-	border-radius: 50%
+	border-radius: 50%;
+
+	will-change: auto
 }
 
 /**
@@ -298,11 +300,7 @@ body .modal-dialog {
 	max-height: 100%;
 	height: auto;
 
-	padding-bottom: 10px;
-
-	-webkit-border-radius: 6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0
+	padding-bottom: 10px
 }
 
 /**
@@ -370,6 +368,8 @@ body .modal-dialog {
 
 	line-height: 4.3em;
 	line-height: 3rem;
+
+	will-change: auto;
 
 	-webkit-transition: .3s ease-out;
 	-moz-transition: .3s ease-out;
