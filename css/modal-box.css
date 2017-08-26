@@ -109,7 +109,7 @@ body .modal-dialog {
  * Hide the background beside the modal box
  */
 .modal-dialog:target ~ .wrapper,
-	a[class^="close"]:target ~ .wrapper {
+	a[class="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
 	position: fixed;
@@ -126,7 +126,7 @@ body .modal-dialog {
  * wrapper visibility after closing the modal box
  */
 #close:target ~ .wrapper,
-	a[class^="close"]:target ~ .wrapper {position: static}
+	a[class="close"]:target ~ .wrapper {position: static}
 
 /**
  * The wrapper of the modal box
@@ -163,21 +163,18 @@ body .modal-dialog {
 	font-size: 125%;
 
 	-webkit-border-radius: 6px 6px 0 0;
-	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0;
 
 	/* Activates GPU Hardware-Acceleration */
 	-webkit-transform: scale(0, 0);
 	-moz-transform: scale(0, 0);
-	-o-transform: scale(0, 0);
 	-ms-transform: scale(0, 0);
 	transform: scale(0, 0);
 	will-change: transform;
 
 	-webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
 	-moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
-	-khtml-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
 	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
 
 	/* For IE7 support: can be safely removed if not used */
@@ -208,7 +205,6 @@ body .modal-dialog {
 
 	/* No vendor prefix for FF: ugly in old versions */
 	-webkit-border-radius: 50%;
-	-khtml-border-radius: 50%;
 	border-radius: 50%
 }
 
@@ -218,15 +214,16 @@ body .modal-dialog {
 .modal-dialog .close:hover,
 	.inner-dialog .close:active {
 	background: #03a9f4;
-	outline: none;
 	border: none;
 
 	-webkit-transform: scale(1.2, 1.2);
 	-moz-transform: scale(1.2, 1.2);
 	transform: scale(1.2, 1.2);
 
-	-webkit-tap-highlight-color: transparent
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
+
+.modal-dialog .close:focus{outline: none}
 
 /**
  * The header of the modal box
@@ -247,7 +244,6 @@ body .modal-dialog {
 	font-weight: 300;
 
 	-webkit-border-radius: 6px 6px 0 0;
-	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0;
 
@@ -297,6 +293,8 @@ body .modal-dialog {
 	border-right: 1px solid #eee;
 	border-left: 1px solid #eee;
 	color: #212121;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
 	hyphens: auto
 }
 
@@ -306,7 +304,6 @@ body .modal-dialog {
 	padding-bottom: 10px;
 
 	-webkit-border-radius: 6px 6px 0 0;
-	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0
 }
@@ -348,11 +345,9 @@ body .modal-dialog {
 	-webkit-border-radius: 0 0 2px 2px;
 	-moz-border-radius: 0 0 2px 2px;
 	-ms-border-radius: 0 0 2px 2px;
-	-khtml-border-radius: 0 0 2px 2px;
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14);
 	-moz-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
-	-khtml-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14);
 	box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14)
 }
 
@@ -379,11 +374,8 @@ body .modal-dialog {
 	line-height: 4.3em;
 	line-height: 3rem;
 
-	outline: none;
-
 	-webkit-transition: .3s ease-out;
 	-moz-transition: .3s ease-out;
-	-o-transition: .3s ease-out;
 	-ms-transition: .3s ease-out;
 	transition: .3s ease-out
 }
@@ -397,14 +389,17 @@ body .modal-dialog {
 	-webkit-tap-highlight-color: #03a9f4
 }
 
+.footer-modal a:focus {outline: none}
+
 /**
  * Media query for screen below 720px
  */
 @media only screen and (max-width: 720px) {
 
 	.modal-dialog:target ~ .wrapper,
-		a[class^="close"]:target ~ .wrapper{position:absolute}
-	.modal-dialog .modal.modal-message .inner-dialog {
+		a[class="close"]:target ~ .wrapper{position:absolute}
+	.modal-dialog .modal {width: 80%}
+	.modal-dialog .modal-message .inner-dialog {
 		max-height: none;
 		height: auto
 	}
@@ -414,12 +409,6 @@ body .modal-dialog {
 		margin: 5vh auto 3em;
 		margin: calc(15vh - 50px) auto 3em;
 		margin: 5vmin auto 3em
-	}
-	.footer-modal {
-		-webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-		-moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-		-khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
-		box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
 	}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
