@@ -514,13 +514,15 @@ html .info-sign {background: #9ea8dd}
 
 	.modal-dialog:target ~ .wrapper,
 		a[class="close"]:target ~ .wrapper{position:absolute}
-	.modal-dialog .modal {width: 80%}
+	.modal-dialog .modal {
+		width: 80%;
+		-webkit-overflow-scrolling: touch
+	}
 	.modal-dialog .modal-message .inner-dialog {
 		max-height: none;
 		height: auto
 	}
 	.header-modal {max-height: 11vmax}
-	.modal-dialog .modal {width: 80%}
 	.footer-modal a {font-size: 60%}
 	.mob-hide {display: none}
 
