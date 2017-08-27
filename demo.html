@@ -369,12 +369,19 @@ body .modal-dialog {
 	hyphens: auto
 }
 
+/**
+ * Changes modal message boxes aspect
+ */
 .modal-dialog .modal-message {
 	overflow: hidden;
-	max-height: 100%;
-	height: auto;
 
 	padding-bottom: 10px
+}
+
+.modal-dialog .modal-message .inner-dialog {
+	overflow: hidden;
+	max-height: none;
+	height: auto
 }
 
 /**
@@ -666,7 +673,7 @@ WebFont.load({
 </script>
 
 <noscript>
-	<link rel="prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans" media="screen">
+	<link rel="prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans&amp;lang=en" media="screen">
 </noscript>
 
 </head>
@@ -730,6 +737,27 @@ WebFont.load({
 				<!--
 				<span class="error-sign"><strong>✕</strong></span> 
 				-->
+				This is a sample modal message box suitable for infos. ✌
+			</p>
+			<p>
+				<span class="info-sign"><strong>&#8505;</strong></span> 
+				<span class="warning-sign"><strong>⚠</strong></span>
+				<span class="success-sign"><strong>✔</strong></span> 
+				<span class="error-sign"><strong>✕</strong></span> 
+				This is a sample modal message box suitable for infos. ✌
+			</p>
+			<p>
+				<span class="info-sign"><strong>&#8505;</strong></span> 
+				<span class="warning-sign"><strong>⚠</strong></span>
+				<span class="success-sign"><strong>✔</strong></span> 
+				<span class="error-sign"><strong>✕</strong></span> 
+				This is a sample modal message box suitable for infos. ✌
+			</p>
+			<p>
+				<span class="info-sign"><strong>&#8505;</strong></span> 
+				<span class="warning-sign"><strong>⚠</strong></span>
+				<span class="success-sign"><strong>✔</strong></span> 
+				<span class="error-sign"><strong>✕</strong></span> 
 				This is a sample modal message box suitable for infos. ✌
 			</p>
 

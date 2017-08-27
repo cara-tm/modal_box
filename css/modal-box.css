@@ -295,12 +295,19 @@ body .modal-dialog {
 	hyphens: auto
 }
 
+/**
+ * Changes modal message boxes aspect
+ */
 .modal-dialog .modal-message {
-	overflow-y: hidden;
-	max-height: 100%;
-	height: auto;
+	overflow: hidden;
 
 	padding-bottom: 10px
+}
+
+.modal-dialog .modal-message .inner-dialog {
+	overflow: hidden;
+	max-height: none;
+	height: auto
 }
 
 /**
