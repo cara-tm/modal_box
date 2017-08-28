@@ -66,6 +66,18 @@ Remove all the code between `<style>` and `</style>` from the `demo.html` page, 
 
 ![Template sample](https://github.com/cara-tm/modal_box/raw/master/template.png "The sample Template result").
 
+## Custom template FLATERIAL (v1.4 onward)
+
+Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag:
+
+    <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+	<!-- Facultative: for optional elements -->
+    <link rel="stylesheet" href="css/custom.min.css" media="screen">
+	<!-- Sample custom colors styling (overwrite default) -->
+    <link rel="stylesheet" href="css/flaterial.css" media="screen">
+
+![FLATERIAL template sample](https://github.com/cara-tm/modal_box/raw/master/flaterial-template.png "The FLATERIAL Template result").
+
 ## Integration example
 
 Here is an integration test within the default Textpattern template (v 4.7-dev) without any kind of conflicts even by putting the modal's styles at the beginning of the default.css file:
