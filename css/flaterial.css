@@ -34,13 +34,11 @@
             animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91)
 }
 
-@-webkit-keyframes fade-in-pulse-08{0%{opacity:0;-webkit-transform:scale(.8);transform:scale(.8)}50%{opacity:1}100%,70%{-webkit-transform:scale(1);transform:scale(1)}}
+/* 
+ * No @-webkit-keyframes due to poor rendering within old
+ * Chromium versions. Default animation will be used.
+*/
 @keyframes fade-in-pulse-08{0%{opacity:0;transform:scale(.8)}50%{opacity:1}100%,70%{transform:scale(1)}}
-
-/**
- * No background beside the modal boxes
- */
-.modal-dialog {background: none}
 
 /**
  * Changes the border width of the entire message box
