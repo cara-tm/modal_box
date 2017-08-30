@@ -5,14 +5,16 @@
 <title>Modal Box by Patrick LEFEVRE</title>
 <meta name="viewport" content="width=device-width, shrink-to-fit=no">
 
-<link rel="stylesheet" href="css/modal-box.css" media="screen">
-<link rel="stylesheet" href="css/custom.css" media="screen">
+<link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+<link rel="stylesheet" href="css/custom.min.css" media="screen">
+<link rel="stylesheet" href="css/flaterial.css" media="screen">	
+
 
 <style>
+
 /*! ============================
     CSS rules for this page demo
 */
-
 
 
 /**
@@ -53,9 +55,11 @@ p.first-line {
 /* Custom fonts */
 @media only screen and (min-width: 720px) {
 
-    .header-modal {font-family: 'Noto Sans', sans-serif}
-
-    .modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
+    .header-modal,
+		.modal-dialog .inner-dialog h2 {
+			font-family: Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-weight: 300
+	}
 
     .modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}
 
@@ -86,15 +90,18 @@ html .visible {
 	visibility: visible
 }
 
-
 </style>
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+-->
 
 <script asyn src="https://ajax.googleapis.com/ajax/libs/webfont/1.6/webfont.js"></script>
 <script>
 /*! Webfontloader */
 WebFont.load({
     google: {
-      families: [ 'Open+Sans', 'Noto+Sans' ]
+      families: [ 'Open+Sans', 'Roboto' ]
 	}
 });
 (function() {
@@ -108,20 +115,21 @@ WebFont.load({
 </script>
 
 <noscript>
-	<link rel="prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans&amp;lang=en" media="screen">
+	<link rel="prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans" media="screen">
 </noscript>
 
 </head>
 <body>
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+<div aria-hidden="true" role="dialog" class="modal-dialog dialog" id="open-modal">
 
 	<div class="modal">
-
+		<!--
 		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
+		-->
 
 		<div class="header-modal no__select">
-			<h1><strong>⇄</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#openModal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
+			<h1><strong>☂</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#open-modal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✓<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
 		</div>
 
 		<div class="inner-dialog">
@@ -147,7 +155,7 @@ WebFont.load({
 		</div> <!-- /inner-dialog -->
 
 		<div class="footer-modal no__select">
-			<a href="#close" class="" id="footer-close">Close</a><a href="https://www.cara-tm.com" target="_blank" class="">Help</a>
+			<a href="#close" class="ripple" id="footer-close">Close</a><a href="https://www.cara-tm.com" target="_blank" class="ripple">Help</a>
 		</div>
 	</div> <!-- /modal -->
  
@@ -155,7 +163,7 @@ WebFont.load({
 
 
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal2" aria-haspopup="true" class="modal-dialog dialog" id="openModal2">
+<div aria-hidden="true" role="dialog" class="modal-dialog dialog" id="open-modal2">
 
 	<div class="modal modal-message">
 
@@ -164,16 +172,8 @@ WebFont.load({
 		<div class="inner-dialog">
 
 			<h2>Message Box</h2>
-			<p><!-- 
-				<span class="info-sign"><strong>&#8505;</strong></span> 
-				<span class="warning-sign"><strong>⚠</strong></span>
-				--> 
-				<span class="success-sign"><strong>✔</strong></span> 
-				<!--
-				<span class="error-sign"><strong>✕</strong></span> 
-				-->
-				This is a sample modal message box suitable for infos. ✌
-			</p>
+            <p><span class="info-sign"><strong>ℹ</strong></span> This is a sample modal message box suitable for infos. ✌</p>
+            
 
 		</div> <!-- /inner-dialog -->
 
@@ -185,8 +185,8 @@ WebFont.load({
 
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
-		<a href="#openModal" class="button" id="link1">Open Modal Box</a>
-		<a href="#openModal2" class="button" id="link2">Open Modal Message</a>
+		<a href="#open-modal" class="button" id="link1">Open Modal Box</a>
+		<a href="#open-modal2" class="button" id="link2">Open Modal Message</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
@@ -215,7 +215,7 @@ WebFont.load({
 */
 /*
 'use strict';
-var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('openModal'),target2=document.getElementById('openModal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
+var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('open-modal'),target2=document.getElementById('open-modal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
 */
 </script>
 </body></html>

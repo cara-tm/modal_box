@@ -1,0 +1,262 @@
+/*!
+ * FLATERIAL
+ * A sample of customization for CSS Modal Box
+ * @link:      https://github.com/cara-tm/modal_box/
+ * @colors:    https://www.materialpalette.com
+ * @date:      26/08/2017
+ * @revision : 29/08/2017
+ */
+
+/**
+ * Waiting for Google @font-face loader: hide the entire page
+ */
+.wf-loading {
+	opacity: 0;
+	visibility: hidden;
+	height: 100%;
+	overflow: hidden
+}
+
+/**
+ * All is fine: display the document
+ */
+.wf-active {
+	opacity: 1;
+	visibility: visible
+}
+
+.modal-dialog:target {
+	-webkit-animation: none;
+	        animation: none;
+	-webkit-transform-origin: bottom center;
+	        transform-origin: bottom center;
+    -webkit-animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91);
+            animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91)
+}
+
+@-webkit-keyframes fade-in-pulse-08{0%{opacity:0;-webkit-transform:scale(.8);transform:scale(.8)}50%{opacity:1}100%,70%{-webkit-transform:scale(1);transform:scale(1)}}
+@keyframes fade-in-pulse-08{0%{opacity:0;transform:scale(.8)}50%{opacity:1}100%,70%{transform:scale(1)}}
+
+/**
+ * No background beside the modal boxes
+ */
+.modal-dialog {background: none}
+
+/**
+ * Changes the border width of the entire message box
+ */
+.modal-dialog .modal-message {border: 1px solid #eee}
+
+/**
+ * Color for the main text content
+ */
+.modal-dialog .inner-modal {color: #212121}
+
+/**
+ * The close button
+ */
+.modal-dialog .inner-modal .close { background: #eee}
+
+.modal-dialog .inner-modal .close:hover,
+	.modal-dialog .inner-modal .close:active {
+
+		/* Shadow on hover state */
+		-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		-o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		-khtml-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		-ms-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+
+/**
+ * Changes the border width of the modal header
+ */
+.header-modal {border-width: 1px}
+
+/**
+ * Heading (level 1) for the modal box header
+ */
+html .header-modal h2 {color: #212121}
+
+.header-modal strong,
+	.header-modal svg {
+		display: inline-table;
+		vertical-align: middle;
+		color: #757575;
+		line-height: 90px
+}
+
+/**
+ * The states of the links into the modal box header
+ */
+.header-modal span {margin-left: 10%}
+
+.header-modal a:hover,
+	.header-modal a:active {
+		color: #333;
+
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		-khtml-box-shadow: none;
+		box-shadow: none
+}
+
+/**
+ * SVG icon color within the modal box header
+ */
+html .header-modal a:hover svg,
+	html .header-modal a:active svg {
+		background: #aaa; color: #fff;
+		-webkit-border-radius: 50%;
+		-khtml-border-radius: 50%;
+		border-radius: 50%
+}
+
+.header-modal svg path {fill: #757575}
+
+.header-modal a:hover svg path,
+	.header-modal a:active svg path {fill: #fff}
+
+@media only screen and (max-width: 720px) {
+
+	.header-modal svg {
+		width: 32px;
+		height: 32px;
+		margin-top: -.054em;
+		vertical-align: baseline
+	}
+	.mob-hide {display: none!important}
+
+}
+
+/**
+ * The 'Close' button
+ */
+.modal-dialog .close {
+	background: #eee;
+	color: #757575
+}
+
+/**
+ * The 'Close' state
+ */
+.modal-dialog .close:hover,
+	.modal-dialog .close:active {
+	background: #aaa;
+	color: #fff
+}
+
+/**
+ * The main content of the modal box
+ */
+.modal-dialog .inner-dialog {
+	background: #fff;
+	border-width: 1px;
+	color: #212121
+}
+
+.modal-dialog .inner-dialog p,
+	.modal-dialog .inner-dialog ul {color: #757575}
+
+/**
+ * No border for the inner message: there are yet
+ */
+.modal-dialog .modal-message .inner-dialog {border: none}
+
+/**
+ * Creates rounding icons for Message Boxes instead of square ones
+ */
+html span[class*="-sign"] {
+	width: 1em;
+	height: 1em;
+	margin-top: -.125em;
+	padding: .1em;
+	
+	-webkit-border-radius: 50%;
+	border-radius: 50%
+}
+
+/**
+ * The entire modal box outer footer
+ */
+.footer-modal {
+	width: 99.8%;
+	height: 3.21em;
+	height: 4.01rem;
+	margin-right: 0;
+	margin-left: 0;
+	background: #fff;
+	border: 1px solid #eee;
+	border-top-width: 1px;
+	border-right: 1px solid #eee;
+	
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none
+}
+
+/**
+ * The modal box footer's links
+ */
+.modal-dialog .footer-modal a {
+	/* 2.8em + .6em = 3.4; 3.4em + .6em = 4em (line-height) */
+	margin: .6em;
+	color: #448aff /* #00897b */;
+	line-height: 3.4em;
+	line-height: 2.975rem;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+/**
+ * The footer's links states
+ */
+.modal-dialog .footer-modal a:hover,
+	.footer-modal a:active {
+	background: #eee;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+.ripple {
+	position: relative;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0)
+}
+
+.ripple:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200%;
+
+	background-image: -webkit-radial-gradient(circle, #000 10%, transparent 10.01%);
+	background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+	background-repeat: no-repeat;
+	background-position: 50%;
+
+	pointer-events: none;
+
+	-webkit-transform: scale(10,10);
+	        transform: scale(10,10);
+	-webkit-transition: opacity 1s, -webkit-transform .5s;
+	transition: opacity 1s, -webkit-transform .5s;
+	transition: transform .5s, opacity 1s;
+	transition: transform .5s, opacity 1s, -webkit-transform .5s
+}
+
+.ripple:hover {background: none}
+
+.ripple:hover:after {
+	opacity: .2;
+
+	-webkit-transform: scale(0,0);
+	        transform: scale(0,0);
+	-webkit-transition: 0s;
+	transition: 0s
+}

@@ -8,7 +8,7 @@
  * Effect on the close buton; 
  * need to change the class as this: class="close no__select bounceInUp"
  */
-.bounceInUp{
+.bounceInUp {
 	-webkit-animation: bounceInUp 1s both;
 	animation: bounceInUp 1s both
 }
@@ -17,11 +17,18 @@
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
-    display: inline-table;
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-	font-size: 70%
+	display: inline-table;
+	display: inline-block;
+	margin-left: 20%;
+	text-align: center;
+	font-size: 70%;
+	line-height: 90px
+}
+
+.header-modal strong {
+	display: inline-table;
+	line-height: 100px;
+    vertical-align: middle
 }
 
 /**
@@ -32,11 +39,10 @@
 	width: 34px;
 	height: 34px;
 	margin: 0 0 0 .5em;
-    text-decoration: none;
+	text-decoration: none;
 	line-height: 32px;
-
-    -webkit-border-radius: 50%;
-    -khtml-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-khtml-border-radius: 50%;
 	border-radius: 50%
 }
 
@@ -44,17 +50,17 @@
  * The link state into the modal box header
  */
 .header-modal a:hover,
-    .header-modal a:active {
-    -webkit-box-shadow: 0px 0px 2px #0288d1;
-    -moz-box-shadow: 0px 0px 2px #0288d1;
-    -khtml-box-shadow: 0px 0px 2px #0288d1;
-    box-shadow: 0px 0px 2px #0288d1;
+	.header-modal a:active {
+	-webkit-box-shadow: 0 0 2px #0288d1;
+	-moz-box-shadow: 0 0 2px #0288d1;
+	-khtml-box-shadow: 0 0 2px #0288d1;
+	box-shadow: 0 0 2px #0288d1;
 
-    -webkit-transform: translate(1.2, 1.2);
+	-webkit-transform: translate(1.2, 1.2);
 	-webkit-transition: transform 200ms ease-out;
-    -moz-transform: translate(1.2, 1.2);
+	-moz-transform: translate(1.2, 1.2);
 	-moz-transition: transform 200ms ease-out;
-    -ms-transform: translate(1.2, 1.2);
+	-ms-transform: translate(1.2, 1.2);
 	-ms-transition: transform 200ms ease-out;
 	transform: translate(1.2, 1.2);
 	transition: transform 200ms ease-out;
@@ -86,7 +92,7 @@
  * Styling the signs for the Modal Message Box
  */
 span[class*="-sign"] {
-	display: table;
+	display: table-cell;
 	display: inline-block;
 	float: left;
 	width: 1.364em;
@@ -98,11 +104,10 @@ span[class*="-sign"] {
 }
 
 span[class*="-sign"] strong {
-	display: table-cell;
-	width: 1.364em;
+	display: inline-table;
 	vertical-align: baseline;
 	text-align: center;
-	font: 100%/1 'Cambria Math','Apple Symbols'
+	font: 100%/1 'Cambria Math', 'Apple Symbols'
 }
 
 /**

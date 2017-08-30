@@ -20,24 +20,6 @@ body {
 }
 
 /**
- * Waiting for Google font loader
- */
-.wf-loading {
-	opacity: 0;
-	visibility: hidden;
-	height: 100%;
-	overflow: hidden
-}
-
-/**
- * All is fine: display the document
- */
-.wf-active {
-	opacity: 1;
-	visibility: visible
-}
-
-/**
  * Prevent conflicts from other CSS rules
  */
 body .modal-dialog {
@@ -52,8 +34,10 @@ body .modal-dialog {
  * Desable the user's mouse selection
  */
 .no__select {
+	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
+	-khtml-user-select: none;
 	-ms-user-select: none;
 	user-select: none
 }
@@ -63,18 +47,19 @@ body .modal-dialog {
  */
 @-webkit-keyframes scale-up-center {
 	0% {
-		-webkit-transform: scale(.5);
-		transform: scale(.5)
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5)
 	}
 	100% {
 		-webkit-transform: scale(1);
 		transform: scale(1)
 	}
 }
+
 @keyframes scale-up-center {
 	0% {
-		-webkit-transform: scale(.5);
-		transform: scale(.5)
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5)
 	}
 	100% {
 		-webkit-transform: scale(1);
@@ -88,7 +73,10 @@ body .modal-dialog {
 .modal-dialog:target {
 	opacity: 1;
 	display: block;
+
+	/* 'auto' value generates background hightlighting; 'none' desables the click or tap 
 	pointer-events: auto
+	*/
 }
 
 /**
@@ -96,15 +84,21 @@ body .modal-dialog {
  */
 .modal-dialog:target .modal {
 	opacity: 1;
+
 	-webkit-animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both;
 	animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both
 }
 
 /**
+ * Removes background highlighting behavior
+ */
+.modal-dialog:focus {outline: none}
+
+/**
  * Hide the background beside the modal box
  */
 .modal-dialog:target ~ .wrapper,
-	a[class="close"]:target ~ .wrapper {
+	a[class^="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
 	position: fixed;
@@ -113,7 +107,9 @@ body .modal-dialog {
 	left: 0;
 	height: 0;
 	margin: 0;
-	padding: 0
+	padding: 0;
+
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0)
 }
 
 /**
@@ -121,7 +117,9 @@ body .modal-dialog {
  * wrapper visibility after closing the modal box
  */
 #close:target ~ .wrapper,
-	a[class="close"]:target ~ .wrapper {position: static}
+	a[class^="close"]:target ~ .wrapper {
+	position: static
+}
 
 /**
  * The wrapper of the modal box
@@ -129,6 +127,7 @@ body .modal-dialog {
 .modal-dialog {
 	display: none;
 	opacity: 0;
+	position: fixed;
 	position: absolute;
 	z-index: 99999;
 	top: 0;
@@ -144,7 +143,6 @@ body .modal-dialog {
  */
 .modal-dialog .modal {
 	overflow: hidden;
-	/* For old FF versions */
 	overflow: -moz-hidden-unscrollable;
 
 	position: relative;
@@ -152,25 +150,27 @@ body .modal-dialog {
 
 	max-width: 35em;
 
-	margin: 2.5% auto 1em;
-	margin: 5vh auto 1em;
+	margin: 2.5% auto 0;
+	margin: 5vh auto 0;
 	background: #fff;
 	font-size: 125%;
-
 	-webkit-border-radius: 6px 6px 0 0;
+	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0;
 
 	/* Activates GPU Hardware-Acceleration */
 	-webkit-transform: scale(0, 0);
 	-moz-transform: scale(0, 0);
+	-o-transform: scale(0, 0);
 	-ms-transform: scale(0, 0);
 	transform: scale(0, 0);
 	will-change: transform;
 
-	-webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
-	-moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
-	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, .3), 0 50px 100px 0 rgba(51, 51, 51, .2);
+	-webkit-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+	-moz-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+	-khtml-box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+	box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
 
 	/* For IE7 support: can be safely removed if not used */
 	zoom: 1
@@ -185,7 +185,7 @@ body .modal-dialog {
 	z-index: 10000;
 	top: .35em;
 	right: .4em;
-	width: 1.45em;
+	width: 1.435em;
 	height: 1.435em;
 	margin: 0;
 	padding: 0;
@@ -200,9 +200,8 @@ body .modal-dialog {
 
 	/* No vendor prefix for FF: ugly in old versions */
 	-webkit-border-radius: 50%;
-	border-radius: 50%;
-
-	will-change: auto
+	-khtml-border-radius: 50%;
+	border-radius: 50%
 }
 
 /**
@@ -211,16 +210,17 @@ body .modal-dialog {
 .modal-dialog .close:hover,
 	.inner-dialog .close:active {
 	background: #03a9f4;
+	outline: none;
 	border: none;
 
 	-webkit-transform: scale(1.2, 1.2);
 	-moz-transform: scale(1.2, 1.2);
 	transform: scale(1.2, 1.2);
 
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0)
 }
 
-.modal-dialog .close:focus{outline: none}
+.modal-dialog .close:focus {outline: none}
 
 /**
  * The header of the modal box
@@ -229,24 +229,24 @@ body .modal-dialog {
 	position: relative;
 	z-index: 1001;
 
-	height: 5em;
+	height: 90px;
 	min-height: 5rem;
 	max-height: 26vh;
 
 	border: 1px solid #eee;
 	border-bottom: 0;
-
 	color: #aaa;
 	font-family: inherit;
 	font-weight: 300;
 
 	-webkit-border-radius: 6px 6px 0 0;
+	-khtml-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
 	border-radius: 6px 6px 0 0;
 
-	-webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	-moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, .9);
-	box-shadow: -15px 10px 30px rgba(255, 255, 255, .9)
+	-webkit-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+	-moz-box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9);
+	box-shadow: -15px 10px 30px rgba(255, 255, 255, 0.9)
 }
 
 /**
@@ -256,7 +256,7 @@ body .modal-dialog {
 	display: inline;
 	display: inline-block;
 	margin: 0;
-	padding: 0 0 0 .5em;
+	padding: 0 0 0 20px;
 	vertical-align: middle;
 	letter-spacing: -1px;
 	text-transform: capitalize;
@@ -290,6 +290,7 @@ body .modal-dialog {
 	border-right: 1px solid #eee;
 	border-left: 1px solid #eee;
 	color: #212121;
+
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto
@@ -298,16 +299,19 @@ body .modal-dialog {
 /**
  * Changes modal message boxes aspect
  */
-.modal-dialog .modal-message {
-	overflow: hidden;
+.modal-dialog .modal.modal-message {
+	border: 1px solid #eee;
 
-	padding-bottom: 10px
+	-webkit-border-radius: 6px 6px 0 0;
+	-khtml-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0
 }
 
-.modal-dialog .modal-message .inner-dialog {
+.modal-dialog .modal.modal-message .inner-dialog {
 	overflow: hidden;
-	max-height: none;
-	height: auto
+	margin: 0;
+	border: 0
 }
 
 /**
@@ -333,23 +337,24 @@ body .modal-dialog {
  */
 .footer-modal {
 	overflow-y: auto;
-	width: 100%;
 
-	height: 3em;
-	height: 3rem;
+	width: 100%;
+	height: 3.2153em;
+	height: 4.015rem;
 
 	background: #0288d1;
 	text-align: right;
 	border-right: 1px solid #0288d1;
-	border-bottom: 0;
 	border-left: 1px solid #0288d1;
 
 	-webkit-border-radius: 0 0 2px 2px;
 	-moz-border-radius: 0 0 2px 2px;
 	-ms-border-radius: 0 0 2px 2px;
+	-khtml-border-radius: 0 0 2px 2px;
 	border-radius: 0 0 2px 2px;
 	-webkit-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14);
 	-moz-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+	-khtml-box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14);
 	box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.14)
 }
 
@@ -361,7 +366,7 @@ body .modal-dialog {
 	display: inline-block;
 
 	/* The only reasonable solution to get good looking buttons, but 
-       forces to reverse the order of the links into the footer. */ 
+       forces to reverse the order of the links into the footer. */
 	float: right;
 
 	padding: 0 2em;
@@ -373,13 +378,12 @@ body .modal-dialog {
 	font-weight: 700;
 	font-size: 70%;
 
-	line-height: 4.3em;
-	line-height: 3rem;
-
-	will-change: auto;
+	line-height: 4.618em;
+	line-height: 4.041rem;
 
 	-webkit-transition: .3s ease-out;
 	-moz-transition: .3s ease-out;
+	-o-transition: .3s ease-out;
 	-ms-transition: .3s ease-out;
 	transition: .3s ease-out
 }
@@ -395,24 +399,31 @@ body .modal-dialog {
 
 .footer-modal a:focus {outline: none}
 
+
 /**
  * Media query for screen below 720px
  */
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width:720px) {
 
-	.modal-dialog:target ~ .wrapper,
-		a[class="close"]:target ~ .wrapper{position:absolute}
-	.modal-dialog .modal {
-		width: 80%;
-		-webkit-overflow-scrolling: touch
-	}
-	.modal-dialog .modal-message .inner-dialog {
+	.modal-dialog .modal.modal-message .inner-dialog {
 		max-height: none;
 		height: auto
 	}
 	.header-modal {max-height: 11vmax}
+	.modal-dialog .modal {
+		width: 80%;
+		margin: 5vh auto 3em;
+		margin: calc(15vh - 50px) auto 3em;
+		margin: 5vmin auto 3em
+	}
+	.footer-modal {
+		-webkit-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		-moz-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		-khtml-box-shadow: 0 -10px 20px rgba(225, 225, 225, .95);
+		box-shadow: 0 -10px 20px rgba(225, 225, 225, .95)
+	}
 	.footer-modal a {font-size: 60%}
-	.mob-hide {display: none}
+	.mob-hide {display: none !important}
 
 }
 
@@ -422,37 +433,39 @@ body .modal-dialog {
  * 2.° fallback for line-height
  */
 :-o-prefocus,
-html .modal-dialog .inner-dialog {
+	html .modal-dialog .inner-dialog {
 	/* 1.° */
 	height: 100%;
 	max-height: 100%
 }
+
 :-o-prefocus,
-html .footer-modal a {
+	html .footer-modal a {
 	/* 2.° */
 	display: inline-block;
 	padding: .8em 2em
 }
 
-/**
- * Styling the scroll bars for webkit browsers engine
- */
-.modal-dialog::-webkit-scrollbar {
+.modal-dialog ::-webkit-scrollbar {
 	width: 3px;
 	height: 3px
 }
-.modal-dialog::-webkit-scrollbar-button {background-color: #666}
 
-.modal-dialog::-webkit-scrollbar-track {background-color: #999}
+/**
+ * Styling the scroll bars for webkit browsers engine
+ */
+.modal-dialog ::-webkit-scrollbar-button {background-color: #666}
 
-.modal-dialog::-webkit-scrollbar-track-piece {background-color: #fff}
+.modal-dialog ::-webkit-scrollbar-track {background-color: #999}
 
-.modal-dialog::-webkit-scrollbar-thumb {
+.modal-dialog ::-webkit-scrollbar-track-piece {background-color: #fff}
+
+.modal-dialog ::-webkit-scrollbar-thumb {
 	height: 50px;
 	background-color: #999;
 	border-radius: 3px
 }
 
-.modal-dialog::-webkit-scrollbar-corner {background-color: #999}
+.modal-dialog ::-webkit-scrollbar-corner {background-color: #999}
 
-.modal-dialog::-webkit-resizer {background-color: #666}
+.modal-dialog ::-webkit-resizer {background-color: #666}
