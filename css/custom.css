@@ -1,5 +1,5 @@
 /**
- * Animation
+ * Animation for the close button, use class: .bounceInUp
  */
 @-webkit-keyframes bounceInUp{from,60%,75%,90%,to{-webkit-animation-timing-function:cubic-bezier(0.215,0.610,0.355,1.000);animation-timing-function:cubic-bezier(0.215,0.610,0.355,1.000)}from{opacity:0;-webkit-transform: translate3d(0,3000px,0);transform: translate3d(0,3000px,0)}60%{opacity:1;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}75%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}90%{-webkit-transform:translate3d(0,-5px,0);transform:translate3d(0,-5px,0)}to{-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0)}}
 @keyframes bounceInUp{from,60%,75%,90%,to{animation-timing-function:cubic-bezier(0.215,0.610,0.355,1.000)}from{opacity:0;transform: translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform: translate3d(0,0,0)}}
@@ -17,24 +17,30 @@
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
+	position: relative;
 	display: inline-table;
 	display: inline-block;
 	margin-left: 20%;
 	text-align: center;
-	font-size: 70%;
-	line-height: 90px
+	font-size: 70%
 }
 
-.header-modal strong {
+html .header-modal strong {
+	position:relative;
+	top:3px;
 	display: inline-table;
-	line-height: 100px;
-    vertical-align: middle
+	height: 55.5px;
+	/* Prevents Unicode symbols to be rendering as emoji */
+	font: 100%/1 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols', 'EmojiSymbols'
 }
+
+.modal-dialog .header-modal .static {position: static}
 
 /**
  * The links into the modal box header
  */
 .header-modal a {
+	display: inline-table;
 	display: inline-block;
 	width: 34px;
 	height: 34px;
@@ -105,9 +111,11 @@ span[class*="-sign"] {
 
 span[class*="-sign"] strong {
 	display: inline-table;
-	vertical-align: baseline;
+	vertical-align: auto;
 	text-align: center;
-	font: 100%/1 'Cambria Math', 'Apple Symbols'
+	color: #fff;
+	/* Prevents Unicode symbols to be rendering as emoji */
+	font: 100%/1 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols', 'EmojiSymbols'
 }
 
 /**

@@ -5,8 +5,13 @@
 <title>Modal Box by Patrick LEFEVRE</title>
 <meta name="viewport" content="width=device-width, shrink-to-fit=no">
 
-<link rel="stylesheet" href="css/modal-box.css" media="screen">
-<link rel="stylesheet" href="css/custom.css" media="screen">
+<!-- Remove Tap Highlight on Windows Phone IE -->
+<meta name="msapplication-tap-highlight" content="no">
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="js/selectivizr-min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="css/modal-box.min.css" media="screen">
+<link rel="stylesheet" href="css/custom.min.css" media="screen">
 
 <style>
 /*! ============================
@@ -57,7 +62,8 @@ p.first-line {
 
     .modal-dialog .inner-dialog h2{font-family: 'Noto Sans', sans-serif}
 
-    .modal-dialog .inner-dialog p{font-family: 'Open Sans', sans-serif}
+    .modal-dialog .inner-dialog p,
+	.footer-modal {font-family: 'Open Sans', sans-serif}
 
 }
 
@@ -118,10 +124,10 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
+		<a href="#close" title="Close" class="close no__select bounceInUp" id="close-modal">×</a>
 
 		<div class="header-modal no__select">
-			<h1><strong>⇄</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#openModal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
+			<h1><strong class="static">☸</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#openModal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
 		</div>
 
 		<div class="inner-dialog">
@@ -213,9 +219,9 @@ WebFont.load({
 /*! A poor alternative to :target selector for IE8 and below;
     script can be removed safely if you don't need this support.
 */
-/*
+
 'use strict';
 var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('openModal'),target2=document.getElementById('openModal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
-*/
+
 </script>
 </body></html>

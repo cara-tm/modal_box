@@ -1,9 +1,9 @@
 /*!
- * FLATERIAL
+ * MESSAGE
  * A sample of customization for CSS Modal Box
  * @link:      https://github.com/cara-tm/modal_box/
- * @colors:	   https://www.materialpalette.com
- * @date:      26/08/2017
+ * @colors:    https://www.materialpalette.com
+ * @date:	   04/09/2017
  * @revision : 04/09/2017
  */
 
@@ -86,6 +86,11 @@
 }
 
 /**
+ * Helpers
+ */
+.txt-center {text-align: center}
+
+/**
  * Changes the border width of the entire message box
  */
 .modal-dialog .modal-message
@@ -117,7 +122,7 @@
 .modal-dialog .close:active
 {
 	color: #fff;
-	background: #aaa;
+	background: #00ad9f;
 	/* No shadow on hover state */
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
@@ -132,15 +137,61 @@
  */
 .header-modal
 {
+	height: 11em;
+	max-height: none;
 	border-width: 1px;
+	background: #00ad9f;
+	border-color: #00ad9f;
+	color: #fff
 }
 
 /**
  * Heading (level 1) for the modal box header
  */
-html .header-modal h2
+html .header-modal h1
 {
-	color: #212121;
+	display: block;
+	padding: 0;
+	text-align: center;
+	color: #f1f1f1;
+	line-height: 2
+}
+
+.header-modal p {
+	width: 70%;
+	margin: 0 15%;
+	font-size: smaller
+}
+
+.header-modal .modal-profile:after { content:"☺"; }
+.header-modal .modal-profile::after { content:"☻"; }
+
+.header-modal .profile-outer {
+	float: left;
+	width: 60%;
+	min-width: 100%;
+	margin: .5em 0 1em 0;
+	padding: 0 20%
+}
+
+.profile-outer figure {
+	display: table-cell;
+	float: left;
+	width: 20%;
+	margin: 0
+}
+
+.header-modal .modal-profile {
+	width: 68px;
+	height: 68px;
+	border-radius: 50%
+}
+
+.header-modal .profile-outer figcaption {
+	clear: both;
+	font-size: 70%;
+	text-overflow: ellipsis;
+	white-space: nowrap
 }
 
 /**
@@ -152,13 +203,6 @@ html .header-modal h2
 	font-family: 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols';
 }
 
-/**
- * The states of the links into the modal box header
- */
-.header-modal span
-{
-	margin-left: 10%
-}
 
 .header-modal a:hover,
 .header-modal a:active
@@ -170,33 +214,19 @@ html .header-modal h2
 			box-shadow: none;
 }
 
-/**
- * SVG icon color within the modal box header
- */
-html .header-modal a:hover svg,
-html .header-modal a:active svg
-{
-	color: #fff;
-	-webkit-border-radius: 50%;
-	 -khtml-border-radius: 50%;
-			border-radius: 50%;
-	background: #26a69a; 
-}
 
-.header-modal svg path
-{
-	fill: #757575;
-}
-
-.header-modal a:hover svg path,
-.header-modal a:active svg path
-{
-	fill: #fff;
-}
 
 @media only screen and (max-width: 720px)
 {
 
+	.modal-dialog .header-modal {
+		max-height: none;
+		height: auto;
+		padding-bottom: 1em
+	}
+	.header-modal .modal-profile {
+		margin: 1em 0 0;
+	}
 	.header-modal svg
 	{
 		width: 32px;
@@ -217,6 +247,9 @@ html .header-modal a:active svg
  */
 .modal-dialog .inner-dialog
 {
+	max-height: 13em;
+	max-height: 40vh;
+
 	border-width: 1px;
 	background: #fff;
 	color: #212121;
@@ -263,16 +296,34 @@ height: 3.4rem;
 	margin-right: 0;
 	margin-left: 0;
 padding: .65em 0 0;
+	background: #f4f7f9;
 text-align: right;
 font-family: inherit;
 
 	border: 1px solid #eee;
 	border-top-width: 1px;
 	border-right: 1px solid #eee;
-	background: #fff;
+
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 			box-shadow: none;
+}
+
+.footer-modal input {
+	width: 93.29%;
+	height: 2.5em;
+	margin: 0 2.91% 0 0;
+	padding: 0 .5%;
+	background: #f4f7f9;
+	color: #565867;
+	resize: none;
+	border: none
+}
+
+.footer-modal input:focus,
+.footer-modal:focus {
+	background: #fff;
+	outline: none
 }
 
 /**
