@@ -68,7 +68,7 @@ Remove all the code between `<style>` and `</style>` from the `demo.html` page, 
 
 ## Custom template FLATERIAL (v1.4 onward)
 
-Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag:
+Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag (or see the `flaterial.html` file):
 
     <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
 	<!-- Facultative: for optional elements -->
@@ -76,7 +76,13 @@ Remove all the code between `<style>` and `</style>` from the `demo.html` page, 
 	<!-- Sample custom colors styling (overwrite default) -->
     <link rel="stylesheet" href="css/flaterial.css" media="screen">
 
-![FLATERIAL template sample](https://github.com/cara-tm/modal_box/raw/master/flaterial-template.png "The FLATERIAL Template result").
+![FLATERIAL template sample](https://github.com/cara-tm/modal_box/raw/master/flaterial-template.png "The FLATERIAL template result").
+
+## Custom template for messaging (v1.5 onward)
+
+See the file `message-box.html` for details:
+
+![FLATERIAL template sample](https://github.com/cara-tm/modal_box/raw/master/messages-template.png "Messaging template result").
 
 ## Integration example
 
@@ -103,13 +109,5 @@ CSS rules has been verified troughout the online "Validate your CSS for differen
 )
 
 ## Screen shots
-
-Google Chromium (latest) PC preview:
-![Google Chromium PC](https://github.com/cara-tm/modal_box/raw/master/google-chromium.png "Google Chromium PC")
-
-.
-
-
-.
 
 See the 'png' images for all the different browsers.
