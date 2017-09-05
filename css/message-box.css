@@ -182,14 +182,17 @@ html .header-modal h1
 }
 
 .header-modal .modal-profile {
+	display: block;
 	width: 68px;
 	height: 68px;
+	margin: 0 auto;
 	border-radius: 50%
 }
 
 .header-modal .profile-outer figcaption {
 	clear: both;
 	font-size: 70%;
+	text-align: center;
 	text-overflow: ellipsis;
 	white-space: nowrap
 }

@@ -120,6 +120,8 @@ Removed due to uggly support in some webkit old browsers
 	top: 0;
 	left: 0;
 	height: 0;
+	min-height: 0;
+	max-height: 0;
 	margin: 0;
 	padding: 0;
 
@@ -244,6 +246,11 @@ Removed due to uggly support in some webkit old browsers
 .modal-dialog .close:focus {outline: none}
 
 /**
+ * Helper to push the close button on the left
+ */
+.close.push__left {left: .4em}
+
+/**
  * The header of the modal box
  */
 .header-modal {
@@ -324,6 +331,7 @@ Removed due to uggly support in some webkit old browsers
  * Changes modal message boxes aspect
  */
 .modal-dialog .modal.modal-message {
+	padding-top: 1em;
 	border: 1px solid #eee;
 
 	-webkit-border-radius: 6px 6px 0 0;
@@ -395,7 +403,6 @@ Removed due to uggly support in some webkit old browsers
  */
 .modal-dialog .footer-modal a {
 	display: table-cell;
-	display: -moz-fit-content;
 	display: inline-block;
 	
 
