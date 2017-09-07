@@ -54,6 +54,16 @@ A red colored example, well commented, is available for your customization conve
 
 An independant `demo.html` file with full styles is available for integration example ([File: `demo.html`](https://github.com/cara-tm/modal_box/blob/master/demo.html)).
 
+### Helpers for customization
+
+This package is distributed with some class helpers:
+
+* `push__left`: to place the close button and/or the footer's links to the left;
+* `push__center`: to center the footer's links;
+* `push__block`: to display all the footer's links empiled without the scroll bar (the footer adapts it's height accordingly).
+
+See the templates for how tos integration.
+
 ## Custom template sample
 
 Remove all the code between `<style>` and `</style>` from the `demo.html` page, then add before the final `</head>` tag:
