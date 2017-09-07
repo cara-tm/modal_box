@@ -65,7 +65,8 @@ p.first-line {
 			font-weight: 300
 	}
 
-    .modal-dialog .inner-dialog p,
+    .modal-dialog .header-modal,
+	.modal-dialog .inner-dialog p,
 	.footer-modal {font-family: 'Open Sans', sans-serif}
 
 }
@@ -141,14 +142,14 @@ WebFont.load({
 			<h1>Hi</h1>
 			<div class="profile-outer">
 			<figure class="txt-center">
-				<img src="https://randomuser.me/api/portraits/women/49.jpg" alt="Amelia Andrews" class="modal-profile" /><figcaption>Amelia</figcaption>
+				<img src="http://randomuser.me/api/portraits/women/49.jpg" alt="Amelia Andrews" class="modal-profile" /><figcaption>Amelia</figcaption>
 			</figure>
 			<figure class="txt-center">
-				<img src="https://randomuser.me/api/portraits/men/41.jpg" alt="John Long" class="modal-profile" />
+				<img src="http://randomuser.me/api/portraits/men/41.jpg" alt="John Long" class="modal-profile" />
 				<figcaption>John</figcaption>
 			</figure>
 			<figure class="txt-center">
-				<img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Cathy Hansen" class="modal-profile" />
+				<img src="http://randomuser.me/api/portraits/women/12.jpg" alt="Cathy Hansen" class="modal-profile" />
 				<figcaption>Cathy</figcaption>
 			</figure>
 			</div>
@@ -173,8 +174,9 @@ WebFont.load({
 		</div> <!-- /inner-dialog -->
 
 		<div class="footer-modal no__select">
-			<form action="" method="" class="message-box">
-			<input type="text" value="" placeholder="Send a message&hellip;" />
+			<form action="#openModal" method="get" class="message-box">
+				<label for="message"><input type="text" value="" required placeholder="Send a message&hellip;" autofocus id="message" /><span>Send a message&hellip;</span></label>
+			<input type="submit" value="Ok" class="hidden" />
 			</form>
 		</div>
 	</div> <!-- /modal -->

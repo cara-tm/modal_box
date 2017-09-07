@@ -292,16 +292,14 @@ html span[class*='-sign']
 {
 	display: block;
 	width: 99.9%;
-	height: 3.45em;
-	height: 4.31rem;
-height: 2.72em;
-height: 3.4rem;
+	height: 2.72em;
+	height: 3.4rem;
 	margin-right: 0;
 	margin-left: 0;
-padding: .65em 0 0;
+	padding: .65em 0 0;
 	background: #f4f7f9;
-text-align: right;
-font-family: inherit;
+	text-align: right;
+	font-family: inherit;
 
 	border: 1px solid #eee;
 	border-top-width: 1px;
@@ -312,37 +310,133 @@ font-family: inherit;
 			box-shadow: none;
 }
 
+.footer-modal label {
+	display: block;
+	position: relative;
+	
+}
+
+
 .footer-modal input {
+/* Not necessary indeed */
+	display: inline-table;
+	display: inline-block;
+
 	width: 93.29%;
 	height: 2.5em;
-	margin: 0 2.91% 0 0;
-	padding: 0 .5%;
-	background: #f4f7f9;
+	margin: .5em 2.91% 0 0;
+	padding: .1em .5% 0;
+	background: #fff;
 	color: #565867;
+	line-height: 1.5;
 	resize: none;
 	border: none
 }
 
-.footer-modal input:focus,
-.footer-modal:focus {
-	background: #fff;
-	outline: none
+/**
+ * David Walsh's FF correction for input fields
+ * @source https://davidwalsh.name/firefox-buttons
+ */
+input::-moz-focus-inner { 
+	margin-top: -2px;
+	margin-bottom: -2px;
+	padding: 3px 0 0;
+	border: 0
 }
+
+.footer-modal label span {
+	position: absolute;
+	top: -1.1em;
+	left: 3%;
+
+	margin: 0;
+	line-height: 1;
+	font-size: 65%;
+	
+	-webkit-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+
+	pointer-events: none
+}
+
+/**
+ * Keeps input as this in all cases
+ */
+.footer-modal input:focus,
+.footer-modal input[type="text"]:invalid {
+	outline: none;
+	border: none;
+	box-shadow: none
+}
+
+/**
+ * Hide the label tag in favor of placeholder
+ */
+@supports (display: -webkit-box) or
+          (display: -moz-flex) or
+          (display: -ms-flex) or
+		  (display: -ms-flexbox) or
+          (display: -webkit-flex) or
+          (display: flex) {
+
+				.footer-modal input[type="text"] {margin: .1em 2.91% 0 0}
+				.footer-modal label span {
+					/* display: none */
+					top: .8em;
+					margin-left: .08em
+				}
+				.footer-modal input[type="text"]:focus + span,
+			  	.footer-modal input[type="text"]:valid + span {
+					top: -1em;
+					color: #ccc
+				}
+				/**
+			  	 * Hide placeholder
+			  	 */
+				::-webkit-input-placeholder {
+					/* WebKit browsers */
+					color: #fff
+			  	}
+				:-moz-placeholder {
+					/* Mozilla Firefox 4 to 18 */
+					color: #fff;
+					opacity: 1
+				}
+				::-moz-placeholder {
+					/* Mozilla Firefox 19+ */
+					color: #fff;
+					opacity: 1
+				}
+				:-ms-input-placeholder {
+					/* Internet Explorer 10+ */
+					color: #fff
+			  	}
+
+}
+
+
+/**
+ * The active state
+ */
+/*
+input:focus + span,
+	input:valid + span {
+		top:-.7em;
+		color: #bbb
+}
+*/
+
+.modal-dialog .hidden {display: none}
 
 /**
  * The modal box footer's links
  */
 .modal-dialog .footer-modal a
 {
-	line-height: 3.4em;
-	line-height: 2.975rem;
-	/* 2.8em + .6em = 3.4; 3.4em + .6em = 4em (line-height) */
-line-height: 1;
-padding: .9em 2em;
-
-	margin: .6em;
-margin: 0 .6em 1.1em;
+	margin: 0 .6em 1.1em;
+	padding: .9em 2em;
 	color: #448aff;
+	line-height: 1;
 	
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
