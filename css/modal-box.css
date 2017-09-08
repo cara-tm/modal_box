@@ -250,11 +250,6 @@ Removed due to uggly support in some webkit old browsers
 .modal-dialog .close:focus {outline: none}
 
 /**
- * Helper to push the close button on the left
- */
-.close.push__left {left: .4em}
-
-/**
  * The header of the modal box
  */
 .header-modal {
@@ -431,33 +426,6 @@ Removed due to uggly support in some webkit old browsers
 	-o-transition: .3s ease-out;
 	-ms-transition: .3s ease-out;
 	transition: .3s ease-out
-}
-
-/**
- * A class 'reverse' for '.footer-modal' to change the order of the footer's links
- */
-.footer-modal.reverse {display: block; display: inline-block}
-.footer-modal.reverse a {float: none}
-
-/**
- * A class 'push__center' for '.footer-modal' to float on the left the footer's links
- */
-.footer-modal.push__center {text-align: center;direction: rtl}
-
-.footer-modal.push__center a {float: none}
-
-/**
- * A class 'push__left' for '.footer-modal' to float on the left the footer's links
- */
-.footer-modal.push__left a {float: left}
-
-/**
- * An helper to show footer full height
- */
-.footer-modal.push__block {
-	display: block;
-    height: auto;
-    overflow: hidden
 }
 
 /**

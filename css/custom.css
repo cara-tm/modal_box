@@ -14,6 +14,44 @@
 }
 
 /**
+ * Tiny width helper for small boxes creation
+ *
+* <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny">
+ *
+ */
+.modal-dialog .tiny {max-width: 20em}
+
+/**
+ * Helper to push right the modal boxes
+ *
+ * <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny push__right">
+ *
+ */
+.modal-dialog .push__right {margin-right: 1em}
+
+/**
+ * Helper to push left the modal boxes
+ *
+ * <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny push__left">
+ *
+ */
+.modal-dialog .push__left {margin-left: 1em}
+
+/**
+ * Helper to push the close button on the left
+ *
+ * <a href="#close" title="Close" class="close push__left no__select" id="close-modal">×</a>
+ *
+ */
+.close.push__left {left: .4em}
+
+/**
  * Optinal: for call to action into the modal box header
  */
 .header-modal span {
@@ -137,6 +175,54 @@ html .info-sign {background: #9ea8dd}
  * Here is the warning sign color
  */
 .warning-sign {background: #fbc02d}
+
+/**
+ * A class 'reverse' for '.footer-modal' to change the order of the footer's links
+ *
+ * <div class="footer-modal reverse">
+ *
+ */
+.footer-modal.reverse {
+	display: block;
+	display: inline-block
+}
+.footer-modal.reverse a {float: none}
+
+/**
+ * A class 'push__center' for '.footer-modal' to float on the left the footer's links
+ *
+ * <div class="footer-modal push__center">
+ *
+ */
+.footer-modal.push__center {
+	text-align: center;
+	direction: rtl
+}
+.footer-modal.push__center a {
+	float: none;
+	display: block;
+	display: inline-block
+}
+
+/**
+ * A class 'push__left' for '.footer-modal' to float on the left the footer's links
+ *
+ * <div class="footer-modal push__center">
+ *
+ */
+.footer-modal.push__left a {float: left}
+
+/**
+ * An helper to show footer full height
+ *
+ * <div class="footer-modal push__block">
+ *
+ */
+.footer-modal.push__block {
+	overflow: hidden;
+	display: block;
+	height: auto
+}
 
 /**
  * Media query for screen below 720px
