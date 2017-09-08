@@ -131,7 +131,7 @@ WebFont.load({
 </head>
 <body>
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+<div tabindex="2" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
 
 	<div class="modal">
 		
@@ -179,8 +179,8 @@ WebFont.load({
 
 		<div class="footer-modal no__select">
 			<form action="#openModal" method="get" class="message-box">
-				<label for="message"><input type="text" value="" required placeholder="Send a message&hellip;" autofocus id="message" /><span>Send a message&hellip;</span></label>
-			<input type="submit" value="Ok" class="hidden" />
+				<label for="message"><input type="text" value="" tabindex="1" required placeholder="Send a message&hellip;" id="message" /><span>Send a message</span></label>
+			<input type="submit" value="Ok" tabindex="-1" class="hidden" />
 			</form>
 		</div>
 	</div> <!-- /modal -->
@@ -192,7 +192,7 @@ WebFont.load({
 
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
-		<a href="#openModal" class="button" id="link1">Open Modal Box</a>
+		<a href="?#openModal" class="button" id="link1">Open Modal Box</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
