@@ -49,7 +49,10 @@
  * <a href="#close" title="Close" class="close push__left no__select" id="close-modal">×</a>
  *
  */
-.close.push__left {left: .4em}
+.modal .push__left {
+	left: .4em;
+	margin-left: 0
+}
 
 /**
  * Optinal: for call to action into the modal box header
@@ -177,48 +180,49 @@ html .info-sign {background: #9ea8dd}
 .warning-sign {background: #fbc02d}
 
 /**
- * A class 'reverse' for '.footer-modal' to change the order of the footer's links
+ * A class for '.footer-modal' to reverse the order of the footer's links
  *
- * <div class="footer-modal reverse">
+ * <div class="footer-modal footer__reverse">
  *
  */
-.footer-modal.reverse {
+.footer__reverse {
 	display: block;
 	display: inline-block
 }
-.footer-modal.reverse a {float: none}
+.footer__reverse a {float: none}
 
 /**
- * A class 'push__center' for '.footer-modal' to float on the left the footer's links
+ * A class for '.footer-modal' to center the footer's links
  *
- * <div class="footer-modal push__center">
+ * <div class="footer-modal footer-push__center">
  *
  */
-.footer-modal.push__center {
+.footer-push__center {
 	text-align: center;
 	direction: rtl
 }
-.footer-modal.push__center a {
+.modal-dialog .footer-push__center a {
 	float: none;
 	display: block;
 	display: inline-block
 }
 
 /**
- * A class 'push__left' for '.footer-modal' to float on the left the footer's links
+ * A class for '.footer-modal' to float on the left the footer's links
  *
- * <div class="footer-modal push__center">
+ * <div class="footer-modal footer-push__left">
  *
  */
-.footer-modal.push__left a {float: left}
+.footer-push__left {margin-left: 0}
+.modal-dialog .footer-push__left a {float: left}
 
 /**
  * An helper to show footer full height
  *
- * <div class="footer-modal push__block">
+ * <div class="footer-modal footer-push__block">
  *
  */
-.footer-modal.push__block {
+.footer-push__block {
 	overflow: hidden;
 	display: block;
 	height: auto

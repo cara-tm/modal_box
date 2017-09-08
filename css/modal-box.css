@@ -115,7 +115,7 @@ Removed due to uggly support in some webkit old browsers
 /**
  * Hide the background beside the modal box
  */
-.modal-dialog:target ~ .wrapper,
+.modal-dialog:not(.plain):target ~ .wrapper,
 	a[class^="close"]:target ~ .wrapper {
 	overflow: auto;
 	position: absolute;
@@ -153,7 +153,10 @@ Removed due to uggly support in some webkit old browsers
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0;
+	left: 0
+}
+
+.modal-dialog:not(.plain) {
 	background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
 	background: rgba(255, 255, 255, 0.95)
 }

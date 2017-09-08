@@ -58,11 +58,13 @@ An independant `demo.html` file with full styles is available for integration ex
 
 This package is distributed with some class helpers:
 
-* `push__left`: to place the close button and/or the footer's links, or the entire Modal Box to the left;
+* `tiny`: to create small width Modal Boxes (max-width: 20em) useful for login.
+* `push__left`: to place the close button, or the entire Modal Box to the left;
 * `push__right`: to place the entire Modal Box on the right;
-* `push__center`: to center the footer's links;
-* `push__block`: to display all the footer's links empiled without the scroll bar (the footer adapts it's height accordingly);
-* `tiny`: to create small width Modal Boxes (max-width: 20em) useful for login box.
+* `footer-push__left`: to float the footer's links on the left;
+* `footer-push__center`: to place the footer's links on the center;
+* `footer__reverse`: to reverse the order of the footer's links;
+* `footer-push__block`: to display all the footer's links empiled without the scroll bar (the footer adapts it's height accordingly);
 
 See the templates for how tos integration.
 
