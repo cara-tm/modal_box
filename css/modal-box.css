@@ -123,7 +123,7 @@ Removed due to uggly support in some webkit old browsers
 	z-index: -1;
 	top: 0;
 	left: 0;
-	height: 0;
+	height: 1px;
 	min-height: 0;
 	max-height: 0;
 	margin: 0;
@@ -372,14 +372,12 @@ Removed due to uggly support in some webkit old browsers
 .footer-modal {
 	overflow-y: auto;
 	display: table;
-	display: inline-block;
+
+	direction: ltr;
 
 	width: 100%;
 	height: 3em;
 	height: 3.75rem;
-
-	/* Corrects gap due to inline-block property */
-	margin: 0 0 -2px;
 
 	background: #0288d1;
 	text-align: right;
@@ -404,9 +402,7 @@ Removed due to uggly support in some webkit old browsers
  * The footer links
  */
 .modal-dialog .footer-modal a {
-	display: table-cell;
-	display: inline-block;
-	
+	display: table-cell;	
 
 	/* The only reasonable solution to get good looking buttons, but 
        forces to reverse the order of the links into the footer. */

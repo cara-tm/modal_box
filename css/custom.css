@@ -22,6 +22,10 @@
  *
  */
 .modal-dialog .tiny {max-width: 20em}
+.modal-dialog .tiny .header-modal {
+	height: auto;
+	padding-bottom: 1em
+}
 
 /**
  * Helper to push right the modal boxes
@@ -185,11 +189,8 @@ html .info-sign {background: #9ea8dd}
  * <div class="footer-modal footer__reverse">
  *
  */
-.footer__reverse {
-	display: block;
-	display: inline-block
-}
-.footer__reverse a {float: none}
+.footer__reverse {display: block}
+html .modal-dialog .footer__reverse a {float: none}
 
 /**
  * A class for '.footer-modal' to center the footer's links

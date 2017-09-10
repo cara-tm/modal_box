@@ -11,8 +11,8 @@
 <script src="js/selectivizr-min.js"></script>
 <![endif]-->
 <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
-<link rel="stylesheet" href="css/message-box.css" media="screen">	
-
+<link rel="stylesheet" href="css/custom.min.css" media="screen">	
+<link rel="stylesheet" href="css/message-box.css" media="screen">
 
 <style>
 
@@ -91,6 +91,32 @@ p.first-line {
 	color: #fff
 }
 	
+.bubble {
+	display: block;
+	position: absolute;
+	position: fixed;
+	z-index: 100;
+	bottom: 10%;
+	bottom: 2.5rem;
+	right: 3em;
+	right: 2rem;
+	width: 50px;
+	height: 50px;
+	text-decoration: none
+}
+
+.bubble:focus {outline: none}
+
+.bubble svg {
+	width: 50px;
+	height: 50px;
+	color: #00ad9f;
+	font-size: 100px;
+	font-weight: bolder
+}
+
+.bubble path {fill: #00ad9f}
+	
 /**
  * For JS fallback if used
  */
@@ -131,9 +157,9 @@ WebFont.load({
 </head>
 <body>
 
-<div tabindex="2" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+<div tabindex="2" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog plain" id="openModal">
 
-	<div class="modal">
+	<div class="modal tiny push__right">
 		
 		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
 		
@@ -213,6 +239,7 @@ WebFont.load({
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 
+<a href="?#openModal" class="bubble"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26">⚉<path d="M13 0.2C5.9 0.2 0.2 5.3 0.2 11.5 0.2 14.7 1.7 17.5 4.1 19.6 3.5 22.6 0.2 23.8 0.4 24.7 3.4 25.9 9.4 23 10.3 22.6 11.2 22.7 12.1 22.8 13 22.8 20.1 22.8 25.8 17.7 25.8 11.5 25.8 5.3 20.1 0.2 13 0.2Z"/></svg></a>
 </div> <!-- /wrapper -->
 
 <script>

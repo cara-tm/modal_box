@@ -252,21 +252,13 @@ html span[class*='-sign']
 .footer-modal
 {
 	overflow-y: auto;
-/*
-	display: block;
-*/
-	width: 99.9%;
-	height: 2.72em;
-	height: 3.4rem;
 	margin-right: 0;
 	margin-left: 0;
-	padding: .65em 0 0;
+	padding: 0;
 	text-align: right;
 	font-family: inherit;
 
 	border: 1px solid #eee;
-	border-top-width: 1px;
-	border-right: 1px solid #eee;
 	background: #fff;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
@@ -284,7 +276,7 @@ html span[class*='-sign']
 	/* 2.8em + .6em = 3.4; 3.4em + .6em = 4em (line-height) */
 
 
-	margin: 0 .6em 1.1em;
+	margin: .8em .6em .7em;
 	padding: .9em 2em;
 	color: #448aff;
 	line-height: 1;
@@ -303,6 +295,7 @@ html span[class*='-sign']
 {
 	background: #eee;
 	background: rgba(38, 166, 154, 0.2) /* Base color: #00897b */;
+	text-decoration: none;
 
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
