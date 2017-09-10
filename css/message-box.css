@@ -41,6 +41,11 @@
 			animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91)
 }
 
+/**
+ * Hide the bubble on message box open
+ */
+.modal-dialog:target ~ .wrapper .bubble{display:none}
+
 /* 
  * Use of zero as prefix with decimal 
  * values for older webkit browsers.
