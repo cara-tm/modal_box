@@ -1,0 +1,339 @@
+/**
+ * Animation for the close button, use class: .bounceInUp
+ */
+@-webkit-keyframes "bounceInUp" {
+	from,60%,75%,90%,to {
+		-webkit-animation-timing-function: cubic-bezier(0.215,0.610,0.355,1.000);
+		animation-timing-function: cubic-bezier(0.215,0.610,0.355,1.000);
+	}
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0,3000px,0);
+		transform: translate3d(0,3000px,0);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(0,-20px,0);
+		transform: translate3d(0,-20px,0);
+	}
+	75% {
+		-webkit-transform: translate3d(0,10px,0);
+		transform: translate3d(0,10px,0);
+	}
+	90% {
+		-webkit-transform: translate3d(0,-5px,0);
+		transform: translate3d(0,-5px,0);
+	}
+	to {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+}
+@keyframes "bounceInUp" {
+	from,60%,75%,90%,to {
+		animation-timing-function: cubic-bezier(0.215,0.610,0.355,1.000);
+	}
+	from {
+		opacity: 0;
+		transform: translate3d(0,3000px,0);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(0,-20px,0);
+	}
+	75% {
+		transform: translate3d(0,10px,0);
+	}
+	90% {
+		transform: translate3d(0,-5px,0);
+	}
+	to {
+		transform: translate3d(0,0,0);
+	}
+}
+/**
+ * Effect on the close buton; 
+ * need to change the class as this: class="close no__select bounceInUp"
+ */
+/**
+ * Tiny width helper for small boxes creation
+ *
+* <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny">
+ *
+ */
+/**
+ * Helper to push right the modal boxes
+ *
+ * <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny push__right">
+ *
+ */
+/**
+ * Helper to push left the modal boxes
+ *
+ * <div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+ *
+ *	<div class="modal tiny push__left">
+ *
+ */
+/**
+ * Helper to push the close button on the left
+ *
+ * <a href="#close" title="Close" class="close push__left no__select" id="close-modal">×</a>
+ *
+ */
+/**
+ * Optinal: for call to action into the modal box header
+ */
+/**
+ * The links into the modal box header
+ */
+/**
+ * The link state into the modal box header
+ */
+/**
+ * The SVG icon into the modal box header
+ */
+/**
+ * SVG icon color
+ */
+/**
+ * Styling the signs for the Modal Message Box
+ */
+/**
+ * here is the error sign color
+ */
+/**
+ * Here is the info sign color
+ */
+/**
+ * Here is the success sign color
+ */
+/**
+ * Here is the warning sign color
+ */
+/**
+ * A class for '.footer-modal' to reverse the order of the footer's links
+ *
+ * <div class="footer-modal footer__reverse">
+ *
+ */
+/**
+ * A class for '.footer-modal' to center the footer's links
+ *
+ * <div class="footer-modal footer-push__center">
+ *
+ */
+/**
+ * A class for '.footer-modal' to float on the left the footer's links
+ *
+ * <div class="footer-modal footer-push__left">
+ *
+ */
+/**
+ * An helper to show footer full height
+ *
+ * <div class="footer-modal footer-push__block">
+ *
+ */
+/**
+ * Media query for screen below 720px
+ */
+.bounceInUp {
+	-webkit-animation: bounceInUp 1s both;
+	animation: bounceInUp 1s both;
+}
+.modal-dialog {
+	.tiny {
+		max-width: 20em;
+		.header-modal {
+			height: auto;
+			padding-bottom: 1em;
+		}
+	}
+	.push__right {
+		margin-right: 1em;
+	}
+	.push__left {
+		margin-left: 1em;
+	}
+	.header-modal {
+		.static {
+			position: static;
+		}
+	}
+	.footer-push__center {
+		a {
+			float: none;
+			display: block;
+			display: inline-block;
+		}
+	}
+	.footer-push__left {
+		a {
+			float: left;
+		}
+	}
+}
+.modal {
+	.push__left {
+		left: .4em;
+		margin-left: 0;
+	}
+}
+.header-modal {
+	span {
+		position: relative;
+		display: inline-table;
+		display: inline-block;
+		margin-left: 20%;
+		text-align: center;
+		font-size: 70%;
+	}
+	a {
+		display: inline-table;
+		display: inline-block;
+		width: 34px;
+		height: 34px;
+		margin: 0 0 0 .5em;
+		text-decoration: none;
+		line-height: 32px;
+		-webkit-border-radius: 50%;
+		-khtml-border-radius: 50%;
+		border-radius: 50%;
+		&:hover {
+			-webkit-box-shadow: 0 0 2px #0288d1;
+			-moz-box-shadow: 0 0 2px #0288d1;
+			-khtml-box-shadow: 0 0 2px #0288d1;
+			box-shadow: 0 0 2px #0288d1;
+			-webkit-transform: translate(1.2, 1.2);
+			-webkit-transition: transform 200ms ease-out;
+			-moz-transform: translate(1.2, 1.2);
+			-moz-transition: transform 200ms ease-out;
+			-ms-transform: translate(1.2, 1.2);
+			-ms-transition: transform 200ms ease-out;
+			transform: translate(1.2, 1.2);
+			transition: transform 200ms ease-out;
+			-webkit-tap-highlight-color: transparent;
+		}
+		&:active {
+			-webkit-box-shadow: 0 0 2px #0288d1;
+			-moz-box-shadow: 0 0 2px #0288d1;
+			-khtml-box-shadow: 0 0 2px #0288d1;
+			box-shadow: 0 0 2px #0288d1;
+			-webkit-transform: translate(1.2, 1.2);
+			-webkit-transition: transform 200ms ease-out;
+			-moz-transform: translate(1.2, 1.2);
+			-moz-transition: transform 200ms ease-out;
+			-ms-transform: translate(1.2, 1.2);
+			-ms-transition: transform 200ms ease-out;
+			transform: translate(1.2, 1.2);
+			transition: transform 200ms ease-out;
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
+	svg {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		margin: 0;
+		vertical-align: middle;
+		text-align: center;
+		color: #aaa;
+		font-size: 2em;
+		cursor: pointer;
+	}
+	path {
+		fill: #aaa;
+	}
+}
+html {
+	.header-modal {
+		strong {
+			position: relative;
+			top: 3px;
+			display: inline-table;
+			height: 55.5px;
+			font: 100%/1 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols', 'EmojiSymbols';
+		}
+	}
+	.info-sign {
+		background: #9ea8dd;
+	}
+	.modal-dialog {
+		.footer__reverse {
+			a {
+				float: none;
+			}
+		}
+	}
+}
+span[class*="-sign"] {
+	display: table-cell;
+	display: inline-block;
+	float: left;
+	width: 1.364em;
+	margin: 0 5px 0 0;
+	padding: 0;
+	text-align: center;
+	color: #333;
+	font: normal normal normal 22px/1 sans-serif;
+	strong {
+		display: inline-table;
+		vertical-align: auto;
+		text-align: center;
+		color: #fff;
+		font: 100%/1 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols', 'EmojiSymbols';
+	}
+}
+.error-sign {
+	background: #e27575;
+}
+.success-sign {
+	background: #00c853;
+}
+.warning-sign {
+	background: #fbc02d;
+}
+.footer__reverse {
+	display: block;
+}
+.footer-push__center {
+	text-align: center;
+	direction: rtl;
+}
+.footer-push__left {
+	margin-left: 0;
+}
+.footer-push__block {
+	overflow: hidden;
+	display: block;
+	height: auto;
+}
+@media only screen and (max-width:720px) {
+	html {
+		.header-modal {
+			span {
+				width: auto;
+				margin: 0;
+			}
+		}
+	}
+	.header-modal {
+		a {
+			float: none;
+			width: 24px;
+			height: 24px;
+			margin: 0 0 0 .5em;
+			vertical-align: middle;
+		}
+		svg {
+			width: 22px;
+			height: 22px;
+			vertical-align: baseline;
+		}
+	}
+}

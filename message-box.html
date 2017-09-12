@@ -96,7 +96,7 @@ p.first-line {
 	position: absolute;
 	position: fixed;
 	z-index: 100;
-	bottom: 10%;
+	bottom: 12%;
 	bottom: 2.5rem;
 	right: 3em;
 	right: 2rem;
@@ -169,17 +169,17 @@ WebFont.load({
 			<div class="profile-outer">
 			<figure class="txt-center">
 				<span></span>
-				<img src="http://randomuser.me/api/portraits/women/49.jpg" alt="Amelia Andrews" class="modal-profile" />
+				<img src="http://randomuser.me/api/portraits/women/49.jpg" alt="" class="modal-profile" />
 				<figcaption>Amelia</figcaption>
 			</figure>
 			<figure class="txt-center">
 				<span></span>
-				<img src="http://randomuser.me/api/portraits/men/41.jpg" alt="John Long" class="modal-profile" />
+				<img src="http://randomuser.me/api/portraits/men/41.jpg" alt="" class="modal-profile" />
 				<figcaption>John</figcaption>
 			</figure>
 			<figure class="txt-center">
 				<span></span>
-				<img src="http://randomuser.me/api/portraits/women/12.jpg" alt="Cathy Hansen" class="modal-profile" />
+				<img src="http://randomuser.me/api/portraits/women/12.jpg" alt="" class="modal-profile" />
 				<figcaption>Cathy</figcaption>
 			</figure>
 			</div>
@@ -232,7 +232,9 @@ WebFont.load({
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 
-<a href="?#openModal" class="bubble"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26">⚉<path d="M13 0.2C5.9 0.2 0.2 5.3 0.2 11.5 0.2 14.7 1.7 17.5 4.1 19.6 3.5 22.6 0.2 23.8 0.4 24.7 3.4 25.9 9.4 23 10.3 22.6 11.2 22.7 12.1 22.8 13 22.8 20.1 22.8 25.8 17.7 25.8 11.5 25.8 5.3 20.1 0.2 13 0.2Z"/></svg></a>
+	<a href="?#openModal" class="bubble"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">⚉<path d="M25 4.1C12.4 4.1 2.1 12.9 2.1 24 2.1 30.4 5.6 36.1 11 39.7 11 39.9 11 40.3 10.7 41.3 10.4 42.6 9.7 44.4 8.3 46.5L7.2 47.9 9 47.9C15.2 48 18.8 43.9 19.3 43.3 21.1 43.7 23 43.9 25 43.9 37.6 43.9 47.9 35.1 47.9 24 47.9 12.9 37.6 4.1 25 4.1ZM25 5.9C36.7 5.9 46.1 14.1 46.1 24 46.1 33.9 36.7 42.1 25 42.1 23 42.1 21.1 41.8 19.2 41.4L18.7 41.3 18.3 41.7C18.3 41.7 15.4 45 10.8 45.8 11.6 44.3 12.2 42.9 12.5 41.8 12.9 40.3 12.9 39.3 12.9 39.3L12.9 38.8 12.5 38.5C7.3 35.2 3.9 29.9 3.9 24 3.9 14.1 13.3 5.9 25 5.9Z"/></svg></a>
+
+
 </div> <!-- /wrapper -->
 
 <script>
@@ -242,11 +244,6 @@ WebFont.load({
 /*
 'use strict';
 var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('openModal'),target2=document.getElementById('openModal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
-*/
-
-//Written by Aaron Längert
-/*
-var ripple=function(){function rippleStart(e){rippleContainer=getRippleContainer(e.target),("0"==rippleContainer.getAttribute("animating")||!rippleContainer.hasAttribute("animating"))&&e.target.className.indexOf("ripple")>-1&&(rippleContainer.setAttribute("animating","1"),offsetX="number"==typeof e.offsetX?e.offsetX:e.touches[0].clientX-e.target.getBoundingClientRect().left,offsetY="number"==typeof e.offsetY?e.offsetY:e.touches[0].clientY-e.target.getBoundingClientRect().top,fullCoverRadius=Math.max(Math.sqrt(Math.pow(offsetX,2)+Math.pow(offsetY,2)),Math.sqrt(Math.pow(e.target.clientWidth-offsetX,2)+Math.pow(e.target.clientHeight-offsetY,2)),Math.sqrt(Math.pow(offsetX,2)+Math.pow(e.target.clientHeight-offsetY,2)),Math.sqrt(Math.pow(offsetY,2)+Math.pow(e.target.clientWidth-offsetX,2))),expandTime=e.target.getAttribute("ripple-press-expand-time")||3,rippleContainer.style.transition="transform "+expandTime+"s ease-out, box-shadow 0.1s linear",rippleContainer.style.background=e.target.getAttribute("ripple-color")||"white",rippleContainer.style.opacity=e.target.getAttribute("ripple-opacity")||"0.6",rippleContainer.style.boxShadow=e.target.getAttribute("ripple-shadow")||"none",rippleContainer.style.top=offsetY+"px",rippleContainer.style.left=offsetX+"px",rippleContainer.style.transform="translate(-50%, -50%) scale("+fullCoverRadius/100+")")}function rippleEnd(e){rippleContainer=getRippleContainer(e.target),"1"==rippleContainer.getAttribute("animating")&&(rippleContainer.setAttribute("animating","2"),background=window.getComputedStyle(rippleContainer,null).getPropertyValue("background"),destinationRadius=e.target.clientWidth+e.target.clientHeight,rippleContainer.style.transition="none",expandTime=e.target.getAttribute("ripple-release-expand-time")||.4,rippleContainer.style.transition="transform "+expandTime+"s linear, background "+expandTime+"s linear, opacity "+expandTime+"s ease-in-out",rippleContainer.style.transform="translate(-50%, -50%) scale("+destinationRadius/100+")",rippleContainer.style.background="radial-gradient(transparent 10%, "+background+" 40%)",rippleContainer.style.opacity="0",e.target.dispatchEvent(new CustomEvent("ripple-button-click",{target:e.target})),eval(e.target.getAttribute("onrippleclick")))}function rippleRetrieve(e){rippleContainer=getRippleContainer(e.target),"translate(-50%, -50%) scale(0)"==rippleContainer.style.transform&&rippleContainer.setAttribute("animating","0"),"1"==rippleContainer.getAttribute("animating")&&(rippleContainer.setAttribute("animating","3"),collapseTime=e.target.getAttribute("ripple-leave-collapse-time")||.4,rippleContainer.style.transition="transform "+collapseTime+"s linear, box-shadow "+collapseTime+"s linear",rippleContainer.style.boxShadow="none",rippleContainer.style.transform="translate(-50%, -50%) scale(0)")}function getRippleContainer(e){for(childs=e.childNodes,ii=0;ii<childs.length;ii++)try{if(childs[ii].className.indexOf("rippleContainer")>-1)return childs[ii]}catch(t){}return e}window.addEventListener("load",function(){css=document.createElement("style"),css.type="text/css",css.innerHTML=".ripple { overflow: hidden !important; position: relative; } .ripple .rippleContainer { display: block; height: 200px !important; width: 200px !important; padding: 0px 0px 0px 0px; border-radius: 50%; position: absolute !important; top: 0px; left: 0px; transform: translate(-50%, -50%) scale(0); -webkit-transform: translate(-50%, -50%) scale(0); -ms-transform: translate(-50%, -50%) scale(0); background-color: transparent; } .ripple * {pointer-events: none !important;}",document.head.appendChild(css),ripple.registerRipples()});var ripple={registerRipples:function(){for(rippleButtons=document.getElementsByClassName("ripple"),i=0;i<rippleButtons.length;i++)rippleButtons[i].addEventListener("touchstart",function(e){rippleStart(e)},{passive:!0}),rippleButtons[i].addEventListener("touchmove",function(e){if(e.target.hasAttribute("ripple-cancel-on-move"))return void rippleRetrieve(e);try{overEl=document.elementFromPoint(e.touches[0].clientX,e.touches[0].clientY).className.indexOf("ripple")>=0}catch(t){overEl=!1}overEl||rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("touchend",function(e){rippleEnd(e)},{passive:!0}),rippleButtons[i].addEventListener("mousedown",function(e){rippleStart(e)},{passive:!0}),rippleButtons[i].addEventListener("mouseup",function(e){rippleEnd(e)},{passive:!0}),rippleButtons[i].addEventListener("mousemove",function(e){!e.target.hasAttribute("ripple-cancel-on-move")||0==e.movementX&&0==e.movementY||rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("mouseleave",function(e){rippleRetrieve(e)},{passive:!0}),rippleButtons[i].addEventListener("transitionend",function(e){("2"==e.target.getAttribute("animating")||"3"==e.target.getAttribute("animating"))&&(e.target.style.transition="none",e.target.style.transform="translate(-50%, -50%) scale(0)",e.target.style.boxShadow="none",e.target.setAttribute("animating","0"))},{passive:!0}),getRippleContainer(rippleButtons[i])==rippleButtons[i]&&(rippleButtons[i].innerHTML+='<div class="rippleContainer"></div>')},ripple:function(t){t.className.indexOf("ripple")<0||(rect=t.getBoundingClientRect(),e={target:t,offsetX:rect.width/2,offsetY:rect.height/2},rippleStart(e),rippleEnd(e))}};return ripple}();
 */
 </script>
 </body></html>

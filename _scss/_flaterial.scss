@@ -1,0 +1,318 @@
+/*!
+ * FLATERIAL
+ * A sample of customization for CSS Modal Box
+ * @link:      https://github.com/cara-tm/modal_box/
+ * @colors:	   https://www.materialpalette.com
+ * @date:      26/08/2017
+ * @revision : 12/09/2017
+ */
+/**
+ * Waiting for Google @font-face loader: hide the entire page
+ */
+/**
+ * All is fine: display the document
+ */
+/* 
+ * Use of zero as prefix with decimal 
+ * values for older webkit browsers.
+*/
+@-webkit-keyframes "fade-in-pulse" {
+	0% {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100%,70% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes "fade-in-pulse" {
+	0% {
+		transform: scale(.8);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100%,70% {
+		transform: scale(1);
+	}
+}
+/**
+ * Changes the border width of the entire message box
+ */
+/**
+ * Color for the main text content
+ */
+/**
+ * The close button
+ */
+/**
+ * The close button states
+ */
+/**
+ * Changes the border width of the modal header
+ */
+/**
+ * Heading (level 1) for the modal box header
+ */
+/**
+ * Do not render Unicode symbols as emoji
+ */
+/**
+ * The states of the links into the modal box header
+ */
+/**
+ * SVG icon color within the modal box header
+ */
+/**
+ * The main content of the modal box
+ */
+/**
+ * No border for the inner message: there are yet
+ */
+/**
+ * Creates rounding icons for Message Boxes instead of square ones
+ * but not for old FF browsers due to ugly rendering
+ */
+/**
+ * The entire modal box outer footer
+ */
+/**
+ * The modal box footer's links
+ */
+/**
+ * The footer's links states
+ */
+.wf-loading {
+	visibility: hidden;
+	opacity: 0;
+	overflow: hidden;
+	height: 100%;
+}
+.wf-active {
+	visibility: visible;
+	opacity: 1;
+}
+.modal-dialog {
+	&:target {
+		-webkit-transform-origin: bottom center;
+		transform-origin: bottom center;
+		-webkit-animation: none;
+		-webkit-animation: fade-in-pulse .3s forwards cubic-bezier(0.8, 0.02, 0.45, 0.91);
+		animation: none;
+		animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91);
+	}
+	.modal-message {
+		border: 1px solid #eee;
+		.inner-dialog {
+			border: none;
+		}
+	}
+	.inner-modal {
+		color: #212121;
+	}
+	.close {
+		background: #eee;
+		color: #757575;
+		&:hover {
+			color: #fff;
+			background: #aaa;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-o-box-shadow: none;
+			-khtml-box-shadow: none;
+			-ms-box-shadow: none;
+			box-shadow: none;
+		}
+		&:active {
+			color: #fff;
+			background: #aaa;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-o-box-shadow: none;
+			-khtml-box-shadow: none;
+			-ms-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+	.inner-dialog {
+		border-width: 1px;
+		background: #fff;
+		color: #212121;
+		p {
+			color: #757575;
+		}
+		ul {
+			color: #757575;
+		}
+	}
+	.footer-modal {
+		a {
+			margin: .8em .6em .7em;
+			padding: .9em 2em;
+			color: #448aff;
+			line-height: 1;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			&:hover {
+				background: #eee;
+				background: rgba(38, 166, 154, 0.2);
+				text-decoration: none;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+		}
+	}
+}
+.header-modal {
+	border-width: 1px;
+	strong {
+		vertical-align: baseline;
+		font-family: 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols';
+	}
+	span {
+		margin-left: 10%;
+	}
+	a {
+		&:hover {
+			color: #333;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-khtml-box-shadow: none;
+			box-shadow: none;
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+		&:active {
+			color: #333;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-khtml-box-shadow: none;
+			box-shadow: none;
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+	svg {
+		path {
+			fill: #757575;
+		}
+	}
+}
+html {
+	.header-modal {
+		h2 {
+			color: #212121;
+		}
+		a {
+			&:hover {
+				svg {
+					color: #fff;
+					-webkit-border-radius: 50%;
+					-khtml-border-radius: 50%;
+					border-radius: 50%;
+					background: #26a69a;
+				}
+			}
+			&:active {
+				svg {
+					color: #fff;
+					-webkit-border-radius: 50%;
+					-khtml-border-radius: 50%;
+					border-radius: 50%;
+					background: #26a69a;
+				}
+			}
+		}
+	}
+	span[class*='-sign'] {
+		width: 1em;
+		height: 1em;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}
+}
+.footer-modal {
+	overflow-y: auto;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 0;
+	text-align: right;
+	font-family: inherit;
+	border: 1px solid #eee;
+	background: #fff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	a {
+		&:active {
+			background: #eee;
+			background: rgba(38, 166, 154, 0.2);
+			text-decoration: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+	}
+}
+.ripple {
+	position: relative;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		height: 200%;
+		content: '';
+		-webkit-transition: opacity 1s, -webkit-transform .5s;
+		transition: opacity 1s, -webkit-transform .5s;
+		transition: transform .5s, opacity 1s;
+		transition: transform .5s, opacity 1s, -webkit-transform .5s;
+		-webkit-transform: scale(10, 10);
+		transform: scale(10, 10);
+		pointer-events: none;
+		opacity: 0;
+		background-image: -webkit-radial-gradient(circle, #26a69a 10%, transparent 10.01%);
+		background-image: radial-gradient(circle, #26a69a 10%, transparent 10.01%);
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}
+	&:hover {
+		background: none;
+		&:after {
+			position: absolute;
+			-webkit-transition: 0s;
+			transition: 0s;
+			-webkit-transform: scale(0, 0);
+			transform: scale(0, 0);
+			opacity: .2;
+		}
+	}
+}
+@media only screen and (max-width: 720px) {
+	.header-modal {
+		svg {
+			width: 32px;
+			height: 32px;
+			margin-top: -.1em;
+			vertical-align: baseline;
+		}
+	}
+	.mob-hide {
+		display: none !important;
+	}
+}

@@ -1,10 +1,10 @@
 /*!
- * MESSAGE
+ * MESSAGE BOX
  * A sample of customization for CSS Modal Box
  * @link:      https://github.com/cara-tm/modal_box/
  * @colors:    https://www.materialpalette.com
  * @date:	   04/09/2017
- * @revision : 08/09/2017
+ * @revision : 12/09/2017
  */
 
 /**
@@ -30,6 +30,9 @@
 	opacity: 1
 }
 
+/**
+ * Animates the box on opening
+ */
 .modal-dialog:target
 {
 	-webkit-transform-origin: bottom center;
@@ -42,11 +45,13 @@
 }
 
 /**
- * Hide the bubble on message box open
+ * Hides the bubble on message box opening
  */
 .modal-dialog:target ~ .wrapper .bubble{display:none}
 
-/* 
+/**
+ * Animation
+ * 
  * Use of zero as prefix with decimal 
  * values for older webkit browsers.
 */
@@ -233,7 +238,9 @@ html .header-modal h1
 }
 
 
-
+/**
+ * Media queries
+ */
 @media only screen and (max-width: 720px)
 {
 
@@ -317,8 +324,7 @@ html span[class*='-sign']
 	font-family: inherit;
 
 	border: 1px solid #eee;
-	border-top-width: 1px;
-	border-right: 1px solid #eee
+	box-shadow: 0 -10px 30px rgba(246, 246, 246, .9)
 }
 
 .footer-modal label {
@@ -392,7 +398,7 @@ input::-moz-focus-inner {
 }
 
 /**
- * Hide the label tag in favor of placeholder
+ * Hides the label tag in favor of the placeholder
  */
 @supports (display: -webkit-box) or
           (display: -moz-flex) or
@@ -408,11 +414,11 @@ input::-moz-focus-inner {
 				}
 				.footer-modal input[type="text"]:focus + span,
 			  	.footer-modal input[type="text"]:valid + span {
-					top: -1em;
+					top: -.8em;
 					color: #ccc
 				}
 				/**
-			  	 * Hide placeholder
+			  	 * Hides the placeholder
 			  	 */
 				::-webkit-input-placeholder {
 					/* WebKit browsers */
@@ -436,7 +442,7 @@ input::-moz-focus-inner {
 }
 
 /**
- * Just for IE10/11 because it sucks
+ * Just for IE10/11 because it sucks :D
  */
 @media all and (-ms-high-contrast:none) {
 
@@ -479,6 +485,9 @@ input::-moz-focus-inner {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
+/**
+ * Ripple Material effect like
+ */
 .ripple
 {
 	position: relative;
