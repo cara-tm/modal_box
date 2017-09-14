@@ -41,7 +41,8 @@
 	/* Use of zero prefix with decimal values for older webkit browsers */ 
 	-webkit-animation: fade-in-pulse .3s forwards cubic-bezier(0.8, 0.02, 0.45, 0.91);
 			animation: none;
-			animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91)
+			animation: fade-in-pulse-08 .3s forwards cubic-bezier(.8,.02,.45,.91);
+	will-change: auto
 }
 
 /**

@@ -104,7 +104,9 @@ Removed due to uggly support in some webkit old browsers
 
 	/* Note. Older webkit browsers need decimal values prefixed with zero */
 	-webkit-animation: scale-up-center 100ms cubic-bezier(0.39, 0.575, 0.565, 1) both;
-	animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both
+	animation: scale-up-center 100ms cubic-bezier(.39, .575, .565, 1) both;
+	/* Reinitiate will-change */
+	will-change: auto
 }
 
 /**
@@ -153,7 +155,9 @@ Removed due to uggly support in some webkit old browsers
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0
+	left: 0;
+	/* GPU optimisation */
+	will-change: transfotm
 }
 
 .modal-dialog:not(.plain) {
