@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*! 
+ * LOGIN template  - https://github.com/cara-tm/modal_box 
+ * @date     12/09/2017
+ * @revision 15/09/2017
+*/
+
+.txt-center {text-align: center}
+
+.mt2 {margin-top: 2em}
+
+.modal-dialog .modal,
+	.footer-modal {
+	overflow: hidden;
+	background: #78cfcf;
+	color: #fff
+}
+
+.modal-dialog .close {
+	background: #78cfcf;
+	border: 2px solid #fff;
+	color: #fff
+}
+
+.modal-dialog .close:hover,
+.modal-dialog .close:active {
+	background: #78cfcf;
+	border: 2px solid #333;
+	color: #333;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform:none;
+	transform:none
+}
+
+.modal-dialog .header-modal {
+	color: #fff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none
+}
+
+.modal-dialog .header-modal h1 {
+	display: block;
+	color: #bbe7e7;
+	font-size: 1.5em;
+	font-size: 5rem
+}
+
+.modal-dialog .header-modal .lock {
+	    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgZmlsbD0iIzAwMDAwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwMCAxMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik03OS4yNDQsMTAwSDIwLjc1N2MtMi4wODUsMC0zLjc3NC0xLjY4OS0zLjc3NC0zLjc3NVY1OC4xMTNjMC0yLjA4NCwxLjY4OS0zLjc3MywzLjc3NC0zLjc3M2gzLjc3M1YzOC4xOTEgIGMwLTE0LjA2NiwxMS40MDMtMjUuNDcsMjUuNDcxLTI1LjQ3YzE0LjA2NSwwLDI1LjQ3LDExLjQwMywyNS40NywyNS40N1Y1NC4zNGgzLjc3M2MyLjA4NCwwLDMuNzczLDEuNjg5LDMuNzczLDMuNzczdjM4LjExMSAgQzgzLjAxOCw5OC4zMTEsODEuMzI4LDEwMCw3OS4yNDQsMTAweiBNNjMuNDgyLDM4Ljk0NWMwLTcuNDQ1LTYuMDM3LTEzLjQ4LTEzLjQ4MS0xMy40OGMtNy40NDYsMC0xMy40ODEsNi4wMzUtMTMuNDgxLDEzLjQ4VjU0LjM0ICBoMjYuOTYzVjM4Ljk0NXoiLz48L3N2Zz4=");
+}
+
+.modal-dialog .inner-dialog {
+	/* Removes vertical scrolling bar */
+	max-height: 100%;
+	color: #fff
+}
+
+.modal-dialog .inner-dialog a,
+.modal-dialog .footer-dialog a {
+	color: #ec008c
+}
+
+.modal-dialog .modal-message,
+.modal-dialog .header-modal,
+.modal-dialog .inner-dialog,
+.modal-dialog .footer-modal {
+	border-color: #78cfcf !important
+}
+
+.modal-dialog .inner-dialog form {
+	width: 60%;
+	margin: 0 20%
+}
+
+@media only screen and (max-width: 720px) {
+
+	.modal-dialog .inner-dialog form {
+		width: 90%;
+		margin: 0 5%
+	}
+
+}
+
+.modal-dialog .inner-dialog input[type="email"],
+.modal-dialog .inner-dialog input[type="password"]
+{
+	width: 96%;
+	height: 42px;
+	margin: 0;
+	padding: 0 2%;
+	background: transparent /* #bbe7e7 */;
+	border: none;
+	border: 1px solid #fff;
+	color: #fff;
+	font-size: 16px;
+	line-height: 42px;
+
+	box-shadow: none;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none
+}
+
+.modal-dialog .inner-dialog .pattern,
+.modal-dialog .inner-dialog .error {
+	float:right;
+	text-align: right;
+	font-size: .65em
+}
+
+.modal-dialog .inner-dialog input[type="submit"] {
+	width: 100%;
+	margin: 1em 0 .5em;
+	padding: 10px;
+	background: #fff;
+	color: #85c99d;
+	font-weight: 600;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease
+}
+
+input:invalid {box-shadow: 0 0 1px #ec008c}
