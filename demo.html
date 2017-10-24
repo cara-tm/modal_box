@@ -39,8 +39,9 @@
 }
 
 .wrapper {
-    width: 100%;
-    padding: 0 0 3em
+    width: 96%;
+	margin: 0 auto;
+    padding: 1em 0 3em
 }
 
 .wrapper p {
@@ -89,29 +90,18 @@ p.first-line {
 html .visible {
 	display: block;
 	opacity: 1;
-	visibility: visible
+	visibility: visible;
+	background: #fff
 }
 
+html .visible ~ .wrapper {
+	visibility: hidden;
+	height: 0
+}
+
+html .visible .modal {-ms-transform:none;transform: none}
 
 </style>
-
-<script asyn src="https://ajax.googleapis.com/ajax/libs/webfont/1.6/webfont.js"></script>
-<script>
-/*! Webfontloader */
-WebFont.load({
-    google: {
-      families: [ 'Open+Sans', 'Noto+Sans' ]
-	}
-});
-(function() {
-	var wf = document.createElement('script');
-	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6/webfont.js';
-	wf.type = 'text/javascript';
-	wf.async = 'true';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(wf, s);
-});
-</script>
 
 <noscript>
 	<link rel="prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Noto+Sans&amp;lang=en" media="screen">
@@ -127,7 +117,7 @@ WebFont.load({
 		<a href="#close" title="Close" class="close push__left no__select bounceInUp" id="close-modal">×</a>
 
 		<div class="header-modal no__select">
-			<h1><strong class="static">☸</strong> Parameters</h1> <span><strong class="mob-hide">Action:</strong> <a href="#openModal" title="Validate changes"><svg class="svg-icon" viewBox="0 0 20 20">✔<path d="M7.6 14.6c0.1 0.1 0.3 0.2 0.5 0.2 0.2 0 0.3-0.1 0.5-0.2l8.2-8.2c0.3-0.3 0.3-0.7 0-0.9 -0.3-0.3-0.7-0.3-0.9 0l-7.8 7.8L4.2 9.3c-0.3-0.3-0.7-0.3-0.9 0 -0.3 0.3-0.3 0.7 0 0.9L7.6 14.6z"></path></svg></a></span>
+			<h1><strong class="static">☸</strong> Parameters</h1>
 		</div>
 
 		<div class="inner-dialog">
@@ -165,7 +155,7 @@ WebFont.load({
 
 	<div class="modal modal-message">
 
-		<a href="#close" title="Close" class="close no__select" id="close-msg">×</a>
+		<a href="demo.html" title="Close" class="close no__select" id="close-msg">×</a>
 
 		<div class="inner-dialog">
 
@@ -214,7 +204,6 @@ WebFont.load({
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 
 </div> <!-- /wrapper -->
-
 <script>
 /*! A poor alternative to :target selector for IE8 and below;
     script can be removed safely if you don't need this support.
@@ -224,4 +213,10 @@ WebFont.load({
 var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('openModal'),target2=document.getElementById('openModal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
 
 </script>
+<script>
+'use strict';function loadFonts(U,t,c){var args=Array.prototype.slice.call(arguments,3),xhr=new XMLHttpRequest();xhr.ontimeout=function(){console.error('The request for '+U+' timed out.')};xhr.onload=function(){if(xhr.readyState===4){if(xhr.status===200){c.apply(xhr,args);console.log('Fonts Loaded!')}else{console.error(xhr.statusText)};console.timeEnd("Process")}};xhr.open('GET',U,true);xhr.timeout=t;xhr.send(null)}function inject(){var e=this.responseText,h=document.getElementsByTagName('head')[0],a=document.getElementsByTagName('link')[0],s=document.createElement('style');s.media='only screen';s.innerHTML=e;if('undefined'!=typeof s){h.insertBefore(h.appendChild(s),a)}}
+
+loadFonts('https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans+Condensed:300&subset=latin', 9500, inject);
+</script>
+
 </body></html>

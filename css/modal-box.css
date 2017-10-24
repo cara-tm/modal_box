@@ -2,7 +2,7 @@
 /*! 
  * CSS Modal Box by cara-tm.com - MIT license - https://github.com/cara-tm/modal_box 
  * @date     05/08/2017
- * @revision 12/09/2017
+ * @revision 24/10/2017
 */
 
 html {
@@ -27,10 +27,7 @@ body {
  * Prevent conflicts from other CSS rules
  */
 body .modal-dialog {
-/*
-	font: normal normal normal 16px/1 Arial, 'Helvetica Neue', Helvetica, sans-serif;
-*/
-	font: normal normal normal 16px/1 -apple-system,
+	font: normal normal normal 100%/1 '-apple-system',
 				BlinkMacSystemFont,
 				'Segoe UI',
 				Roboto,
@@ -88,6 +85,8 @@ Removed due to uggly support in some webkit old browsers
  * Open the modal box
  */
 .modal-dialog:target {
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
 	opacity: 1;
 	display: block;
 
@@ -100,6 +99,8 @@ Removed due to uggly support in some webkit old browsers
  * Apply animation on modal box opening
  */
 .modal-dialog:target .modal {
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
 	opacity: 1;
 
 	/* Note. Older webkit browsers need decimal values prefixed with zero */
@@ -180,7 +181,7 @@ Removed due to uggly support in some webkit old browsers
 	margin: 2.5% auto 0;
 	margin: 5vh auto 0;
 	background: #fff;
-	font-size: 125%;
+	font-size: 120%;
 	
 	/* 2px more than the .header-modal radius */
 	-webkit-border-radius: 8px 8px 0 0;
