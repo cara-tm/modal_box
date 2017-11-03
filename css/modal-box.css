@@ -188,6 +188,7 @@ Removed due to uggly support in some webkit old browsers
 	-khtml-border-radius: 8px 8px 0 0;
 	-moz-border-radius: 8px 8px 0 0;
 	border-radius: 8px 8px 0 0;
+	background-clip: padding-box;
 
 	/* Activates GPU Hardware-Acceleration */
 	-webkit-transform: scale(0, 0);
