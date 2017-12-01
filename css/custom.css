@@ -183,6 +183,9 @@ html .info-sign {background: #9ea8dd}
  */
 .warning-sign {background: #fbc02d}
 
+
+.inner-dialog {border-bottom: 1px solid #0288d1}
+
 /**
  * A class for '.footer-modal' to reverse the order of the footer's links
  *
