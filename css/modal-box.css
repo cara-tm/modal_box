@@ -419,7 +419,7 @@ Removed due to uggly support in some webkit old browsers
 	/* The only reasonable solution to get good looking buttons, but 
        forces to reverse the order of the links into the footer. */
 	float: right;
-
+	margin-top: -1px;
 	padding: 0 2em;
 	text-transform: uppercase;
 	text-decoration: none;
