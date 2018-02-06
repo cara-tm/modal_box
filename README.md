@@ -104,18 +104,6 @@ Here is an integration test within the default Textpattern template (v 4.7-dev) 
 
 ![TXP intégration sample](https://github.com/cara-tm/modal_box/raw/master/txp-integration.png "The sample Template result").
 
-## IE 8 and below support
-
-Full support in IE9. If you need previous browsers compatibility, you can add this little script into your page:
-
-    <script>
-    /*! Alternative to :target selector (unique ID #open-modal) for
-    IE8 and below; can be removed safely if you don't need it.
-    */
-    'use strict';var addEvent=function(a,b,d){try{a.addEventListener(b,d,!1)}catch(e){a.attachEvent('on'+b,d)}},el=document.getElementById('b-active'),target=document.getElementById('open-modal'),c=document.getElementById('close-modal');addEvent(el,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(c,'click',function(){document.getElementById('open-modal').className='modal-dialog dialog'});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')}function removeClass(a,b){return a.className=a.className.replace(new RegExp('(?:^|s)'+b+'(?!S)'),'')}
-    </script>
-
-Note. This component template is a cross browsers visual solution, not a javascript case study for all browsers. Use your personnal scripting code depending of your needs. This poor javascript solution also affects a little bit the included CSS animation.
 
 ## Note
 
