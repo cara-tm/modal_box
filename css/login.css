@@ -60,7 +60,7 @@
 
 .modal-dialog .inner-dialog a,
 .modal-dialog .footer-dialog a {
-	color: #ec008c
+	color: #f0f465
 }
 
 .modal-dialog .modal-message,
@@ -91,7 +91,7 @@
 	height: 42px;
 	margin: 0;
 	padding: 0 2%;
-	background: transparent /* #bbe7e7 */;
+	background: transparent;
 	border: none;
 	border: 1px solid #fff;
 	color: #fff;
@@ -117,7 +117,7 @@
 	margin: 1em 0 .5em;
 	padding: 10px;
 	background: #fff;
-	color: #85c99d;
+	color: #67aaf9;
 	font-weight: 600;
 	font-size: 16px;
 	outline: none;

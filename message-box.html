@@ -7,9 +7,7 @@
 
 <!-- Remove Tap Highlight on Windows Phone IE -->
 <meta name="msapplication-tap-highlight" content="no">
-<!--[if (gte IE 6)&(lte IE 8)]>
-<script src="js/selectivizr-min.js"></script>
-<![endif]-->
+
 <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
 <link rel="stylesheet" href="css/custom.min.css" media="screen">	
 <link rel="stylesheet" href="css/message-box.css" media="screen">
@@ -161,7 +159,7 @@ WebFont.load({
 
 	<div class="modal tiny push__right">
 		
-		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
+		<a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
 		
 
 		<div class="header-modal no__select">
@@ -211,7 +209,7 @@ WebFont.load({
 
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
-		<a href="?#openModal" class="button" id="link1">Open Modal Box</a>
+		<a href="?#openModal" class="button" onclick="document.getElementById('openModal').style.display='block';return true;">Open Modal Box</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
@@ -232,18 +230,10 @@ WebFont.load({
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 
-	<a href="?#openModal" class="bubble"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">⚉<path d="M25 4.1C12.4 4.1 2.1 12.9 2.1 24 2.1 30.4 5.6 36.1 11 39.7 11 39.9 11 40.3 10.7 41.3 10.4 42.6 9.7 44.4 8.3 46.5L7.2 47.9 9 47.9C15.2 48 18.8 43.9 19.3 43.3 21.1 43.7 23 43.9 25 43.9 37.6 43.9 47.9 35.1 47.9 24 47.9 12.9 37.6 4.1 25 4.1ZM25 5.9C36.7 5.9 46.1 14.1 46.1 24 46.1 33.9 36.7 42.1 25 42.1 23 42.1 21.1 41.8 19.2 41.4L18.7 41.3 18.3 41.7C18.3 41.7 15.4 45 10.8 45.8 11.6 44.3 12.2 42.9 12.5 41.8 12.9 40.3 12.9 39.3 12.9 39.3L12.9 38.8 12.5 38.5C7.3 35.2 3.9 29.9 3.9 24 3.9 14.1 13.3 5.9 25 5.9Z"/></svg></a>
+	<a href="?#openModal" class="bubble" onclick="document.getElementById('openModal').style.display='block';return true;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">⚉<path d="M25 4.1C12.4 4.1 2.1 12.9 2.1 24 2.1 30.4 5.6 36.1 11 39.7 11 39.9 11 40.3 10.7 41.3 10.4 42.6 9.7 44.4 8.3 46.5L7.2 47.9 9 47.9C15.2 48 18.8 43.9 19.3 43.3 21.1 43.7 23 43.9 25 43.9 37.6 43.9 47.9 35.1 47.9 24 47.9 12.9 37.6 4.1 25 4.1ZM25 5.9C36.7 5.9 46.1 14.1 46.1 24 46.1 33.9 36.7 42.1 25 42.1 23 42.1 21.1 41.8 19.2 41.4L18.7 41.3 18.3 41.7C18.3 41.7 15.4 45 10.8 45.8 11.6 44.3 12.2 42.9 12.5 41.8 12.9 40.3 12.9 39.3 12.9 39.3L12.9 38.8 12.5 38.5C7.3 35.2 3.9 29.9 3.9 24 3.9 14.1 13.3 5.9 25 5.9Z"/></svg></a>
 
 
 </div> <!-- /wrapper -->
 
-<script>
-/*! A poor alternative to :target selector for IE8 and below;
-    script can be removed safely if you don't need this support.
-*/
-/*
-'use strict';
-var addEvent=function(a,b,d){if(a.addEventListener) a.addEventListener(b,d,false);else if(a.attachEvent) a.attachEvent('on'+b,d);},target=document.getElementById('openModal'),target2=document.getElementById('openModal2'),link1=document.getElementById('link1'),link2=document.getElementById('link2'),link3=document.getElementById('close-modal'),link4=document.getElementById('footer-close'),link5=document.getElementById('close-msg');addEvent(link1,'click',function(){hasClass(target,'visible')?removeClass(target,'visible'):target.className+=' visible'}),addEvent(link2,'click',function(){hasClass(target2,'visible')?removeClass(target2,'visible'):target2.className+=' visible'}),addEvent(link3,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link4,'click',function(){restaureClass(target,'modal-dialog dialog')}),addEvent(link5,'click',function(){restaureClass(target2,'modal-dialog dialog')});function hasClass(a,b){if('undefined'!=typeof b)return-1<(' '+a.className+' ').indexOf(' '+b+' ')};function restaureClass(a,b){return a.className=b};function addClass(el,className){if (el.classList) el.classList.add(className);else if (!hasClass(el,className)) el.className+=' '+className;}
-*/
-</script>
+
 </body></html>

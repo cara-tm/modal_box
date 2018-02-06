@@ -7,13 +7,9 @@
 
 <!-- Remove Tap Highlight on Windows Phone IE -->
 <meta name="msapplication-tap-highlight" content="no">
-<!--[if (gte IE 6)&(lte IE 8)]>
-<script src="js/selectivizr-min.js"></script>
-<![endif]-->
+
 <link rel="stylesheet" href="css/modal-box.min.css" media="screen">
-
 <link rel="stylesheet" href="css/login.css" media="screen">	
-
 
 <style>
 
@@ -136,7 +132,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
+		<a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
 
 
 		<div class="header-modal no__select">
@@ -151,7 +147,7 @@ WebFont.load({
 				<p><label for="password"></label>
 				<input type="password" value="" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Your Password&hellip;" id="password" /><span class="pattern">(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)</span></p>
 				<p class="mt2 txt-center">Forgot Password? <a href="#nogo">Get it</a></p>
-				<input type="submit" value="Logging-in" id="submit" />
+				<input type="submit" value="Logging in" id="submit" />
 			</form>
 			<p class="txt-center">Don't have an account? <a href="#nogo">Create yours own</a></p>
 
@@ -164,11 +160,11 @@ WebFont.load({
 
 
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal2" aria-haspopup="true" class="modal-dialog dialog" id="openModal2">
+<div tabindex="0" role="dialog" aria-labelled-by="openMessage" aria-haspopup="true" class="modal-dialog dialog" id="openMessage">
 
 	<div class="modal modal-message">
 
-		<a href="#close" title="Close" class="close no__select" id="close-msg">×</a>
+		<a href="#close" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openMessage').style.display='none';return true;">×</a>
 
 		<div class="inner-dialog">
 
@@ -186,8 +182,8 @@ WebFont.load({
 
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
-		<a href="#openModal" class="button" id="link1">Open Modal Box</a>
-		<a href="#openModal2" class="button" id="link2">Open Modal Message</a>
+		<a href="#openModal" class="button" onclick="document.getElementById('openModal').style.display='block';return true;">Open Modal Box</a>
+		<a href="#openMessage" class="button" onclick="document.getElementById('openMessage').style.display='block';return true;">Open Modal Message</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
