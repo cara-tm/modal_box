@@ -294,15 +294,13 @@ Removed due to uggly support in some webkit old browsers
 /**
  * The main title of the modal box header
  */
-.header-modal h1 {
-	display: inline;
+.header-modal span {
+	display: inline-table;
 	display: inline-block;
 	margin: 0;
-	padding: 0 0 0 20px;
 	vertical-align: middle;
 	letter-spacing: -1px;
 	text-transform: capitalize;
-	line-height: 90px;
 	font-size: 110%;
 	font-weight: 400
 }

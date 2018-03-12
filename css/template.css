@@ -75,7 +75,7 @@
 /**
  * Heading (level 1) for the modal box header
  */
-.header-modal h1,
+.header-modal span,
 	.header-modal strong,
 		.header-modal svg {color: #fff}
 

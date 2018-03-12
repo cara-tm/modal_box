@@ -59,15 +59,13 @@
 }
 
 /**
- * Optinal: for call to action into the modal box header
+ * Optinal: for title into the modal box header
  */
 .header-modal span {
 	position: relative;
 	display: inline-table;
 	display: inline-block;
-	margin-left: 20%;
-	text-align: center;
-	font-size: 70%
+	margin: 2.2em 0 0 1em
 }
 
 html .header-modal strong {

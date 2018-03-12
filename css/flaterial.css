@@ -135,9 +135,9 @@
 /**
  * Heading (level 1) for the modal box header
  */
-html .header-modal h2
+html .header-modal span
 {
-	color: #212121
+	
 }
 
 /**
@@ -147,14 +147,6 @@ html .header-modal h2
 {
 	vertical-align: baseline;
 	font-family: 'Segoe UI Symbol', 'Cambria Math', 'Apple Symbols'
-}
-
-/**
- * The states of the links into the modal box header
- */
-.header-modal span
-{
-	margin-left: 10%
 }
 
 .header-modal a:hover,
