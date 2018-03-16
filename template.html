@@ -130,7 +130,7 @@ WebFont.load({
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close no__select" id="close-modal">×</a>
+		<a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
 
 
 		<div class="header-modal no__select">
@@ -160,7 +160,7 @@ WebFont.load({
 		</div> <!-- /inner-dialog -->
 
 		<div class="footer-modal no__select">
-			<a href="#close" class="ripple" id="footer-close">Close</a><a href="https://www.cara-tm.com" target="_blank" class="ripple">Help</a>
+			<a href="#close" class="ripple" id="footer-close" onclick="document.getElementById('openModal').style.display='none';return true;">Close</a><a href="https://www.cara-tm.com" target="_blank" class="ripple">Help</a>
 		</div>
 	</div> <!-- /modal -->
  
@@ -172,7 +172,7 @@ WebFont.load({
 
 	<div class="modal modal-message">
 
-		<a href="#close" title="Close" class="close no__select" id="close-msg">×</a>
+		<a href="#close" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openModal2').style.display='none';return true;">×</a>
 
 		<div class="inner-dialog">
 
@@ -190,8 +190,8 @@ WebFont.load({
 
 	<p class="first-line">
 		<a href="#open" class="button">A simple link</a>
-		<a href="#openModal" class="button" id="link1">Open Modal Box</a>
-		<a href="#openModal2" class="button" id="link2">Open Modal Message</a>
+		<a href="#openModal" class="button" id="link1" onclick="document.getElementById('openModal').style.display='block';return true;">Open Modal Box</a>
+		<a href="#openModal2" class="button" id="link2" onclick="document.getElementById('openModal2').style.display='block';return true;">Open Modal Message</a>
 	</p>
 
 	<p>This is a sample modal box that can be created using the powers of CSS3.</p>
