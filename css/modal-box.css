@@ -208,6 +208,17 @@ Removed due to uggly support in some webkit old browsers
 }
 
 /**
+ * The close text message
+ */
+.modal .close-span {
+    display: block;
+    padding-top: .3em;
+    line-height: 1.43em
+}
+
+.close-span strong {font:normal normal normal 70%/1 'Helvetica Neue', Helvetica, Arial, sans-serif}
+
+/**
  * The close button
  */
 .modal-dialog .close {

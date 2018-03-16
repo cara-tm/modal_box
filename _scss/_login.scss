@@ -16,6 +16,8 @@
 		background: #78cfcf;
 		color: #fff;
 	}
+    .close-span {text-align: right}
+    .close-span strong {margin-right: 3.5em}
 	.close {
 		background: #78cfcf;
 		border: 2px solid #fff;
@@ -47,7 +49,8 @@
 		-moz-box-shadow: none;
 		box-shadow: none;
 		border-color: #78cfcf !important;
-		h1 {
+        span {width: 100%}
+		strong {
 			display: block;
 			color: #bbe7e7;
 			font-size: 1.5em;

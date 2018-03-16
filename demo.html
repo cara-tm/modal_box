@@ -76,6 +76,20 @@ p.first-line {
 }
 
 /**
+ * Position of the close text
+ */
+.modal .close-span {
+    margin-left: 2.2em;
+    color: #aaa;
+}
+
+.modal-message .close-span {
+    margin-left: auto;
+    margin-right: 2.5em;
+    text-align: right
+}
+
+/**
  * The buttons
 */
 .button {
@@ -180,7 +194,7 @@ html .modal-dialog .modal .ss-container {
 
 	<div class="modal">
 
-		<a href="#close" title="Close" class="close push__left no__select bounceInUp" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
+        <span class="close-span"><strong>Close</strong> <a href="#close" title="Close" class="close push__left no__select bounceInUp" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a></span>
 
 		<div class="header-modal no__select">
 			<span><strong class="static">☸</strong> Parameters</span>
@@ -221,7 +235,7 @@ html .modal-dialog .modal .ss-container {
 
 	<div class="modal modal-message">
 
-		<a href="demo.html" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openMessage').style.display='none';return true;">×</a>
+        <span class="close-span"><strong>Close</strong> <a href="demo.html" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openMessage').style.display='none';return true;">×</a></span>
 
 		<div class="inner-dialog">
 

@@ -16,6 +16,10 @@
 	color: #fff
 }
 
+.modal .close-span {text-align: right}
+
+.close-span strong {margin-right: 3.5em}
+
 .modal-dialog .close {
 	background: #78cfcf;
 	border: 2px solid #fff;
@@ -41,7 +45,9 @@
 	box-shadow: none
 }
 
-.modal-dialog .header-modal h1 {
+.header-modal span {width: 100%}
+
+.modal-dialog .header-modal strong {
 	display: block;
 	color: #bbe7e7;
 	font-size: 1.5em;
