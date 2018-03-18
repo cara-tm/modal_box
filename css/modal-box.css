@@ -126,13 +126,23 @@ Removed due to uggly support in some webkit old browsers
 	z-index: -1;
 	top: 0;
 	left: 0;
-	height: 1px;
-	min-height: 0;
-	max-height: 0;
 	margin: 0;
 	padding: 0;
 
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+}
+
+/**
+ * Available class for the .modal-box container which
+ * allows to hide the .wrapper on the modal boxes opening
+ */
+.modal-dialog.no-visibility:target ~ .wrapper {
+    visibility: hidden;
+    height: 1px;
+    min-height: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0
 }
 
 /**
@@ -162,8 +172,8 @@ Removed due to uggly support in some webkit old browsers
 }
 
 .modal-dialog:not(.plain) {
-	background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
-	background: rgba(255, 255, 255, 0.95)
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiqAcAAIgAgoGu+rEAAAAASUVORK5CYII=) 0 0 repeat;
+	background: rgba(255, 255, 255, 0.90)
 }
 
 /**

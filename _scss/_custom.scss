@@ -187,11 +187,9 @@
 .header-modal {
 	span {
 		position: relative;
-		display: inline-table;
-		display: inline-block;
-		margin-left: 20%;
-		text-align: center;
-		font-size: 70%;
+        display: inline-table;
+        display: inline-block;
+        margin: 1.2em 0 0 1em;
 	}
 	a {
 		display: inline-table;
@@ -321,7 +319,7 @@ span[class*="-sign"] {
 		.header-modal {
 			span {
 				width: auto;
-				margin: 0;
+				
 			}
 		}
 	}
