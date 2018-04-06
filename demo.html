@@ -190,9 +190,9 @@ html .modal-dialog .modal .ss-container {
 </head>
 <body>
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog no-visibility" id="openModal">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openModal">
 
-	<div class="modal">
+	<div role="document" class="modal">
 
         <span class="close-span"><strong>Close</strong> <a href="#close" title="Close" class="close push__left no__select bounceInUp" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a></span>
 
@@ -203,7 +203,7 @@ html .modal-dialog .modal .ss-container {
 		<div class="inner-dialog">
 
 
-			<h2>Modal Box</h2>
+			<h2 id="dialog-description">Modal Box</h2>
 
 			<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 			<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
@@ -231,15 +231,15 @@ html .modal-dialog .modal .ss-container {
 
 
 
-<div tabindex="0" role="dialog" aria-labelled-by="openMessage" aria-haspopup="true" class="modal-dialog dialog" id="openMessage">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openMessage">
 
-	<div class="modal modal-message">
+	<div role="document" class="modal modal-message">
 
         <span class="close-span"><strong>Close</strong> <a href="demo.html" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openMessage').style.display='none';return true;">×</a></span>
 
 		<div class="inner-dialog">
 
-			<strong>Message Box</strong>
+			<strong id="dialog-dscription">Message Box</strong>
 			<p><!-- 
 				<span class="info-sign"><strong>&#8505;</strong></span> 
 				<span class="warning-sign"><strong>⚠</strong></span>

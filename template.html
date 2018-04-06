@@ -51,6 +51,9 @@
     line-height: 1.5
 }
 
+/* Corrects the wrapper position on Modal Boxes opening */
+.modal-dialog:target ~.wrapper{margin-top: 1.2em}
+
 p.first-line {
     float: left;
     clear: both;
@@ -126,9 +129,9 @@ WebFont.load({
 </head>
 <body>
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openModal">
 
-	<div class="modal">
+	<div role="document" class="modal">
 
 		<a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
 
@@ -140,7 +143,7 @@ WebFont.load({
 		<div class="inner-dialog">
 
 
-			<span>Modal Box</span>
+			<span id="dialog-description">Modal Box</span>
 
 			<p>This is a sample modal box that can be created using the powers of CSS3.</p>
 			<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
@@ -168,15 +171,15 @@ WebFont.load({
 
 
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal2" aria-haspopup="true" class="modal-dialog dialog" id="openModal2">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openModal2">
 
-	<div class="modal modal-message">
+	<div role="document" class="modal modal-message">
 
 		<a href="#close" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openModal2').style.display='none';return true;">×</a>
 
 		<div class="inner-dialog">
 
-			<h2>Message Box</h2>
+			<h2 id="dialog-description">Message Box</h2>
             <p><span class="info-sign"><strong>ℹ</strong></span> This is a sample modal message box suitable for infos. ✌</p>
             
 

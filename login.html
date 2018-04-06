@@ -48,6 +48,9 @@
     line-height: 1.5
 }
 
+/* Corrects the wrapper position on Modal Boxes opening */
+.modal-dialog:target ~.wrapper{margin-top: 1.2em}
+
 p.first-line {
     float: left;
     clear: both;
@@ -128,15 +131,15 @@ WebFont.load({
 </head>
 <body>
 
-<div tabindex="0" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog" id="openModal">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openModal">
 
-	<div class="modal">
+	<div role="document" class="modal">
 
         <span class="close-span"><strong>Close</strong> <a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a></span>
 
 
 		<div class="header-modal no__select">
-			<span class="txt-center"><strong class="static">☖</strong></span>
+			<span class="txt-center" id="dialog-description"><strong class="static">☖</strong></span>
 		</div>
 
 		<div class="inner-dialog">
@@ -160,15 +163,15 @@ WebFont.load({
 
 
 
-<div tabindex="0" role="dialog" aria-labelled-by="openMessage" aria-haspopup="true" class="modal-dialog dialog" id="openMessage">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog" id="openMessage">
 
-	<div class="modal modal-message">
+	<div role="document" class="modal modal-message">
 
         <span class="close-span"><strong>Close</strong> <a href="#close" title="Close" class="close no__select" id="close-msg" onclick="document.getElementById('openMessage').style.display='none';return true;">×</a></span>
 
 		<div class="inner-dialog">
 
-			<span>Message Box</span>
+			<span id="dialog-description">Message Box</span>
             <p><span class="info-sign"><strong>ℹ</strong></span> This is a sample modal message box suitable for infos. ✌</p>
             
 

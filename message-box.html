@@ -155,14 +155,14 @@ WebFont.load({
 </head>
 <body>
 
-<div tabindex="2" role="dialog" aria-labelled-by="openModal" aria-haspopup="true" class="modal-dialog dialog plain" id="openModal">
+<div role="dialog" aria-modal="true" aria-haspopup="true" tabindex="-1" aria-live="assertive" aria-describedby="dialog-description" class="modal-dialog dialog plain" id="openModal">
 
-	<div class="modal tiny push__right">
+	<div role="document" class="modal tiny push__right">
 		
 		<a href="#close" title="Close" class="close no__select" id="close-modal" onclick="document.getElementById('openModal').style.display='none';return true;">×</a>
 		
 
-		<div class="header-modal no__select">
+		<div class="header-modal no__select" id="dialog-description">
 			<span>Hi</span>
 			<div class="profile-outer">
 			<figure class="txt-center">

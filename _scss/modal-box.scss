@@ -370,8 +370,9 @@ a[class^="close"] {
 .header-modal {
 	position: relative;
 	z-index: 1001;
-	height: 90px;
-	min-height: 5rem;
+    height: 3.75em;
+    height: 4.5rem;
+	min-height: 4.5rem;
 	max-height: 26vh;
 	border: 1px solid #eee;
 	border-bottom: 0;
