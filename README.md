@@ -1,6 +1,6 @@
 # CSS Modal Box
 
-![Browsers](https://badges.herokuapp.com/browsers?firefox=1.0.8,60&googlechrome=1,67&iexplore=6,7,8,9,10,11&microsoftedge=13&opera=9.64,53&safari=5.17,11&android=7,2.3.6 "Browser support")
+![Browsers](https://badges.herokuapp.com/browsers?firefox=1.0.8,60&googlechrome=1,67&iexplore=6,7,8,9,10,11&microsoftedge=13,42&opera=9.64,53&safari=5.17,11&android=7,2.3.6 "Browser support")
 ![Licence](https://camo.githubusercontent.com/9c0dc59d81d725b3904bda6613e541fa30cb2c8a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f796574742e737667 "MIT")
 
 Pure CSS Modal Box, "responsive" with a pretty good browsers support: IE6 minimum! ([See this demo here](https://codepen.io/cara-tm/full/ayzXPJ/))
