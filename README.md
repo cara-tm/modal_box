@@ -39,6 +39,8 @@ This component template has been tested successfully in (real systems not from e
 * Shiira Mac;
 * OmniWeb 5 Mac.
 
+Here is a new version with the use of Flexbox & CSS Grid Layout for hipsters and nerds keeping a pretty good support within old browsers: IE6 minimum capable. Please note these new CSS features in this web design sample do not act any kind of noticed advantages.  [Online latest demo](http://sandbox.cara-tm.com/clients/cara/demo.html)
+
 ## Usage
 
 First, you need to encapsulate your entire content page into a div with a class name `wrapper`.
